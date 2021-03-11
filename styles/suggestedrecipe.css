@@ -1,5 +1,16 @@
-img{
-    width: 300px;
-    height: 250px;
-    border-radius: 50%;
+body{
+    padding-top: 150px;
+    }
+
+h1{
+    margin-left: 2em;
+}
+
+#intro{
+    margin-left: 5em;
+}
+
+#saved-recipe{
+    margin-top: 3em;
+    margin-left: 5em;
 }
