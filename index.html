@@ -15,7 +15,19 @@
 
     <!-- Optional styles and scripts of your own -->
     <style>
+        input[type=search] {
+            background-image: url("searchicon.png");
+            width: 30vw;
+        }
 
+        .socialMediaIcon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .img-fluid {
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -25,56 +37,44 @@
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sign Up</a>
-                    </li>
-                </ul>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="images/stratadeli.png">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <!--<li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li> -->
+                    </ul>
+                    <form class="position-absolute top-50 start-50 translate-middle">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                    <button type="button" class="btn btn-dark">Log In</button>
+                    <button type="button" class="btn btn-outline-secondary">Sign Up</button>
+                </div>
             </div>
-        </div>
-    </nav>
-
-    <div>
-        <h1>Strata Deli</h1>
-    </div>
-
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-        </script>
-
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
-
+        </nav>
+    </header>
     <div>
         <img src="./images/maddi-bazzocco-Hz4FAtKSLKo-unsplash.jpg" class="img-fluid" alt="groceries">
     </div>
-    <div>
+    <div class="container">
+        <br>
         <br>
         <h3> Welcome to Strata Deli</h3>
-    </div>
-    <div>
         <p>Strata Deli makes your grocery shopping experience safe, effortless, and affordable.</p>
-    </div>
-    <div>
+
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
@@ -98,30 +98,52 @@
         </div>
     </div>
     <br>
+    <br>
     <div>
         <img src="./images/sign_up_bg_pic.png" class="img-fluid" alt="signup">
-        <h5>Sign Up Now</h5>
     </div>
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">About Us</a>
-        </div>
-    </nav>
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0">Contact Us</span>
-        </div>
-    </nav>
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0">FAQ</span>
-        </div>
-    </nav>
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0">Terms and Conditions</span>
-        </div>
-    </nav>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <br>
+        <br>
+        <p class="float-end">
+            <a href="https://www.facebook.com/">
+                <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
+            <a href="https://www.instagram.com/">
+                <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
+            <a href="https://www.linkedin.com/company/">
+                <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
+                    class="socialMediaIcon"></a>
+        </p>
+        <a class="navbar-brand" href="#">
+            <img src="images/stratadeli.png">
+        </a>
+        <p><br>&copy; 2021 strataDeli, Inc.<br><br>
+            &middot;
+            <a href="#">About</a><br>
+            &middot;
+            <a href="faq.html">FAQ</a><br>
+            &middot;
+            <a href="#">Contact Us</a><br>
+            &middot;
+            <a href="#">Privacy</a>
+        </p>
+    </footer>
+
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related    -->
+    <!----------------------------------------------->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+
+
 </body>
 
 </html>

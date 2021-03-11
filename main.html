@@ -19,6 +19,16 @@
       width: 280px;
       height: 280px;
     }
+
+    input[type=search] {
+      background-image: url("searchicon.png");
+      width: 30vw;
+    }
+
+    .socialMediaIcon {
+      width: 32px;
+      height: 32px;
+    }
   </style>
 </head>
 
@@ -28,33 +38,34 @@
   <!-- The following is HTML for layout -->
   <!-------------------------------------->
   <!-- Header Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Strata Deli</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/stratadeli.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <!--<li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Account settings</a></li>
-        </ul>
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
+          </ul>
+          <form class="position-absolute top-50 start-50 translate-middle">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
+          <button type="button" class="btn btn-dark">Log In</button>
+          <button type="button" class="btn btn-outline-secondary">Sign Up</button>
+        </div>
       </div>
-    </div>
-  </nav>
-
+    </nav>
+  </header>
   <div class="card-group">
     <div class="card">
       <img src="images/tomato.png" class="card-img-top" alt="...">
@@ -87,8 +98,7 @@
         <p class="card-text">This carrot will help imporve strength.</p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
-  </div>
-  <div class="card-group">
+    </div>
     <div class="card">
       <img src="images/tomato.png" class="card-img-top" alt="...">
       <div class="card-body">
@@ -123,6 +133,33 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
+  <footer class="container">
+    <br>
+    <br>
+    <p class="float-end">
+      <a href="https://www.facebook.com/">
+        <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
+      <a href="https://www.instagram.com/">
+        <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
+      <a href="https://www.linkedin.com/company/">
+        <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
+          class="socialMediaIcon"></a>
+    </p>
+    <a class="navbar-brand" href="index.html">
+      <img src="images/stratadeli.png">
+    </a>
+    <p><br>&copy; 2021 strataDeli, Inc.<br><br>
+      &middot;
+      <a href="#">About</a><br>
+      &middot;
+      <a href="faq.html">FAQ</a><br>
+      &middot;
+      <a href="#">Contact Us</a><br>
+      &middot;
+      <a href="#">Privacy</a>
+    </p>
+  </footer>
   <!----------------------------------------------->
   <!-- JS: Boostrap, Firebase, API related    -->
   <!----------------------------------------------->
