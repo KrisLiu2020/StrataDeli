@@ -29,6 +29,21 @@
       width: 32px;
       height: 32px;
     }
+
+    #footer {
+      background-color: black;
+      height: 500px;
+    }
+
+    p a {
+      text-decoration: none;
+      list-style-type: none;
+      color: white;
+    }
+
+    p a:hover {
+      color: white;
+    }
   </style>
 </head>
 
@@ -39,7 +54,7 @@
   <!-------------------------------------->
   <!-- Header Navigation Bar -->
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
           <img src="images/stratadeli.png">
@@ -60,8 +75,13 @@
           <form class="position-absolute top-50 start-50 translate-middle">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           </form>
-          <button type="button" class="btn btn-dark">Log In</button>
-          <button type="button" class="btn btn-outline-secondary">Sign Up</button>
+          </ul>
+          <a href="profile.html">
+            <img src="images/profile2.png" width="40px" , height="40px">
+          </a>
+          <a href="cart.html">
+            <img src="images/cart2.png" width="40px" , height="40px">
+          </a>
         </div>
       </div>
     </nav>
@@ -134,32 +154,41 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="container">
-    <br>
-    <br>
-    <p class="float-end">
-      <a href="https://www.facebook.com/">
-        <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
-      <a href="https://www.instagram.com/">
-        <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
-      <a href="https://www.linkedin.com/company/">
-        <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
-          class="socialMediaIcon"></a>
-    </p>
-    <a class="navbar-brand" href="index.html">
-      <img src="images/stratadeli.png">
-    </a>
-    <p><br>&copy; 2021 strataDeli, Inc.<br><br>
-      &middot;
-      <a href="#">About</a><br>
-      &middot;
-      <a href="faq.html">FAQ</a><br>
-      &middot;
-      <a href="#">Contact Us</a><br>
-      &middot;
-      <a href="#">Privacy</a>
-    </p>
-  </footer>
+  <div id=footer class="fixed-bottom">
+    <!--Change to sticky-bottom when we have more content-->
+    <footer class="container">
+      <br><br><br><br><br>
+      <div class="float-end">
+        <br><br><br><br><br>
+        <a href="https://www.facebook.com/">
+          <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
+        <a href="https://www.instagram.com/">
+          <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
+        <a href="https://www.linkedin.com/company/">
+          <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
+            class="socialMediaIcon"></a>
+        <p>
+          <br><br>
+          <img src="images/app-store.png" , width="150px" , height="40px">
+          <br><br>
+          <img src="images/play-store.png" , width="150px" , height="40px">
+        </p>
+      </div>
+      <a class="navbar-brand" href="index.html">
+        <img src="images/stratadeliwhite.png">
+      </a>
+      <div>
+        <br>
+        <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
+        <br>
+        <p><a href="/Story">About Us</a></p>
+        <p><a href="/Story">Careers</a></p>
+        <p><a href="faq.html">FAQ</a></p>
+        <p><a href="/Story">Contact Us</a></p>
+        <p><a href="/Story">Terms & Conditions</a></p>
+      </div>
+    </footer>
+  </div>
   <!----------------------------------------------->
   <!-- JS: Boostrap, Firebase, API related    -->
   <!----------------------------------------------->

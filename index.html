@@ -28,6 +28,21 @@
         .img-fluid {
             width: 100%;
         }
+
+        #footer {
+            background-color: black;
+            height: 500px;
+        }
+
+        p a {
+            text-decoration: none;
+            list-style-type: none;
+            color: white;
+        }
+
+        p a:hover {
+            color: white;
+        }
     </style>
 </head>
 
@@ -102,35 +117,43 @@
     <div>
         <img src="./images/sign_up_bg_pic.png" class="img-fluid" alt="signup">
     </div>
+    <br><br><br><br><br><br><br><br>
 
     <!-- FOOTER -->
-    <footer class="container">
-        <br>
-        <br>
-        <p class="float-end">
-            <a href="https://www.facebook.com/">
-                <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
-            <a href="https://www.instagram.com/">
-                <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
-            <a href="https://www.linkedin.com/company/">
-                <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
-                    class="socialMediaIcon"></a>
-        </p>
-        <a class="navbar-brand" href="#">
-            <img src="images/stratadeli.png">
-        </a>
-        <p><br>&copy; 2021 strataDeli, Inc.<br><br>
-            &middot;
-            <a href="#">About</a><br>
-            &middot;
-            <a href="faq.html">FAQ</a><br>
-            &middot;
-            <a href="#">Contact Us</a><br>
-            &middot;
-            <a href="#">Privacy</a>
-        </p>
-    </footer>
-
+    <div id=footer class="sticky-bottom">
+        <footer class="container">
+            <br><br><br><br><br>
+            <div class="float-end">
+                <br><br><br><br><br>
+                <a href="https://www.facebook.com/">
+                    <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
+                <a href="https://www.instagram.com/">
+                    <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
+                <a href="https://www.linkedin.com/company/">
+                    <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
+                        class="socialMediaIcon"></a>
+                <p>
+                    <br><br>
+                    <img src="images/app-store.png" , width="150px" , height="40px">
+                    <br><br>
+                    <img src="images/play-store.png" , width="150px" , height="40px">
+                </p>
+            </div>
+            <a class="navbar-brand" href="index.html">
+                <img src="images/stratadeliwhite.png">
+            </a>
+            <div>
+                <br>
+                <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
+                <br>
+                <p><a href="/Story">About Us</a></p>
+                <p><a href="/Story">Careers</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+                <p><a href="/Story">Contact Us</a></p>
+                <p><a href="/Story">Terms & Conditions</a></p>
+            </div>
+        </footer>
+    </div>
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
     <!----------------------------------------------->

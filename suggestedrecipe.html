@@ -53,6 +53,21 @@
         .img-fluid {
             width: 100%;
         }
+
+        #footer {
+            background-color: black;
+            height: 500px;
+        }
+
+        p a {
+            text-decoration: none;
+            list-style-type: none;
+            color: white;
+        }
+
+        p a:hover {
+            color: white;
+        }
     </style>
 </head>
 
@@ -68,7 +83,7 @@
     <header>
         <section>
             <div class="card" style="width: 30rem; margin-left: 5em; margin-right: 1em; float: left;">
-                <img class="card-img-top" src="./images/tomato_soup.jpg" alt="Card image cap">
+                <img class="card-img-top" src="images/tomato_soup.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Fire-Roasted Tomato and Pepper Soup</h5>
                     <p class="card-text">The fresh taste of summer, all year long.</p>
@@ -76,7 +91,7 @@
                 </div>
             </div>
             <div class="card" style="width: 30rem; margin-left: 5em; margin-right: 5em; float: left;">
-                <img class="card-img-top" src="./images/beef.jpg" alt="Card image cap">
+                <img class="card-img-top" src="images/beef.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Mushroom Beef Burgers</h5>
                     <p class="card-text">Simple yet flavorful mushroom and beef burgers.</p>
@@ -84,7 +99,7 @@
                 </div>
             </div>
             <div class="card" style="width: 30rem; margin-top: 5em; margin-left: 5em;">
-                <img class="card-img-top" src="./images/chicken.jpg" alt="Card image cap">
+                <img class="card-img-top" src="images/chicken.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Breaded Parmesan Ranch Chicken</h5>
                     <p class="card-text">Quick and easy breaded ranch chicken.</p>
@@ -95,53 +110,63 @@
         <section id="saved-recipe">
             <h2>Your Favorites</h2>
             <div class="card" style="width: 18rem; margin-top: 1em; float: left; margin-right: 1em;">
-                <img class="card-img-top" src="/images/salad.jpg" alt="Card image cap">
+                <img class="card-img-top" src="images/salad.jpg" alt="Card image cap">
                 <div class="card-body">
-                  <p class="card-text">Thai Salad</p>
+                    <p class="card-text">Thai Salad</p>
                 </div>
-              </div>
-              <div class="card" style="width: 18rem; margin-top: 1em; float: left; margin-right: 1em;">
-                <img class="card-img-top" src="./images/salad.jpg" alt="Card image cap">
+            </div>
+            <div class="card" style="width: 18rem; margin-top: 1em; float: left; margin-right: 1em;">
+                <img class="card-img-top" src="images/salad.jpg" alt="Card image cap">
                 <div class="card-body">
-                  <p class="card-text">Thai Salad</p>
+                    <p class="card-text">Thai Salad</p>
                 </div>
-              </div>
-              <div class="card" style="width: 18rem; margin-top: 1.5em; margin-right: 1em; clear: right;">
-                <img class="card-img-top" src="./images/salad.jpg" alt="Card image cap">
+            </div>
+            <div class="card" style="width: 18rem; margin-top: 1.5em; margin-right: 1em; clear: right;">
+                <img class="card-img-top" src="images/salad.jpg" alt="Card image cap">
                 <div class="card-body">
-                  <p class="card-text">Thai Salad</p>
+                    <p class="card-text">Thai Salad</p>
                 </div>
-              </div>
+            </div>
         </section>
-        <link rel="stylesheet" href="./styles/suggestedrecipe.css">
+        <link rel="stylesheet" href="styles/suggestedrecipe.css">
     </header>
+
     <!-- FOOTER -->
-    <footer class="container">
-        <br>
-        <br>
-        <p class="float-end">
-            <a href="https://www.facebook.com/">
-                <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
-            <a href="https://www.instagram.com/">
-                <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
-            <a href="https://www.linkedin.com/company/">
-                <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
-                    class="socialMediaIcon"></a>
-        </p>
-        <a class="navbar-brand" href="index.html">
-            <img src="images/stratadeli.png">
-        </a>
-        <p><br>&copy; 2021 strataDeli, Inc.<br><br>
-            &middot;
-            <a href="#">About</a><br>
-            &middot;
-            <a href="faq.html">FAQ</a><br>
-            &middot;
-            <a href="#">Contact Us</a><br>
-            &middot;
-            <a href="#">Privacy</a>
-        </p>
-    </footer>
+    <div id=footer class="sticky-bottom">
+        <!--Change to sticky-bottom when we have more content-->
+        <footer class="container">
+            <br><br><br><br><br>
+            <div class="float-end">
+                <br><br><br><br><br>
+                <a href="https://www.facebook.com/">
+                    <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
+                <a href="https://www.instagram.com/">
+                    <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
+                <a href="https://www.linkedin.com/company/">
+                    <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
+                        class="socialMediaIcon"></a>
+                <p>
+                    <br><br>
+                    <img src="images/app-store.png" , width="150px" , height="40px">
+                    <br><br>
+                    <img src="images/play-store.png" , width="150px" , height="40px">
+                </p>
+            </div>
+            <a class="navbar-brand" href="index.html">
+                <img src="images/stratadeliwhite.png">
+            </a>
+            <div>
+                <br>
+                <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
+                <br>
+                <p><a href="/Story">About Us</a></p>
+                <p><a href="/Story">Careers</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+                <p><a href="/Story">Contact Us</a></p>
+                <p><a href="/Story">Terms & Conditions</a></p>
+            </div>
+        </footer>
+    </div>
 
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->

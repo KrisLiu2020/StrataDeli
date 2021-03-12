@@ -5,16 +5,21 @@
     <meta charset="utf-8">
     <title>TEAM43 Strata Deli</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+    <meta name="author" content="Kerry, Kris, Tomo">
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-
     <!-- Optional styles and scripts of your own -->
+    <link href="styles/carousel.css" rel="stylesheet">
     <style>
+        img.card-img-top {
+            width: 100%;
+            height: 100%;
+        }
+
         input[type=search] {
             background-image: url("searchicon.png");
             width: 30vw;
@@ -24,45 +29,6 @@
             width: 32px;
             height: 32px;
         }
-
-        .img-fluid {
-            width: 100%;
-        }
-
-        body {
-            margin-top: 10em;
-        }
-
-        #item-pic-display {
-            margin-left: 5em;
-        }
-
-        .related-recipes-pic {
-            height: 100px;
-            width: 150px;
-        }
-
-        .without-pic {
-            margin-left: 5em;
-        }
-
-        .item-picture {
-            float: left;
-            margin-right: 20em;
-            margin-top: 5em;
-            margin-left: 10em;
-        }
-
-        .function-intro {
-            width: 30em;
-            float: left;
-        }
-
-        .related-recipes-pic {
-            border-radius: 5em
-        }
-
-        .related-items {}
 
         #footer {
             background-color: black;
@@ -100,15 +66,16 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <!--<li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li> -->
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
                     </ul>
                     <form class="position-absolute top-50 start-50 translate-middle">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     </form>
+                    </ul>
                     <a href="profile.html">
                         <img src="images/profile2.png" width="40px" , height="40px">
                     </a>
@@ -119,51 +86,80 @@
             </div>
         </nav>
     </header>
-    <section class="item-picture">
-        <img id="item-pic-display" src="./images/tomato.png">
-    </section>
-    <section class="without-pic">
-        <section class="function-intro" style="margin-top: 3em;">
-            <button type="button" class="btn btn-success">Add to Cart</button>
-            <p>Coupon Available!</p>
-            <br>
-            <section class="item-short-description">
-                <h3>Tomatoes - Large, Field, 330 Gram</h3>
-            </section>
-            <section class="item-detail-description">
-                <p>Greenhouse tomatoes are firm and plump with a red skin when ripe. They are perfect sliced and used as
-                    a
-                    topping on burgers and sandwiches like the classic BLT. Or scoop out the pulp and seeds to make
-                    baked
-                    stuffed tomatoes.
-                <p>
-            </section>
-            <button type="button" class="btn btn-success">Save the Item</button>
-        </section>
-        <section class="item-picture">
-            <img src="./images/nutrition_facts.png">
-            <br>
-            <hr>
-            <br>
-        </section>
-        <section class="related-items-and-recipes">
-            <section class="related-items" style="clear: both; margin-left: 10em;">
-                <h5>Related Items:</h5>
-                <div>
-                    <img class="related-recipes-pic" src="./images/carrot.png">
-                </div>
-            </section>
-            <br><br>
-            <section class="related-recipes" style="margin-left: 10em;">
-                <h5>Recipes You May Like:</h5>
-                <img class="related-recipes-pic" src="./images/tomato_soup.jpg">
-                <img class="related-recipes-pic" src="./images/pad_thai.jpg">
-            </section>
-        </section>
-    </section>
-    <br>
+
+    <!-- START THE FEATURETTES -->
+    <div class="container">
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">The <span class="text-muted">Beginning.</span>
+                </h2>
+                <p class="lead">Strata Deli was started in the New Year of 2021 by BCIT Computer Systems Technology
+                    students
+                    who were all in search of an easier answer to the question "How can we avoid COVID 19"
+                    For busy people who live in apartments, they found there were too many obstacles to cooking a
+                    wholesome meal at
+                    home and that made it all too appealing to just grab fast food instead. They figured there had to be
+                    a better option and that’s why they started Strata Deli.
+
+                    With Strata Deli you just click and cook. It’s gone from dream to reality and we’re on a mission to
+                    share this great solution with all of Vancouver, and to do it in an honest and sustainable way while
+                    saving lots of $ on delivery fees!</p>
+            </div>
+            <div class="col-md-5">
+                <img src="https://www.premiercommunity.co.uk/wp-content/uploads/90996156_185407c.jpg" width="500px" ,
+                    height="500px">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Our <span class="text-muted">Mission</span>
+                </h2>
+                <p class="lead">We believe that the quality of your life starts with the food you eat. By eating the
+                    right food, your mind and body can flourish and function at the best of its ability. The problem is:
+                    you’re too busy, and you don’t have time to eat well, often resorting to take-out or fast food. It
+                    takes too much time to plan, shop, cut and clean up. That’s why at Strata Deli, we find the absolute
+                    easiest way for you to access the highest quality food, everyday. We are committed to making your
+                    life in the kitchen, and outside the kitchen, as easy and as stress-free as possible.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img src="images/salad.jpg" width="500px" , height="500px">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">How StrataDeli<span class="text-muted"> Works</span></h2>
+                <p class="lead">It all starts with you placing an order on our website. We then process the order and
+                    send it to the local grocery store. We will then ship your order with your Apartment within 2 days
+                    Guaranteed. We do a bulk order with your Apartment so that you don't have those hefty delivery fees
+                    other companys are charging! You can then check out our suggested recipe section for some quick and
+                    easy recipes you can add to the cart. Recieve your grocery items, and cook your meals / put away
+                    your essential items!
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img src="https://www.gannett-cdn.com/presto/2019/06/24/USAT/13e52c05-380a-4714-97a0-79a15033d1ae-instacart-0227-2117-final.jpg?width=660&height=347&fit=crop&format=pjpg&auto=webp"
+                    width="500px" , height="500px">
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+    </div><!-- /.container -->
+
     <!-- FOOTER -->
     <div id=footer class="sticky-bottom">
+        <!--Change to sticky-bottom when we have more content-->
         <footer class="container">
             <br><br><br><br><br>
             <div class="float-end">
@@ -197,11 +193,9 @@
             </div>
         </footer>
     </div>
-
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
     <!----------------------------------------------->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
         </script>
@@ -209,6 +203,8 @@
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
+
+
 </body>
 
 </html>
