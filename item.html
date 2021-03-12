@@ -28,6 +28,41 @@
         .img-fluid {
             width: 100%;
         }
+
+        body {
+            margin-top: 10em;
+        }
+
+        #item-pic-display {
+            margin-left: 5em;
+        }
+
+        .related-recipes-pic {
+            height: 100px;
+            width: 150px;
+        }
+
+        .without-pic {
+            margin-left: 5em;
+        }
+
+        .item-picture {
+            float: left;
+            margin-right: 20em;
+            margin-top: 5em;
+            margin-left: 10em;
+        }
+
+        .function-intro {
+            width: 30em;
+            float: left;
+        }
+
+        .related-recipes-pic {
+            border-radius: 5em
+        }
+
+        .related-items {}
     </style>
 </head>
 
@@ -65,45 +100,52 @@
             </div>
         </nav>
     </header>
-    <div>
-        <img src="./images/maddi-bazzocco-Hz4FAtKSLKo-unsplash.jpg" class="img-fluid" alt="groceries">
-    </div>
-    <div class="container">
-        <br>
-        <br>
-        <h3> Welcome to Strata Deli</h3>
-        <p>Strata Deli makes your grocery shopping experience safe, effortless, and affordable.</p>
-
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">HOW STRATA DELI WORKS</h5>
-                        <p class="card-text">We significantly lower the cost for delivery through bulk strata purchase.
-                        </p>
-                        <a href="#" class="btn btn-primary">More Info</a>
-                    </div>
+    <section class="item-picture">
+        <img id="item-pic-display" src="./images/tomato.png">
+    </section>
+    <section class="without-pic">
+        <section class="function-intro" style="margin-top: 3em;">
+            <button type="button" class="btn btn-success">Add to Cart</button>
+            <p>Coupon Available!</p>
+            <br>
+            <section class="item-short-description">
+                <h3>Tomatoes - Large, Field, 330 Gram</h3>
+            </section>
+            <section class="item-detail-description">
+                <p>Greenhouse tomatoes are firm and plump with a red skin when ripe. They are perfect sliced and used as
+                    a
+                    topping on burgers and sandwiches like the classic BLT. Or scoop out the pulp and seeds to make
+                    baked
+                    stuffed tomatoes.
+                <p>
+            </section>
+            <button type="button" class="btn btn-success">Save the Item</button>
+        </section>
+        <section class="item-picture">
+            <img src="./images/nutrition_facts.png">
+            <br>
+            <hr>
+            <br>
+        </section>
+        <section class="related-items-and-recipes">
+            <section class="related-items" style="clear: both; margin-left: 10em;">
+                <h5>Related Items:</h5>
+                <div>
+                    <img class="related-recipes-pic" src="./images/carrot.png">
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">SEE PRICING</h5>
-                        <p class="card-text">No commitment and cancel anytime you want. </p>
-                        <a href="#" class="btn btn-primary">More Info</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            </section>
+            <br><br>
+            <section class="related-recipes" style="margin-left: 10em;">
+                <h5>Recipes You May Like:</h5>
+                <img class="related-recipes-pic" src="./images/tomato_soup.jpg">
+                <img class="related-recipes-pic" src="./images/pad_thai.jpg">
+            </section>
+        </section>
+    </section>
     <br>
-    <br>
-    <div>
-        <img src="./images/sign_up_bg_pic.png" class="img-fluid" alt="signup">
-    </div>
-
+    <hr>
     <!-- FOOTER -->
-    <footer class="container">
+    <footer class="container" style="margin-left: 5em;">
         <br>
         <br>
         <p class="float-end">
@@ -141,8 +183,6 @@
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-
-
 </body>
 
 </html>
