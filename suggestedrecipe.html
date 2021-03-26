@@ -110,9 +110,36 @@
                     <a href="#" class="btn btn-primary">See Recipe</a>
                 </div>
             </div>
-            <h1>Special suggestion: <span id="saved-recipe-goes-here"></span></h1>
+            <br><br>
+            <h1>Special suggestion:</h1>
+            <section>
+                <div class="card" style="width: 30rem; margin-left: 5em; margin-right: 1em; float: left;">
+                    <img class="card-img-top" src="images/food_pic.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="BEEF">laoding</h5>
+                        <p>We suggest this because you bought beef 2 days ago.</p>
+                        <a href="#" class="btn btn-primary">See Recipe</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 30rem; margin-left: 5em; margin-right: 5em; float: left;">
+                    <img class="card-img-top" src="images/food_pic.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="TOMATO">laoding</h5>
+                        <p>We suggest this because you bought tomato last weekend.</p>
+                        <a href="#" class="btn btn-primary">See Recipe</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 30rem; margin-top: 5em; margin-left: 5em;">
+                    <img class="card-img-top" src="images/food_pic.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="VEGETABLE">laoding</h5>
+                        <p>We suggest this because you love vegetables.</p>
+                        <a href="#" class="btn btn-primary">See Recipe</a>
+                    </div>
+                </div>
+                
         </section>
-        <section id="saved-recipe">
+        <section id="saved-recipe" style="margin-top: 3em;">
             <h2>Your Favorites</h2>
             <div class="card" style="width: 18rem; margin-top: 1em; float: left; margin-right: 1em;">
                 <img class="card-img-top" src="images/salad.jpg" alt="Card image cap">
@@ -219,7 +246,22 @@
             });
         }
     </script>
+    <script>
+        function displayRecipes() {
+            db.collection("recipes").get()
+                .then(function (snap) {
+                    snap.forEach(function (doc) {
+                        var n = doc.data().name;             //gets the name field
+                        console.log(n);
+                        var recipeid = doc.data().code;        //gets the unique ID field
+                        console.log(recipeid);
+                        document.getElementById(recipeid).innerText = n;
+                    })
 
+                })
+        }
+        displayRecipes();
+    </script>
 </body>
 
 </html>
