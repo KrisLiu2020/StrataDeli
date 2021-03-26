@@ -1,143 +1,156 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>TEAM43 Strata Deli</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+  <meta charset="utf-8">
+  <title>TEAM43 Strata Deli</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="Kerry, Kris, Tomo">
 
-    <!-- Bootstrap for Mobile-first, and JQuery -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!-- Bootstrap for Mobile-first, and JQuery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 
-    <!-- Optional styles and scripts of your own -->
+  <!-- Optional styles and scripts of your own -->
+  <style>
+    img.card-img-top {
+      width: 100%;
+      height: 100%;
+    }
 
+    input[type=search] {
+      width: 30vw;
+    }
+
+    .socialMediaIcon {
+      width: 32px;
+      height: 32px;
+    }
+
+    #footer {
+      background-color: black;
+      height: 500px;
+    }
+
+    p a {
+      text-decoration: none;
+      list-style-type: none;
+      color: white;
+    }
+
+    p a:hover {
+      color: white;
+    }
+  </style>
 
 </head>
 
 <body>
 
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
-    <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Strata Deli</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-            </div>
+  <!-------------------------------------->
+  <!-- The following is HTML for layout -->
+  <!-------------------------------------->
+  <!-- Header Navigation Bar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/stratadeli.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <!--<li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+          </ul>
+          <form class="position-absolute top-50 start-50 translate-middle">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
+          </ul>
+          <a href="profile.html">
+            <img src="images/profile2.png" width="40px" , height="40px">
+          </a>
+          <a href="cart.html">
+            <img src="images/cart2.png" width="40px" , height="40px">
+          </a>
         </div>
+      </div>
     </nav>
+  </header>
 
-    <div class="container"><br>
-        <h1 class="display-4">Welcome Back, 'insert name here'
-        </h1>
+
+  <div class="container">
+    <h1 class="display-4"> Hello, <span id="name-goes-here">I'm broken :(</span> </h1>
+</div>
+
+
+  <!-- FOOTER -->
+  <div id=footer class="fixed-bottom"> <!-- Change to sticky-bottom when there is enough content-->
+    <!--Change to sticky-bottom when we have more content-->
+    <footer class="container">
+      <br><br><br><br><br>
+      <div class="float-end">
+        <br><br><br><br><br>
+        <a href="https://www.facebook.com/">
+          <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
+        <a href="https://www.instagram.com/">
+          <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
+        <a href="https://www.linkedin.com/company/">
+          <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
+            class="socialMediaIcon"></a>
+        <p>
+          <br><br>
+          <img src="images/app-store.png" , width="150px" , height="40px">
+          <br><br>
+          <img src="images/play-store.png" , width="150px" , height="40px">
+        </p>
+      </div>
+      <a class="navbar-brand" href="index.html">
+        <img src="images/stratadeliwhite.png">
+      </a>
+      <div>
         <br>
-    </div>
-    <div class="alert alert-danger" role="alert">
-        Please register to your apartment with your apartment code.<br><br>
-        <label for="inputPassword5" class="form-label">Apartment Code</label>
-        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-        <div id="passwordHelpBlock" class="form-text">
-          If you do not have the code, please contact your building manager for the provided code.
-        </div>
+        <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
+        <br>
+        <p><a href="about.html">About Us</a></p>
+        <p><a href="/Story">Careers</a></p>
+        <p><a href="faq.html">FAQ</a></p>
+        <p><a href="/Story">Contact Us</a></p>
+        <p><a href="/Story">Terms & Conditions</a></p>
       </div>
-      <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              Account Settings
-            </button>
-          </h2>
-          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body"><div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">
-                  Edit Profile
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">Change Password</a>
-                <a href="#" class="list-group-item list-group-item-action">Your Address</a>
-                <a href="#" class="list-group-item list-group-item-action">Your Payments</a>
-                <a href="#" class="list-group-item list-group-item-action">Login & Security</a>
-              </div></div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-              Orders
-            </button>
-          </h2>
-          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-              Help Desk
-            </button>
-          </h2>
-          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-          </div>
-        </div>
-      </div>
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-          <h5 class="text-white h4">Collapsed content</h5>
-          <span class="text-muted">Toggleable via the navbar brand.</span>
-        </div>
-      </div>
-      <footer class="navbar navbar-dark bg-dark" style="position:fixed; width:100%; bottom:0">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span><img src="images/house.png"style="height:55px; width:55px;"></span>
-          </button>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span><img src="images/bell.png"style="height:55px; width:55px;"></span>
-          </button>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span><img src="images/heart.png"style="height:55px; width:55px;"></span>
-          </button>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span><img src="images/profile.png"style="height:55px; width:55px;"></span>
-          </button>
-        </div>
     </footer>
+  </div>
     <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
+    <!-- JS: Boostrap, JQuery, Firebase, API related    -->
     <!----------------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
 
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
+    <!-- Link to the api keys for your firebase project -->
+    <script src="scripts/firebase_team43.js"></script>
 
-    <div class="fixed-bottom">...</div>
 
-      
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <!--------------------------------------------------------------------->
+  <script src="scripts/my_functions.js"></script>
+
+
 </body>
 
 </html>
