@@ -96,17 +96,20 @@
     <div class="card-group">
         <div class="card">
             <div class="card-body">
-                <h5 id ="The 420 suite" class="card-title">Card title</h5>
+                <h5 id ="T4" class="card-title">Card title</h5>
+                <p id="ganja"></p>
             </div>
         </div>
         <div class="card">
             <div class="card-body">
-                <h5 id ="The woods" class="card-title">Card title</h5>
+                <h5 id ="TW" class="card-title">Card title</h5>
+                <p id="wood"></p>
             </div>
         </div>
         <div class="card">
             <div class="card-body">
-                <h5 id ="The Stanley" class="card-title">Card title</h5>
+                <h5 id ="TS" class="card-title">Card title</h5>
+                <p id="oldpeople"></p>
             </div>
         </div>
     </div>
@@ -173,16 +176,30 @@
             db.collection("coverage").get()
             .then(function (snap) {
                 snap.forEach(function (doc) {
+                    var code = doc.data().code;
+                    console.log(code);
                     var name = doc.data().strata;
                     console.log(name);
-                    var postcode = doc.data().postcode;
-                    console.log(postcode);
-                    document.getElementById(name).innerText = name;
+                    document.getElementById(code).innerText = name;
                     })
 
                 })
         }
         displayCities();
+        
+        function displayAddress() {
+            db.collection("coverage").get()
+            .then(function (snap) {
+                snap.forEach(function (doc) {
+                    var addressCode = doc.data().ad_code;
+                    console.log(addressCode);
+                    var address = doc.data().address;
+                    console.log(address);
+                    document.getElementById(addressCode).innerText = address;
+                })
+            })
+        }
+        displayAddress();
     </script>
 
 
