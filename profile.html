@@ -221,6 +221,16 @@
             })
         }
         displayAddress();
+        
+        function displayBranches() {
+            db.collection("test_user").get().then().db.collection("favorite recipe").get().then(function (snap) {
+                snap.forEach(function (doc) {
+                    var code = doc.data().code;
+                    console.log(code);
+                })
+            })
+        }
+        displayBranches();
     </script>
 
 
