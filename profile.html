@@ -93,6 +93,25 @@
 </div>
 
 
+    <div class="card-group">
+        <div class="card">
+            <div class="card-body">
+                <h5 id ="YVR" class="card-title">Card title</h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 id ="YVR" class="card-title">Card title</h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 id ="YVR" class="card-title">Card title</h5>
+            </div>
+        </div>
+    </div>
+
+
   <!-- FOOTER -->
   <div id=footer class="fixed-bottom"> <!-- Change to sticky-bottom when there is enough content-->
     <!--Change to sticky-bottom when we have more content-->
@@ -149,6 +168,22 @@
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
   <script src="scripts/my_functions.js"></script>
+    <script>
+        function displayCities() {
+            db.collection("coverage").get()
+            .then(function (snap) {
+                snap.forEach(function (doc) {
+                    var n = doc.data().name;
+                    console.log(n);
+                    var cityid = doc.data().code;
+                    console.log(cityid);
+                    document.getElementById(cityid).innerText = n;
+                    })
+
+                })
+        }
+        displayCities();
+    </script>
 
 
 </body>
