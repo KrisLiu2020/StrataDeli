@@ -2,259 +2,346 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>TEAM43 Strata Deli</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+  <meta charset="utf-8">
+  <title>TEAM43 Strata Deli</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
 
-    <!-- Bootstrap for Mobile-first, and JQuery -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!-- Bootstrap for Mobile-first, and JQuery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
+  <!-- Optional styles and scripts of your own -->
+  <style>
+    input[type=search] {
+      background-image: url("searchicon.png");
+      width: 30vw;
+    }
 
-    <!-- Optional styles and scripts of your own -->
-    <style>
-        input[type=search] {
-            background-image: url("searchicon.png");
-            width: 30vw;
-        }
+    .socialMediaIcon {
+      width: 32px;
+      height: 32px;
+    }
 
-        .socialMediaIcon {
-            width: 32px;
-            height: 32px;
-        }
+    .img-fluid {
+      width: 100%;
+    }
 
-        .img-fluid {
-            width: 100%;
-        }
-                #footer {
-            background-color: black;
-            height: 500px;
-        }
+    #footer {
+      background-color: black;
+      height: 500px;
+    }
 
-        p a {
-            text-decoration: none;
-            list-style-type: none;
-            color: white;
-        }
+    p a {
+      text-decoration: none;
+      list-style-type: none;
+      color: white;
+    }
 
-        p a:hover {
-            color: white;
-        }
-    </style>
+    p a:hover {
+      color: white;
+    }
+
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: 1px solid #D0D0D0;
+      border-radius: 5px;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active,
+    .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: white;
+      overflow: hidden;
+      border: black;
+    }
+
+    #faq {
+      width: 50%;
+      padding: 20px;
+    }
+
+    .accordion:after {
+      content: '\02795';
+      /* Unicode character for "plus" sign (+) */
+      font-size: 13px;
+      color: #777;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      content: "\2796";
+      /* Unicode character for "minus" sign (-) */
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
+  <!-------------------------------------->
+  <!-- The following is HTML for layout -->
+  <!-------------------------------------->
 
-    <!-- Header Navigation Bar -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/stratadeli.png">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <!--<li class="nav-item">
+  <!-- Header Navigation Bar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/stratadeli.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <!--<li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
               </li> -->
-                    </ul>
-                    <form class="position-absolute top-50 start-50 translate-middle">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
-                    <button type="button" class="btn btn-dark">Log In</button>
-                    <button type="button" class="btn btn-outline-secondary">Sign Up</button>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- FAQ Section Centered-->
-    <br>
-    <br>
-    <div>
-        <section id="faq" class="py-5"><div class="container-fluid px-md-5"><div class="row pb-5"><div class="col-12 col-lg-6"><h2>FAQ</h2> <br> <h3>Food Safety</h3> <div id="accordion-6" role="tablist" class="pb-3"><div class="card"><div id="faq-header-46" role="tab" href="#faq-body-46" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-46" class="card-header mb-0 pointer collapsed">
-            What food safety measures does Strata Deli take to prevent the spread of illness?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-46" role="tabpanel" aria-labelledby="faq-header-46" data-parent="#accordion-6" class="collapse" style=""><div class="card-body"><p><span style="font-weight: 400;">Our meal kits are prepared by a combination of both machinery and people. We follow official Good Manufacturing Practices (GMP), Food Safe requirements, and are certified by the Canadian Food Inspection Agency (CFIA) to ensure our facilities and food handling processes are in compliance with food safety standards.&nbsp;</span></p> <p><span style="font-weight: 400;">We provide ongoing training and supervision for food safety measures with our production staff to ensure all guidelines are being followed. Examples of these measures include, but are not limited to food production staff wearing appropriate attire including non-surgical masks, smocks, hairnets, gloves, and following strict hand washing procedures.</span></p></div></div></div> <div class="card"><div id="faq-header-48" role="tab" href="#faq-body-48" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-48" class="card-header mb-0 pointer collapsed">
-            What extra precautions are you taking to ensure food is prepared in a manner that prevents the spread of COVID-19?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-48" role="tabpanel" aria-labelledby="faq-header-48" data-parent="#accordion-6" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">We employ our standard food safety precautions and food handling standards as part of our core operations to protect against any viruses or transmission of sickness. </span></p> <p><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;">We perform regular deep cleans of our facility, as per the strict guidelines of health officials and the highest standards of sanitization we employ at Strata Deli.</span></p> <p><span style="font-weight: 400;">At the beginning of each shift, we review the hand washing practices as part of our Good Manufacturing Principles (GMP's), specifically around increasing the regularity of handwashing at a minimum of once per hour. </span></p> <p><span style="font-weight: 400;">We require vigorous handwashing after using the washroom; handling raw foods; handling allergens; touching face or body; handling garbage, compost or recycling bins; transitioning between handling different ingredients; discarding any items that have come in contact with a non-food contact surface. </span></p> <p><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;">We have staggered shifts, breaks, and have added extra delivery days and shifts to ensure staff have a safe physical distance between other team members. Team members also have designated washrooms and breakrooms for each shift.</span></p> <p><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;">ALL STAFF are required to wear PPE including a mask while working and walking throughout the facility, as well as </span><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;">gloves, hair net, smock and other PPE in production areas.</span></p></div></div></div> <div class="card"><div id="faq-header-50" role="tab" href="#faq-body-50" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-50" class="card-header mb-0 pointer collapsed">
-            Is Strata Deli taking back recycling and picking up cooler bags?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-50" role="tabpanel" aria-labelledby="faq-header-50" data-parent="#accordion-6" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">Yes, drivers will pick up cooler bags, ice packs, and recycling.</span></p> <p><span style="font-weight: 400;">Returnable items include the following:</span></p> <p><span style="font-weight: 400;"> -Cooler bag</span></p> <p><span style="font-weight: 400;"> -Zero Waste Kit including cups and lid </span></p> <p><span style="font-weight: 400;">-Rinsed soft plastics* </span></p> <p><span style="font-weight: 400;">-Rinsed Strata Deli salad or other Add-ons packaging* </span></p> <p>&nbsp;</p> <p><span style="font-weight: 400;">*Please note we are unable to accept items that were not originally sent in your Strata Deli delivery such as other household recyclables.</span></p> <p>&nbsp;</p> <p><span style="font-weight: 400;">Drivers are provided with PPE including masks and gloves when on shift, and have been supplied with commercial-grade sanitizer.&nbsp;</span></p> <p>&nbsp;</p> <p><span style="font-weight: 400;">As an additional precaution, drivers are now placing all cooler bags into additional receptacles once they are picked up. Due to space constraints taken up by this safeguard, we regret that not all bags may be collected. If your bags are not picked up, simply hold onto them until your next order.</span></p> <p>&nbsp;</p></div></div></div> <div class="card"><div id="faq-header-54" role="tab" href="#faq-body-54" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-54" class="card-header mb-0 pointer collapsed">
-            Will my delivery be affected in the coming weeks?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-54" role="tabpanel" aria-labelledby="faq-header-54" data-parent="#accordion-6" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">We are making changes to our delivery operations to accommodate both increased demand and to facilitate social distancing within our facility.&nbsp; </span><span style="font-weight: 400;"><br></span><span style="font-weight: 400;"><br></span><strong>Saturday Deliveries: </strong><span style="font-weight: 400;">We are moving a portion of our Sunday deliveries to Saturday. This will give drivers more space when loading the bags and will help ensure we can accommodate demand on our busiest delivery day. Check your </span><a href="http://www.freshprep.ca/delivery-schedule"><span style="font-weight: 400;">Delivery Schedule</span></a><span style="font-weight: 400;"> to see if your order has been moved. </span><span style="font-weight: 400;"><br></span><span style="font-weight: 400;"><br></span><strong>Driver Protocols: </strong><span style="font-weight: 400;">You will see that drivers are wearing gloves when making deliveries. Drivers have also been supplied with commercial grade sanitizer to use on their gloves in between deliveries. Drivers will be picking up cooler bags and ice packs, but no longer accepting bags containing paper or plastic recycling at this time. </span><span style="font-weight: 400;"><br></span><span style="font-weight: 400;"><br></span><span style="font-weight: 400;">As an additional precaution, drivers are now placing all cooler bags into garbage bags once they are picked up. Due to space constraints taken up by this safeguard, we regret that not all bags may be collected. If your bags are not picked up, simply hold onto them until your next order.</span></p></div></div></div> <div class="card"><div id="faq-header-47" role="tab" href="#faq-body-47" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-47" class="card-header mb-0 pointer collapsed">
-            What is being done to prevent the potential spread of illness via my reusable cooler bag?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-47" role="tabpanel" aria-labelledby="faq-header-47" data-parent="#accordion-6" class="collapse"><div class="card-body"><p>As part of our regular sanitation procedures, we thoroughly clean and disinfect the bags when they return to our facility. Cleaning is done in a separate area from our ingredient processing area to avoid any cross contamination.</p> <p>Our delivery drivers are being instructed to practice no-contact delivery. This means they will limit their contact with our customers by only knocking or ringing the bell, then place delivery bags in front of your door.</p></div></div></div> <div class="card"><div id="faq-header-53" role="tab" href="#faq-body-53" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-53" class="card-header mb-0 pointer collapsed">
-            Will Strata Deli have any problems supplying ingredients or add-ons?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-53" role="tabpanel" aria-labelledby="faq-header-53" data-parent="#accordion-6" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">For the most part, Strata Deli’s suppliers are continuing operations, however during these unprecedented times, some ingredient changes may occur and some of our local add-on suppliers may no longer be able to supply us, or in limited quantities. To accommodate these changes we will either swap ingredients or full recipes, We will keep an updated list of changes below:</span></p> <p><strong>Ingredient Updates</strong></p> <p>There are no ingredient or recipe swaps at this time.&nbsp;</p></div></div></div> <div class="card"><div id="faq-header-75" role="tab" href="#faq-body-75" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-75" class="card-header mb-0 pointer collapsed">
-            Was Strata Deli affected by any recent recalls or food safety concerns?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-75" role="tabpanel" aria-labelledby="faq-header-75" data-parent="#accordion-6" class="collapse"><div class="card-body"><p>August 1, 2020 - Our supplier recalled raw onions. Affected customers were contacted by email and all affected onions have been removed from all upcoming orders and replaced with shallots. Strata Deli will continue to closely monitor the situation, make adjustments as appropriate and communicate with our customers as the circumstances evolve and more information becomes available.<a href="https://www.inspection.gc.ca/food-recall-warnings-and-allergy-alerts/2020-08-01/eng/1596343331110/1596343336880" target="_blank" rel="noopener noreferrer" data-stringify-link="https://www.inspection.gc.ca/food-recall-warnings-and-allergy-alerts/2020-08-01/eng/1596343331110/1596343336880" data-sk="tooltip_parent" class="c-link">&nbsp;See the Canadian Food Inspection Agency website for more information.</a></p></div></div></div> <div class="card"><div id="faq-header-49" role="tab" href="#faq-body-49" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-49" class="card-header mb-0 pointer collapsed">
-            How is Strata Deli ensuring the health and safety of its employees? 
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-49" role="tabpanel" aria-labelledby="faq-header-49" data-parent="#accordion-6" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">We have enabled the following policies to protect our people and take precautionary measures including:&nbsp;</span></p> <ul><li style="font-weight: 400;"><span style="font-weight: 400;">All Strata Deli employees who can work from home will be working from home fr the foreseeable future to eliminate any unnecessary risks.</span></li> <li style="font-weight: 400;"><span style="font-weight: 400;">All staff and visitors entering the facility are required to receive a non-contact temperature check, answer a COVID-19 questionnaire and provide contact information.</span></li> <li style="font-weight: 400;"><span style="font-weight: 400;">Monitoring of symptoms in our staff with protocol to send them home with pay if any flu symptoms are present. If any employees are quarantined because of COVID-19 they are eligible to receive up to 14 days of paid time off to ensure they have the time needed to return to work in good health.</span></li> <li style="font-weight: 400;"><span style="font-weight: 400;">All staff receive a PPE kit including mask and gloves upon arrival to the facility, and are required to wear a non-surgical mask while working and walking throughout the facility. Staff working in production areas are required to wear PPE including a mask, gloves, hair net, smock and other PPE. Drivers are provided with PPE and hand sanitizer.</span></li> <li style="font-weight: 400;"><span style="font-weight: 400;">Staggered shifts, breaks, and have added extra delivery days and shifts to ensure staff have a safe physical distance between other team members.&nbsp;</span><span style="font-weight: 400;">Employees are asked to keep a 2-meter distance from other employees working as well as on breaks.&nbsp;</span></li></ul></div></div></div></div> <br> <h3>Recipes and Ingredients</h3> <div id="accordion-5" role="tablist" class="pb-3"><div class="card"><div id="faq-header-11" role="tab" href="#faq-body-11" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-11" class="card-header mb-0 pointer collapsed">
-            Can I select the recipes?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-11" role="tabpanel" aria-labelledby="faq-header-11" data-parent="#accordion-5" class="collapse"><div class="card-body"><p>Yes! We select meals based on the taste preferences you provide during sign-up, and if you want to change anything you can do so easily through your account page.</p></div></div></div> <div class="card"><div id="faq-header-33" role="tab" href="#faq-body-33" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-33" class="card-header mb-0 pointer collapsed">
-            Does everything come prepped?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-33" role="tabpanel" aria-labelledby="faq-header-33" data-parent="#accordion-5" class="collapse"><div class="card-body"><p>Yes, for most ingredients we prep them to whatever style is required for the recipe &nbsp;(diced, shredded, minced etc.)&nbsp;</p> <p>Everything is portioned in the exact amount required for the recipe, including the spice mixes and sauces we make in-house.</p> <p>&nbsp;</p> <p>To preserve the quality of a few&nbsp;ingredients which don't keep well after being prepped we send them whole (ie. tomatoes, avocados) but ensure any required prep still keeps the recipe time under 30 minutes :)</p></div></div></div> <div class="card"><div id="faq-header-20" role="tab" href="#faq-body-20" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-20" class="card-header mb-0 pointer collapsed">
-            How long will the ingredients stay fresh?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-20" role="tabpanel" aria-labelledby="faq-header-20" data-parent="#accordion-5" class="collapse"><div class="card-body">
-              Everything is shipped to arrive fresher than you might see at the supermarket. We guarantee you’ll be able to use the ingredients for at least 4 days after you receive them. If you receive seafood with your delivery we always suggest cooking that first for optimum taste!
-            </div></div></div> <div class="card"><div id="faq-header-21" role="tab" href="#faq-body-21" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-21" class="card-header mb-0 pointer collapsed">
-            Where do you source your ingredients?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-21" role="tabpanel" aria-labelledby="faq-header-21" data-parent="#accordion-5" class="collapse"><div class="card-body"><p>The quality and freshness of our ingredients are incredibly important to us, so we work directly with local purveyors and farms in BC that support sustainable practices.</p></div></div></div> <div class="card"><div id="faq-header-38" role="tab" href="#faq-body-38" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-38" class="card-header mb-0 pointer collapsed">
-            Where can I find my recipe cards?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-38" role="tabpanel" aria-labelledby="faq-header-38" data-parent="#accordion-5" class="collapse"><div class="card-body"><p>Our recipe card location has recently changed. They can now be found outside of the ingredient bags.<br><br>They will be located in either the sleeve on the outside of the cooler bag or inside the cooler bag near the <span style="font-weight: 400;">proteins</span> and add-ons.<br><br>We hope you enjoy the new format! If you still cannot find your recipe cards, a digital version can be found here: <a href="../../menu/this-week"><span style="font-weight: 400;">Menu This Week</span></a>.</p></div></div></div> <div class="card"><div id="faq-header-22" role="tab" href="#faq-body-22" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-22" class="card-header mb-0 pointer collapsed">
-            What cooking equipment and ingredients do I need to have at home?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-22" role="tabpanel" aria-labelledby="faq-header-22" data-parent="#accordion-5" class="collapse"><div class="card-body"><p>Usually all you’ll ever need to have at home is salt, pepper, and a high temperature cooking oil (we vote for grapeseed.) Occasionally, some recipes might require milk or butter. We got you covered on everything else!</p> <p>For cooking equipment, a range of pots and pans are great. Spatulas, mixing and slotted spoons too. A baking sheet, mixing bowls. </p></div></div></div> <div class="card"><div id="faq-header-35" role="tab" href="#faq-body-35" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-35" class="card-header mb-0 pointer collapsed">
-            Do you use Halal certified meat?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-35" role="tabpanel" aria-labelledby="faq-header-35" data-parent="#accordion-5" class="collapse"><div class="card-body"><p>Yes, our poultry (chicken and turkey) from Rossdown Farms located in Abbotsford and our lamb provided by Intercity Packers are Halal certified by the Halal Inspection &amp; Certification Committee of the BC Muslim Association.&nbsp;</p> <p>&nbsp;</p> <p>All other meat we use in our meal kits (beef, pork, seafood) is not Halal certified.&nbsp;</p></div></div></div> <div class="card"><div id="faq-header-45" role="tab" href="#faq-body-45" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-45" class="card-header mb-0 pointer collapsed">
-            Where does Strata Deli lamb come from?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-45" role="tabpanel" aria-labelledby="faq-header-45" data-parent="#accordion-5" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">Strata Deli lamb is sourced directly from the lush pastures of South-Eastern Australia. The lamb is free-range, raised without antibiotics, and free of hormone growth promotants. Our lamb is </span><span style="font-weight: 400;">Halal certified by the Halal Inspection &amp; Certification Committee of the BC Muslim Association. </span></p></div></div></div> <div class="card"><div id="faq-header-19" role="tab" href="#faq-body-19" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-19" class="card-header mb-0 pointer collapsed">
-            Do you accommodate specific diets or allergies?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-19" role="tabpanel" aria-labelledby="faq-header-19" data-parent="#accordion-5" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">We work with nutritionists to accommodate a variety of dietary preferences like vegetarian, pescatarian, or if you don’t eat certain meats. You can easily personalize your menu based on your dietary preferences and change them anytime in your account settings. If you have any severe food allergies, we do not recommend Strata Deli as an option for you.</span></p> <p>&nbsp;</p> <p><span style="font-weight: 400;">While we use best practices, we cannot guarantee the complete absence of food allergens. Our meals are prepared in a facility that contains allergens including tree nuts, peanuts, fish, shellfish, dairy, soy, eggs, wheat, gluten, mustard, sesame, and sulphites. Through best practices are used when preparing the meal kits, inadvertent cross-contamination may occur.</span></p></div></div></div></div> <br><h3>Subscription Plans</h3> <div id="accordion-4" role="tablist" class="pb-3"><div class="card"><div id="faq-header-28" role="tab" href="#faq-body-28" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-28" class="card-header mb-0 pointer collapsed">
-            How do I skip a delivery?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-28" role="tabpanel" aria-labelledby="faq-header-28" data-parent="#accordion-4" class="collapse"><div class="card-body"><p>You can easily skip deliveries by logging into your account and going to the ‘My Deliveries’ page. Alongside of the date of your delivery just click the ‘Skip this Week’ button and your delivery for that week will be cancelled (as long as you do it by the <u>weekly cutoff time</u>)</p></div></div></div> <div class="card"><div id="faq-header-15" role="tab" href="#faq-body-15" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-15" class="card-header mb-0 pointer collapsed">
-            Is there a minimum time commitment?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-15" role="tabpanel" aria-labelledby="faq-header-15" data-parent="#accordion-4" class="collapse"><div class="card-body"><p>Nope, we're very flexible with all our subscription plans - skip or cancel any time.</p></div></div></div> <div class="card"><div id="faq-header-27" role="tab" href="#faq-body-27" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-27" class="card-header mb-0 pointer collapsed">
-            Can I change my meal plan or taste preferences?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-27" role="tabpanel" aria-labelledby="faq-header-27" data-parent="#accordion-4" class="collapse"><div class="card-body"><p>Yes, you can do this easily through your account settings page. If you want to stick with the same plan and just have one less meal for whatever reason on a given week, then you can just drop one and we’ll bill the appropriate plan.</p></div></div></div> <div class="card"><div id="faq-header-30" role="tab" href="#faq-body-30" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-30" class="card-header mb-0 pointer collapsed">
-            What if I forgot my password?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-30" role="tabpanel" aria-labelledby="faq-header-30" data-parent="#accordion-4" class="collapse"><div class="card-body"><p>No worries, reset it <a href="https://www.freshprep.ca/clients/password/new">here</a>.</p></div></div></div> <div class="card"><div id="faq-header-39" role="tab" href="#faq-body-39" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-39" class="card-header mb-0 pointer collapsed">
-            Is it better to increase servings or increase plan size?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-39" role="tabpanel" aria-labelledby="faq-header-39" data-parent="#accordion-4" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">If you find yourself increasing your number of servings every week, you can save money and effort by increasing your plan size.&nbsp;</span></p> <p><span style="font-weight: 400;">Although increasing your number of servings gives you greater flexibility week to week, increasing your plan size instead of servings will give you the best deal. </span></p></div></div></div> <div class="card"><div id="faq-header-32" role="tab" href="#faq-body-32" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-32" class="card-header mb-0 pointer collapsed">
-            How do I cancel my subscription?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-32" role="tabpanel" aria-labelledby="faq-header-32" data-parent="#accordion-4" class="collapse"><div class="card-body"><p>Email us at <a href="mailto: hello@stratadeli.ca">hello@stratadeli.ca</a> before your weekly cutoff time to cancel your account. You’ll receive a confirmation email shortly after.</p></div></div></div> <div class="card"><div id="faq-header-29" role="tab" href="#faq-body-29" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-29" class="card-header mb-0 pointer collapsed">
-            When is the weekly cutoff time?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-29" role="tabpanel" aria-labelledby="faq-header-29" data-parent="#accordion-4" class="collapse"><div class="card-body"><p>The weekly cutoff time to change or cancel orders is <span tabindex="0" data-term="goog_1881711042" class="aBn"><span class="aQJ">Wednesday</span></span> at <span tabindex="0" data-term="goog_1881711043" class="aBn"><span class="aQJ">11:59PM</span></span> before your next delivery. For example, if you have a delivery scheduled for <span tabindex="0" data-term="goog_1881711044" class="aBn"><span class="aQJ">Monday</span></span>, you have until the <span tabindex="0" data-term="goog_1881711045" class="aBn"><span class="aQJ">Wednesday prior</span></span>&nbsp;to modify your delivery.&nbsp;</p></div></div></div> <div class="card"><div id="faq-header-31" role="tab" href="#faq-body-31" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-31" class="card-header mb-0 pointer collapsed">
-            When is my credit card billed?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-31" role="tabpanel" aria-labelledby="faq-header-31" data-parent="#accordion-4" class="collapse"><div class="card-body"><p>After the original purchase of your subscription plan, your card will be billed Thursday morning after the weekly cutoff time has passed, shortly after midnight. Any changes made to the plan prior to the cutoff will be reflected on the billed amount, and if you have skipped a delivery, your card will not be billed.</p></div></div></div> <div class="card"><div id="faq-header-40" role="tab" href="#faq-body-40" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-40" class="card-header mb-0 pointer collapsed">
-            How can I save money on Strata Deli?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-40" role="tabpanel" aria-labelledby="faq-header-40" data-parent="#accordion-4" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">You can save money per serving by switching to a bigger plan. For example, a plan with 4 meals and 4 servings each will cost less per serving than a plan with 2 meals and 2 servings each.</span></p> <p><span style="font-weight: 400;">If you need more flexibility week to week, you can always increase your servings within your plan.&nbsp; However, we recommend </span><a href="http://www.freshprep.ca/settings/account"><span style="font-weight: 400;">increas</span><span style="font-weight: 400;">ing</span><span style="font-weight: 400;"> your plan size</span></a><span style="font-weight: 400;"> instead of increasing servings for the best deal. </span><span style="font-weight: 400;"><br></span><span style="font-weight: 400;"><br></span><span style="font-weight: 400;">To earn free meals, refer your friends to Strata Deli! Just log into your account, click on “</span><a href="../../../invite"><span style="font-weight: 400;">Invite Friends</span></a><span style="font-weight: 400;">”, and share your referral link with them. For every friend who signs up and orders with your referral link, you’ll get 1 free plate credited to your account. Your friend will receive 3 free plates, so it’s a win-win situation! Remember that the friends you refer have to be new customers and cannot have an existing Strata Deli account. </span></p></div></div></div></div> <br><h3>General Questions</h3> <div id="accordion-3" role="tablist" class="pb-3"><div class="card"><div id="faq-header-36" role="tab" href="#faq-body-36" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-36" class="card-header mb-0 pointer collapsed">
-            How can I return my cooler bags if I am not ordering again in the near future?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-36" role="tabpanel" aria-labelledby="faq-header-36" data-parent="#accordion-3" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">If you have extra cooler bags and would like to return them you may </span><a href="https://freshprep.ca/pickups/new"><span style="font-weight: 400;">schedule a free bag pick up.</span></a></p></div></div></div> <div class="card"><div id="faq-header-37" role="tab" href="#faq-body-37" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-37" class="card-header mb-0 pointer collapsed">
-            Can I return the cooler bag and ice packs that come with my order?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-37" role="tabpanel" aria-labelledby="faq-header-37" data-parent="#accordion-3" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">Yes! We reuse cooler bags and ice packs, they will be picked up with your next delivery.&nbsp;</span></p> <p><br><span style="font-weight: 400;">If you need bag pick up because you will not be ordering in the near future, you may </span><a href="https://freshprep.ca/pickups/new"><span style="font-weight: 400;">schedule a free bag pick up.</span></a></p></div></div></div> <div class="card"><div id="faq-header-42" role="tab" href="#faq-body-42" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-42" class="card-header mb-0 pointer collapsed">
-            What is the Zero Waste Kit?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-42" role="tabpanel" aria-labelledby="faq-header-42" data-parent="#accordion-3" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">The Zero Waste Kit is a reusable container that will hold most of your meal kit ingredients.&nbsp;</span></p> <p><span style="font-weight: 400;">Eliminating extra packaging means:</span></p> <ul><li style="font-weight: 400;"><span style="font-weight: 400;">Less effort: Lift the ingredients from the kit and pour.</span></li> <li style="font-weight: 400;"><span style="font-weight: 400;">Less mess: Most ingredients are contained neatly in the reusable kit.</span></li> <li style="font-weight: 400;"><span style="font-weight: 400;">Less waste: Less single-use plastic.</span></li></ul></div></div></div> <div class="card"><div id="faq-header-69" role="tab" href="#faq-body-69" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-69" class="card-header mb-0 pointer collapsed">
-            What are returnable items? 
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-69" role="tabpanel" aria-labelledby="faq-header-69" data-parent="#accordion-3" class="collapse"><div class="card-body"><p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;What are returnable items? \nReturnable items are materials in your weekly delivery that can be returned for reuse or recycling to Strata Deli upon your next delivery. \n\nReturnable items, or returnables, include the following: \n-Cooler bag\n-Zero Waste Kit including cups and lid\n-Rinsed soft plastics* \n-Rinsed Strata Deli salad or other Add-ons packaging*\n\n*Please note we are unable to accept items that were not originally sent in your Strata Deli delivery such as other household recyclables.&quot;}" data-sheets-userformat="{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:1383206},&quot;15&quot;:&quot;inherit&quot;,&quot;16&quot;:11}" data-sheets-textstyleruns="{&quot;1&quot;:0,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:27}">Returnable items are materials in your weekly delivery that can be returned for reuse or recycling to Strata Deli upon your next delivery. <br><br>Returnable items, or returnables, include the following: <br>-Cooler bag<br>-Zero Waste Kit including cups and lid<br>-Rinsed soft plastics* <br>-Rinsed Strata Deli salad or other Add-ons packaging*<br><br>*Please note we are unable to accept items that were not originally sent in your Strata Deli delivery such as other household recyclables.</span></p></div></div></div></div> <br><h3>About Strata Deli</h3> <div id="accordion-2" role="tablist" class="pb-3"><div class="card"><div id="faq-header-17" role="tab" href="#faq-body-17" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-17" class="card-header mb-0 pointer collapsed">
-            Why choose Strata Deli over grocery stores?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-17" role="tabpanel" aria-labelledby="faq-header-17" data-parent="#accordion-2" class="collapse"><div class="card-body"><p>In cost comparisons we’ve done, shopping at grocery stores can be significantly more expensive simply because we send you everything in the exact portion you need it in - no more paying for a bottle of garam masala when you only need a teaspoon or tossing out a bunch of cilantro after only using a few sprigs. And, equally importantly, you don’t contribute to the massive food waste problem in our society.</p> <p>On top of this we save you a whole lot of valuable time by taking care of the recipe research, sourcing the ingredients and a whole lot of prep (not to mention the cleanup prep takes after!) </p></div></div></div> <div class="card"><div id="faq-header-12" role="tab" href="#faq-body-12" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-12" class="card-header mb-0 pointer collapsed">
-            How does Strata Deli work?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-12" role="tabpanel" aria-labelledby="faq-header-12" data-parent="#accordion-2" class="collapse"><div class="card-body"><p>It’s really simple - you just create an account and tell us your taste and delivery preferences when you sign up. Then every week, we deliver you prepped and portioned ingredients for however many meals you’d like along with easy to follow recipe cards for you to cook incredible meals in under 30 minutes. You can switch your preferences and meals, skip weeks or cancel anytime.</p></div></div></div> <div class="card"><div id="faq-header-13" role="tab" href="#faq-body-13" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-13" class="card-header mb-0 pointer collapsed">
-            What's included in each delivery?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-13" role="tabpanel" aria-labelledby="faq-header-13" data-parent="#accordion-2" class="collapse"><div class="card-body"><p>Every delivery is sent out in insulated cooler bags with fresh ingredients and easy to follow recipes separately packed for each recipe you’ve ordered. Most of our ingredients, from chopped veggies to pre-measured spices and seasoning, have been prepped for you, allowing you to save time without sacrificing flavour. All of our packaging is made from recyclable, reusable and/or compostable materials.</p></div></div></div> <div class="card"><div id="faq-header-18" role="tab" href="#faq-body-18" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-18" class="card-header mb-0 pointer collapsed">
-            Why choose Strata Deli over restaurants or take-out?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-18" role="tabpanel" aria-labelledby="faq-header-18" data-parent="#accordion-2" class="collapse"><div class="card-body"><p>Nothing beats a fresh, home-cooked meal. When you open up a Strata Deli meal kit, you’re looking at exactly what’s going into your meal—no mystery ingredients! You’ll also know that our team has put a lot of time and care into sourcing high-quality ingredients for you.</p> <p>Our recipes are developed by both chefs and nutritionists to ensure you’re eating a tasty and healthy meal.</p> <p>You also don’t need to spend time deciding, choosing and scheduling takeout meals. By getting simple but exciting recipes and pre-portioned ingredients delivered to your door, you can easily whip up a delicious and wholesome meal. No more sitting down to cold or soggy food.</p></div></div></div> <div class="card"><div id="faq-header-16" role="tab" href="#faq-body-16" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-16" class="card-header mb-0 pointer collapsed">
-            How much does Strata Deli cost?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-16" role="tabpanel" aria-labelledby="faq-header-16" data-parent="#accordion-2" class="collapse"><div class="card-body"><p>We strive to make Strata Deli an affordable option for daily dinners, and our cost is less than what you’d typically pay for take out or even some grocery stores - especially when you factor in all the time you’d save and avoided wastage.</p> <p>Our pricing is based on how many meals and servings you order weekly, and ranges from $10-$12.25 per serving. Delivery and tax is included.</p></div></div></div></div> <br> <h3>Delivery</h3> <div id="accordion-1" role="tablist" class="pb-3"><div class="card"><div id="faq-header-23" role="tab" href="#faq-body-23" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-23" class="card-header mb-0 pointer collapsed">
-            When do you deliver?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-23" role="tabpanel" aria-labelledby="faq-header-23" data-parent="#accordion-1" class="collapse"><div class="card-body"><p>We deliver between Saturday - Wednesday, with time slots varying based on your location. Our delivery options are growing over time, and current options for your location can be found by signing up for an account, or on your Account page.</p></div></div></div> <div class="card"><div id="faq-header-34" role="tab" href="#faq-body-34" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-34" class="card-header mb-0 pointer collapsed">
-            Should I tip my delivery driver?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-34" role="tabpanel" aria-labelledby="faq-header-34" data-parent="#accordion-1" class="collapse"><div class="card-body"><p>Nope! Our delivery drivers&nbsp;do not expect any form of tip or gratuity.&nbsp;</p></div></div></div> <div class="card"><div id="faq-header-25" role="tab" href="#faq-body-25" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-25" class="card-header mb-0 pointer collapsed">
-            Can I skip a delivery?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-25" role="tabpanel" aria-labelledby="faq-header-25" data-parent="#accordion-1" class="collapse"><div class="card-body"><p>Yes, you can change or cancel orders up to <span tabindex="0" data-term="goog_1881711042" class="aBn"><span class="aQJ">Wednesday</span></span> at <span tabindex="0" data-term="goog_1881711043" class="aBn"><span class="aQJ">11:59PM</span></span> before your next delivery. For example, if you have a delivery scheduled for <span tabindex="0" data-term="goog_1881711044" class="aBn"><span class="aQJ">Monday</span></span>, you have until the <span tabindex="0" data-term="goog_1881711045" class="aBn"><span class="aQJ">Wednesday prior</span></span> to modify your delivery. Visit <a href="http://freshprep.ca/schedule"><span style="font-weight: 400;">Your Schedule to view your upcoming deliveries and make changes.</span></a></p></div></div></div> <div class="card"><div id="faq-header-14" role="tab" href="#faq-body-14" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-14" class="card-header mb-0 pointer collapsed">
-            Where do you deliver?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-14" role="tabpanel" aria-labelledby="faq-header-14" data-parent="#accordion-1" class="collapse"><div class="card-body"><p>We currently deliver throughout Greater Vancouver, Greater Victoria, Nanaimo and the Okanagan. <a href="https://www.google.com/maps/d/u/0/viewer?mid=1Jm4aG2VNpePdAwgVbO3A2Blvaes" target="_blank" rel="noopener">See if we deliver to you</a>. If you are outside of our delivery zone, we do deliver to workplaces--so you can toss our cooler bag in your work fridge and take it home with you at the end of the day.</p></div></div></div> <div class="card"><div id="faq-header-24" role="tab" href="#faq-body-24" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-24" class="card-header mb-0 pointer collapsed">
-            Do I need to be home to accept my delivery?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-24" role="tabpanel" aria-labelledby="faq-header-24" data-parent="#accordion-1" class="collapse"><div class="card-body"><p>Our insulated cooler bags are packed with ice packs and insulated liners to ensure your ingredients will stay fresh for several hours even if you’re not at home to accept the delivery.</p></div></div></div> <div class="card"><div id="faq-header-51" role="tab" href="#faq-body-51" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-51" class="card-header mb-0 pointer collapsed">
-            How do I change my delivery address after billing?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-51" role="tabpanel" aria-labelledby="faq-header-51" data-parent="#accordion-1" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">If you need to change your delivery address after billing cutoff, there are two steps:&nbsp;</span></p> <ol><li style="font-weight: 400;"><span style="font-weight: 400;">Change your address on your account at </span><a href="http://freshprep.ca/settings/delivery"><span style="font-weight: 400;">freshprep.ca/settings/delivery</span></a><span style="font-weight: 400;">.</span></li> <li style="font-weight: 400;"><span style="font-weight: 400;">Call our customer service line at </span><span style="font-weight: 400;">604-123-4567</span><span style="font-weight: 400;"> so that they can manually redirect the driver to this new address.&nbsp;</span></li></ol> <p><span style="font-weight: 400;">We will do our best to make the address change, however depending on the time of the request and the delivery location, we may not be able honour all requests.&nbsp;</span></p> <p><span style="font-weight: 400;">If we cannot make the change, the order will be cancelled and your account will be credited.</span></p></div></div></div></div> <br><h3>Gift Cards</h3> <div id="accordion-7" role="tablist" class="pb-3"><div class="card"><div id="faq-header-58" role="tab" href="#faq-body-58" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-58" class="card-header mb-0 pointer collapsed">
-            How do I send a gift card?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-58" role="tabpanel" aria-labelledby="faq-header-58" data-parent="#accordion-7" class="collapse"><div class="card-body"><p>You can send the gift card either via email or print it out to give it in person.</p> <p>If you are sending the gift card via email, you will need to complete the form with the recipient’s name, recipient’s email address, delivery date (when we will send them the gift card), and optional message.</p></div></div></div> <div class="card"><div id="faq-header-56" role="tab" href="#faq-body-56" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-56" class="card-header mb-0 pointer collapsed">
-            Do gift cards expire?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-56" role="tabpanel" aria-labelledby="faq-header-56" data-parent="#accordion-7" class="collapse"><div class="card-body"><p>Gift cards, first-week discounts and referral credits do not expire.</p> <p>Bonus values or other promotional credits may expire and have no cash value.</p></div></div></div> <div class="card"><div id="faq-header-62" role="tab" href="#faq-body-62" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-62" class="card-header mb-0 pointer collapsed">
-            How do I redeem my gift card or bonus value?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-62" role="tabpanel" aria-labelledby="faq-header-62" data-parent="#accordion-7" class="collapse"><div class="card-body"><p>To apply a gift card or bonus value to your account, log in and click ‘SETTINGS’, then select the ‘PAYMENT’ tab. Enter your bonus value code in the ‘Apply a gift card’ text box then click ‘Apply’.</p> <p>Any vouchers applied to your account will be automatically applied to your next order.</p></div></div></div> <div class="card"><div id="faq-header-61" role="tab" href="#faq-body-61" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-61" class="card-header mb-0 pointer collapsed">
-            Can I purchase a gift card but have it delivered by email on a future date?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-61" role="tabpanel" aria-labelledby="faq-header-61" data-parent="#accordion-7" class="collapse"><div class="card-body"><p>Yes, you can purchase a gift card today, but have it arrive by email in the future</p></div></div></div> <div class="card"><div id="faq-header-57" role="tab" href="#faq-body-57" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-57" class="card-header mb-0 pointer collapsed">
-            Can I use a gift card or bonus value if I don’t have an account?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-57" role="tabpanel" aria-labelledby="faq-header-57" data-parent="#accordion-7" class="collapse"><div class="card-body"><p><span style="font-weight: 400;">No. Gift cards and bonus value must be applied to a Strata Deli account in order to be used. </span></p> <p><span style="font-weight: 400;">To apply a gift card to your account, log in and click ‘SETTINGS’, then select the ‘PAYMENT’ tab. Enter your bonus value code in the ‘Apply a gift card’ text box then click ‘Apply’.&nbsp;</span></p> <p><span style="font-weight: 400;">Any vouchers applied to your account will be automatically applied to your next order.</span></p></div></div></div> <div class="card"><div id="faq-header-59" role="tab" href="#faq-body-59" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-59" class="card-header mb-0 pointer collapsed">
-            Can I purchase one if I don’t have a Strata Deli account?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-59" role="tabpanel" aria-labelledby="faq-header-59" data-parent="#accordion-7" class="collapse"><div class="card-body"><p>Yes! Anyone can purchase a Strata Deli gift card.</p> <p>You can choose to also gift your bonus value to the person you gifted the original gift card to, or save for your own use at a later date.</p></div></div></div></div> <br> <h3>Zero Waste</h3> <div id="accordion-8" role="tablist" class="pb-3"><div class="card"><div id="faq-header-73" role="tab" href="#faq-body-73" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-73" class="card-header mb-0 pointer collapsed">
-            How are the Zero Waste Kits cleaned before re-use?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-73" role="tabpanel" aria-labelledby="faq-header-73" data-parent="#accordion-8" class="collapse"><div class="card-body"><p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Upon return to Strata Deli, all components of the Zero Waste Kit are washed on a contactless conveyor dishwasher. We use Health Canada-recommended disinfectants to protect the health and safety of our customers and our team.\n\n\nQuality assurance testing is performed frequently on washed materials, equipment and procedures to ensure the Zero Waste Kit is completely sanitized before next use.&quot;}" data-sheets-userformat="{&quot;2&quot;:15171,&quot;3&quot;:{&quot;1&quot;:0},&quot;4&quot;:[null,2,16316664],&quot;9&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,1907741],&quot;15&quot;:&quot;Arial&quot;,&quot;16&quot;:11}">Upon return to Strata Deli, all components of the Zero Waste Kit are washed on a contactless conveyor dishwasher. We use Health Canada-recommended disinfectants to protect the health and safety of our customers and our team.<br><br><br>Quality assurance testing is performed frequently on washed materials, equipment and procedures to ensure the Zero Waste Kit is completely sanitized before next use.</span></p></div></div></div> <div class="card"><div id="faq-header-43" role="tab" href="#faq-body-43" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-43" class="card-header mb-0 pointer collapsed">
-            Why did Strata Deli develop the Zero Waste Kit?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-43" role="tabpanel" aria-labelledby="faq-header-43" data-parent="#accordion-8" class="collapse"><div class="card-body"><p>Our mission is to deliver convenient and sustainable solutions to everyday food challenges. As a B-Corporation, it’s our responsibility to design a meal kit that is not only convenient for our customers, but also positively impacts the local community and environment.</p></div></div></div> <div class="card"><div id="faq-header-76" role="tab" href="#faq-body-76" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-76" class="card-header mb-0 pointer collapsed">
-            Which ingredients will remain in soft plastics?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-76" role="tabpanel" aria-labelledby="faq-header-76" data-parent="#accordion-8" class="collapse"><div class="card-body"><p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Why is there still plastic in some of the Zero Waste Kits? \nWhile we are constantly experimenting with different packaging solutions, some ingredients will still remain in soft plastic packaging due to food safety and quality considerations. For example, raw meat and seafood must remain in their original packaging for food safety reasons. \n\nWhat we’re doing with soft plastics\nFor soft plastics that come with your delivery, Strata Deli can recycle them through a partnership with Urban Impact Recycling, with the exception of meat and seafood packaging.\n\nHow to return soft plastics\nTo return soft plastics, please rinse with soapy water and ensure removal of any food residue. Then, place the rinsed soft plastics into your Zero Waste Kit or paper bag. Please do not return meat or seafood packaging and note that we cannot accept any packaging that was not originally provided by Strata Deli.&quot;}" data-sheets-userformat="{&quot;2&quot;:9089,&quot;3&quot;:{&quot;1&quot;:0},&quot;10&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;16&quot;:11}" data-sheets-textstyleruns="{&quot;1&quot;:0,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:60}{&quot;1&quot;:343,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:379}{&quot;1&quot;:557,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:584}">Meat and seafood to maintain food safety.</span></p> <p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Why is there still plastic in some of the Zero Waste Kits? \nWhile we are constantly experimenting with different packaging solutions, some ingredients will still remain in soft plastic packaging due to food safety and quality considerations. For example, raw meat and seafood must remain in their original packaging for food safety reasons. \n\nWhat we’re doing with soft plastics\nFor soft plastics that come with your delivery, Strata Deli can recycle them through a partnership with Urban Impact Recycling, with the exception of meat and seafood packaging.\n\nHow to return soft plastics\nTo return soft plastics, please rinse with soapy water and ensure removal of any food residue. Then, place the rinsed soft plastics into your Zero Waste Kit or paper bag. Please do not return meat or seafood packaging and note that we cannot accept any packaging that was not originally provided by Strata Deli.&quot;}" data-sheets-userformat="{&quot;2&quot;:9089,&quot;3&quot;:{&quot;1&quot;:0},&quot;10&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;16&quot;:11}" data-sheets-textstyleruns="{&quot;1&quot;:0,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:60}{&quot;1&quot;:343,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:379}{&quot;1&quot;:557,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:584}">Spice blends and some powders affected by moisture to maintain freshness.</span></p></div></div></div> <div class="card"><div id="faq-header-64" role="tab" href="#faq-body-64" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-64" class="card-header mb-0 pointer collapsed">
-            How much does the Zero Waste Kit cost? 
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-64" role="tabpanel" aria-labelledby="faq-header-64" data-parent="#accordion-8" class="collapse"><div class="card-body"><p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Meals in the Zero Waste Kit have no additional charge. We are currently not charging a deposit on the tray or the cooler bag.&quot;}" data-sheets-userformat="{&quot;2&quot;:11137,&quot;3&quot;:{&quot;1&quot;:0},&quot;10&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:2236962},&quot;16&quot;:11}">Meals in the Zero Waste Kit have no additional charge. We are currently not charging a deposit on the tray or the cooler bag.</span></p></div></div></div> <div class="card"><div id="faq-header-65" role="tab" href="#faq-body-65" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-65" class="card-header mb-0 pointer collapsed">
-            How should I clean the container?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-65" role="tabpanel" aria-labelledby="faq-header-65" data-parent="#accordion-8" class="collapse"><div class="card-body"><p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Please rinse with warm soapy water for 20-30 seconds until all food residue is removed. Alternatively, you can load into the top rack of your dishwasher. \n\nThen place the fully-dried cups inside the Zero Waste Kit and place it back into the cooler bag with the lid on for pick-up on next delivery. If you are not ordering again next week, you can schedule a free pick-up from your delivery settings. &quot;}" data-sheets-userformat="{&quot;2&quot;:9089,&quot;3&quot;:{&quot;1&quot;:0},&quot;10&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;16&quot;:11}">Please rinse with warm soapy water for 20-30 seconds until all food residue is removed. Alternatively, you can load into the top rack of your dishwasher. <br><br>Then place the fully-dried cups inside the Zero Waste Kit and place it back into the cooler bag with the lid on for pick-up on next delivery. If you are not ordering again next week, you can schedule a free pick-up from your delivery settings. </span></p></div></div></div> <div class="card"><div id="faq-header-66" role="tab" href="#faq-body-66" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-66" class="card-header mb-0 pointer collapsed">
-            Will the packaging keep my ingredients fresh for as long as the previous packaging?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-66" role="tabpanel" aria-labelledby="faq-header-66" data-parent="#accordion-8" class="collapse"><div class="card-body"><p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;There is no change to our existing shelf-life commitments. It is recommended that Strata Deli meals are consumed within four days of delivery. &quot;}" data-sheets-userformat="{&quot;2&quot;:11137,&quot;3&quot;:{&quot;1&quot;:0},&quot;10&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:2236962},&quot;16&quot;:11}">There is no change to our existing shelf-life commitments. It is recommended that Strata Deli meals are consumed within four days of delivery. </span></p></div></div></div> <div class="card"><div id="faq-header-63" role="tab" href="#faq-body-63" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-63" class="card-header mb-0 pointer collapsed">
-            How do I order Zero Waste meals?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-63" role="tabpanel" aria-labelledby="faq-header-63" data-parent="#accordion-8" class="collapse"><div class="card-body"><p>Look for the "Packed in a Zero Waste Kit" badge on recipe images in your menu.</p></div></div></div> <div class="card"><div id="faq-header-71" role="tab" href="#faq-body-71" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-71" class="card-header mb-0 pointer collapsed">
-            What happens if it breaks or I lose a piece? Will I be charged for it?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-71" role="tabpanel" aria-labelledby="faq-header-71" data-parent="#accordion-8" class="collapse"><div class="card-body"><p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;At this time, we do not charge for broken or missing pieces of the Zero Waste Kit, but in future we may introduce a small fee. If a Zero Waste Kit Component is broken, please return it to us as usual.&quot;}" data-sheets-userformat="{&quot;2&quot;:11137,&quot;3&quot;:{&quot;1&quot;:0},&quot;10&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:2236962},&quot;16&quot;:11}">At this time, we do not charge for broken or missing pieces of the Zero Waste Kit, but in future we may introduce a small fee. If a Zero Waste Kit Component is broken, please return it to us as usual.</span></p></div></div></div> <div class="card"><div id="faq-header-68" role="tab" href="#faq-body-68" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-68" class="card-header mb-0 pointer collapsed">
-            Why is there plastic in some of the Zero Waste Kits?  
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-68" role="tabpanel" aria-labelledby="faq-header-68" data-parent="#accordion-8" class="collapse"><div class="card-body"><p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Why is there still plastic in some of the Zero Waste Kits? \nWhile we are constantly experimenting with different packaging solutions, some ingredients will still remain in soft plastic packaging due to food safety and quality considerations. For example, raw meat and seafood must remain in their original packaging for food safety reasons. \n\nWhat we’re doing with soft plastics\nFor soft plastics that come with your delivery, Strata Deli can recycle them through a partnership with Urban Impact Recycling, with the exception of meat and seafood packaging.\n\nHow to return soft plastics\nTo return soft plastics, please rinse with soapy water and ensure removal of any food residue. Then, place the rinsed soft plastics into your Zero Waste Kit or paper bag. Please do not return meat or seafood packaging and note that we cannot accept any packaging that was not originally provided by Strata Deli.&quot;}" data-sheets-userformat="{&quot;2&quot;:9089,&quot;3&quot;:{&quot;1&quot;:0},&quot;10&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;16&quot;:11}" data-sheets-textstyleruns="{&quot;1&quot;:0,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:60}{&quot;1&quot;:343,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:379}{&quot;1&quot;:557,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:584}">While we are constantly experimenting with different packaging solutions, some ingredients will still remain in soft plastic packaging due to food safety and quality considerations. For example, raw meat and seafood must remain in their original packaging for food safety reasons. <br><br><strong>What we’re doing with soft plastics</strong><br>For soft plastics that come with your delivery, Strata Deli can recycle them through a partnership with Urban Impact Recycling, with the exception of meat and seafood packaging.<br><br><strong>How to return soft plastics</strong><br>To return soft plastics, please rinse with soapy water and ensure removal of any food residue. Then, place the rinsed soft plastics into your Zero Waste Kit or paper bag. Please do not return meat or seafood packaging and note that we cannot accept any packaging that was not originally provided by Strata Deli.</span></p> <p>&nbsp;</p> <p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Why is there still plastic in some of the Zero Waste Kits? \nWhile we are constantly experimenting with different packaging solutions, some ingredients will still remain in soft plastic packaging due to food safety and quality considerations. For example, raw meat and seafood must remain in their original packaging for food safety reasons. \n\nWhat we’re doing with soft plastics\nFor soft plastics that come with your delivery, Strata Deli can recycle them through a partnership with Urban Impact Recycling, with the exception of meat and seafood packaging.\n\nHow to return soft plastics\nTo return soft plastics, please rinse with soapy water and ensure removal of any food residue. Then, place the rinsed soft plastics into your Zero Waste Kit or paper bag. Please do not return meat or seafood packaging and note that we cannot accept any packaging that was not originally provided by Strata Deli.&quot;}" data-sheets-userformat="{&quot;2&quot;:9089,&quot;3&quot;:{&quot;1&quot;:0},&quot;10&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;16&quot;:11}" data-sheets-textstyleruns="{&quot;1&quot;:0,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:60}{&quot;1&quot;:343,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:379}{&quot;1&quot;:557,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:584}"><strong>Which ingredients will remain in soft plastics</strong><br>Meat and seafood to maintain food safety. </span></p> <p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Why is there still plastic in some of the Zero Waste Kits? \nWhile we are constantly experimenting with different packaging solutions, some ingredients will still remain in soft plastic packaging due to food safety and quality considerations. For example, raw meat and seafood must remain in their original packaging for food safety reasons. \n\nWhat we’re doing with soft plastics\nFor soft plastics that come with your delivery, Strata Deli can recycle them through a partnership with Urban Impact Recycling, with the exception of meat and seafood packaging.\n\nHow to return soft plastics\nTo return soft plastics, please rinse with soapy water and ensure removal of any food residue. Then, place the rinsed soft plastics into your Zero Waste Kit or paper bag. Please do not return meat or seafood packaging and note that we cannot accept any packaging that was not originally provided by Strata Deli.&quot;}" data-sheets-userformat="{&quot;2&quot;:9089,&quot;3&quot;:{&quot;1&quot;:0},&quot;10&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;16&quot;:11}" data-sheets-textstyleruns="{&quot;1&quot;:0,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:60}{&quot;1&quot;:343,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:379}{&quot;1&quot;:557,&quot;2&quot;:{&quot;5&quot;:1}}{&quot;1&quot;:584}">Spice blends and some powders affected by moisture to maintain freshness.</span></p></div></div></div> <div class="card"><div id="faq-header-70" role="tab" href="#faq-body-70" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-70" class="card-header mb-0 pointer collapsed">
-            What should I do if the a component of the Zero Waste Kit is damaged. 
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-70" role="tabpanel" aria-labelledby="faq-header-70" data-parent="#accordion-8" class="collapse"><div class="card-body"><p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;If a component is damaged please return rinse and return the component with your next delivery. If the damage occurred before your meals arrived to you, please email our customer success team at hello@stratadeli.ca to let us know.&quot;}" data-sheets-userformat="{&quot;2&quot;:6979,&quot;3&quot;:{&quot;1&quot;:0},&quot;4&quot;:{&quot;1&quot;:2,&quot;2&quot;:16777215},&quot;9&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:0},&quot;15&quot;:&quot;Arial&quot;}">If a component is damaged please return rinse and return the component with your next delivery. If the damage occurred before your meals arrived to you, please email our customer success team at hello@stratadeli.ca to let us know.</span></p></div></div></div> <div class="card"><div id="faq-header-72" role="tab" href="#faq-body-72" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-72" class="card-header mb-0 pointer collapsed">
-            If I choose to skip, pause or cancel, will you still pick up my Zero Waste Kit so it can be reused?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-72" role="tabpanel" aria-labelledby="faq-header-72" data-parent="#accordion-8" class="collapse"><div class="card-body"><p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Yes! Simply request a free pick-up via delivery settings in your account or clicking this link: freshprep.ca/pickups/new &quot;}" data-sheets-userformat="{&quot;2&quot;:9089,&quot;3&quot;:{&quot;1&quot;:0},&quot;10&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;16&quot;:11}">Yes! Simply request a free pick-up via delivery settings in your account or clicking this link: <a href="http://freshprep.ca/pickups/new"><span style="font-weight: 400;">freshprep.ca/pickups/new</span></a></span></p></div></div></div> <div class="card"><div id="faq-header-67" role="tab" href="#faq-body-67" data-toggle="collapse" aria-expanded="false" aria-controls="faq-body-67" class="card-header mb-0 pointer collapsed">
-            Will all your meals eventually be delivered in these kits?
-            <i aria-hidden="true" class="fa fa-caret-down text-primary float-right mt-1"></i></div> <div id="faq-body-67" role="tabpanel" aria-labelledby="faq-header-67" data-parent="#accordion-8" class="collapse"><div class="card-body"><p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;We will be adding more recipe options in the Zero Waste Kit each week. Recipes can be previewed up to four weeks in advance and added to orders on the menu page. Look for the badge ‘Packed in a Zero Waste Kit’ on the weekly menu at www.freshprep.ca/menu/this-week&quot;}" data-sheets-userformat="{&quot;2&quot;:1059713,&quot;3&quot;:{&quot;1&quot;:0},&quot;10&quot;:0,&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:2236962},&quot;16&quot;:11,&quot;23&quot;:1}" data-sheets-textstyleruns="{&quot;1&quot;:0}{&quot;1&quot;:232,&quot;2&quot;:{&quot;2&quot;:{&quot;1&quot;:2,&quot;2&quot;:1136076},&quot;9&quot;:1}}" data-sheets-hyperlinkruns="{&quot;1&quot;:232,&quot;2&quot;:&quot;http://www.freshprep.ca/menu/this-week&quot;}{&quot;1&quot;:263}">We will be adding more recipe options in the Zero Waste Kit each week. Recipes can be previewed up to four weeks in advance and added to orders on the menu page. Look for the badge ‘Packed in a Zero Waste Kit’ on the weekly menu at <a href="http://www.freshprep.ca/menu/this-week" target="_blank" rel="noopener" class="in-cell-link">www.freshprep.ca/menu/this-week</a></span></p></div></div></div></div></div> <div class="col-12 col-lg-6"><h2>More Questions?</h2> <div class="row"><div class="col-6">Call Us:</div> <div class="col-6"><a href="tel:+604-123-4567">604-123-4567</a></div></div> <div class="row"><div class="col-6">Email Us:</div> <div class="col-6"><a href="mailto:hello@stratadeli.ca">hello@stratadeli.ca</a></div></div></div></div></div></section>
-    </div>
-    <!-- FOOTER -->
-    <div id=footer class="sticky-bottom">
-        <!--Change to sticky-bottom when we have more content-->
-        <footer class="container">
-          <br><br><br><br><br>
-          <div class="float-end">
-            <br><br><br><br><br>
-            <a href="https://www.facebook.com/">
-              <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
-            <a href="https://www.instagram.com/">
-              <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
-            <a href="https://www.linkedin.com/company/">
-              <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
-                class="socialMediaIcon"></a>
-            <p>
-              <br><br>
-              <img src="images/app-store.png" , width="150px" , height="40px">
-              <br><br>
-              <img src="images/play-store.png" , width="150px" , height="40px">
-            </p>
-          </div>
-          <a class="navbar-brand" href="index.html">
-            <img src="images/stratadeliwhite.png">
-          </a>
-          <div>
-            <br>
-            <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
-            <br>
-            <p><a href="about.html">About Us</a></p>
-            <p><a href="/Story">Careers</a></p>
-            <p><a href="faq.html">FAQ</a></p>
-            <p><a href="/Story">Contact Us</a></p>
-            <p><a href="/Story">Terms & Conditions</a></p>
-          </div>
-        </footer>
+          </ul>
+          <form class="position-absolute top-50 start-50 translate-middle">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
+          <button type="button" class="btn btn-dark">Log In</button>
+          <button type="button" class="btn btn-outline-secondary">Sign Up</button>
+        </div>
       </div>
+    </nav>
+  </header>
 
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
+  <!-- FAQ Section Centered-->
+  <br>
+  <br>
+  <br>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-        </script>
+  <div id="faq">
+    <h1>FAQ</h1>
+    <br>
+    <h4>Covid-19 Safety Protocols</h4>
+    <br>
+    <button class="accordion" id="q1-food-safety">Section 1</button>
+    <div class="panel">
+      <p id="a1-food-safety">text</p>
+    </div>
 
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
+    <button class="accordion" id="q2-food-safety">Section 2</button>
+    <div class="panel">
+      <p id="a2-food-safety">text</p>
+    </div>
+
+    <button class="accordion" id="q3-food-safety">Section 3</button>
+    <div class="panel">
+      <p id="a3-food-safety">text</p>
+    </div>
+
+    <button class="accordion" id="q4-food-safety">Section 3</button>
+    <div class="panel">
+      <p id="a4-food-safety">text</p>
+    </div>
+  </div>
+  <div id="faq">
+    <h4>General Questions</h4>
+    <br>
+    <button class="accordion" id="q1-general">Section 1</button>
+    <div class="panel">
+      <p id="a1-general">text</p>
+    </div>
+
+    <button class="accordion" id="q2-general">Section 2</button>
+    <div class="panel">
+      <p id="a2-general">text</p>
+    </div>
+
+    <button class="accordion" id="q3-general">Section 3</button>
+    <div class="panel">
+      <p id="a3-general">text</p>
+    </div>
+
+    <button class="accordion" id="q4-general">Section 3</button>
+    <div class="panel">
+      <p id="a4-general">text</p>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <div id=footer class="sticky-bottom">
+    <!--Change to sticky-bottom when we have more content-->
+    <footer class="container">
+      <br><br><br><br><br>
+      <div class="float-end">
+        <br><br><br><br><br>
+        <a href="https://www.facebook.com/">
+          <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
+        <a href="https://www.instagram.com/">
+          <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
+        <a href="https://www.linkedin.com/company/">
+          <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
+            class="socialMediaIcon"></a>
+        <p>
+          <br><br>
+          <img src="images/app-store.png" , width="150px" , height="40px">
+          <br><br>
+          <img src="images/play-store.png" , width="150px" , height="40px">
+        </p>
+      </div>
+      <a class="navbar-brand" href="index.html">
+        <img src="images/stratadeliwhite.png">
+      </a>
+      <div>
+        <br>
+        <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
+        <br>
+        <p><a href="about.html">About Us</a></p>
+        <p><a href="/Story">Careers</a></p>
+        <p><a href="faq.html">FAQ</a></p>
+        <p><a href="/Story">Contact Us</a></p>
+        <p><a href="/Story">Terms & Conditions</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <!----------------------------------------------->
+  <!-- JS: Boostrap, Firebase, API related    -->
+  <!----------------------------------------------->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+
+  <!-- Link to the api keys for your firebase project -->
+  <script src="scripts/firebase_team43.js"></script>
+
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <!--------------------------------------------------------------------->
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+
+    function displayQuestion() {
+      db.collection("FAQ").get()
+        .then(function (snap) {
+          snap.forEach(function (doc) {
+            var n = doc.data().question;
+            console.log(n);
+            var questionid = doc.data().qcode;
+            console.log(questionid);
+            document.getElementById(questionid).innerText = n;
+          })
+
+        })
+    }
+    displayQuestion();
+
+    function displayAnswer() {
+      db.collection("FAQ").get()
+        .then(function (snap) {
+          snap.forEach(function (doc) {
+            var n = doc.data().answer;
+            console.log(n);
+            var answerid = doc.data().acode;
+            console.log(answerid);
+            document.getElementById(answerid).innerText = n;
+          })
+
+        })
+    }
+    displayAnswer();
+  </script>
+<!--
+  <script>
+    function writeFAQ() {
+      var faqRef = db.collection("FAQ");
+
+      faqRef.add({
+        qcode: "q1-food-safety",
+        acode : "a1-food-safety",
+        question: "What precautions are you taking to ensure produce is delivered in a manner that prevents the spread of COVID-19?",
+        answer: "We employ our standard food safety precautions and food handling standards as part of our core operations to protect against any viruses or transmission of sickness. We perform regular deep cleans of our facility and employees are tested on a regularly to ensure we minimize our footprint on the Covid-19 Virus. Employees will wear gloves, masks, as well as face shields upon delivering your produce to your door."
+      });
+      faqRef.add({
+        qcode: "q2-food-safety",
+        acode: "a2-food-safety",
+        question: "How is StrataDeli ensuring the health and safety of its employees?",
+        answer: "All StrataDeli employees who can work from home will be working from home fr the foreseeable future to eliminate any unnecessary risks. All staff and visitors entering the facility are required to receive a non-contact temperature check, answer a COVID-19 questionnaire and provide contact information."
+      });
+      faqRef.add({
+        qcode: "q3-food-safety",
+        acode: "a3-food-safety",
+        question: "What is being done to prevent the potential spread of illness via my reusable produce cooler bag?",
+        answer: "As part of our regular sanitation procedures, we thoroughly clean and disinfect the bags when they return to our facility. Cleaning is done in a separate area from our ingredient processing area to avoid any cross contamination."
+      });
+      faqRef.add({
+        qcode: "q4-food-safety",
+        acode: "a4-food-safety",
+        question: "How will I know the quality and freshness of my produce?",
+        answer: "Here are StrataDeli, we are partnered with your local grocery stores the moment they receive their produce and stock. All produce and products are selected carefully to ensure it meets the standards of our customers."
+      });
+      faqRef.add({
+        qcode: "q1-general",
+        acode: "a1-general",
+        question: "When will my order be delivered?",
+        answer: "We deliver to each strata in bulk, thus there is a unique date set for every strata. This information will be available with your building manager or you can easily access the deliverable dates on your profile as well."
+      });
+      faqRef.add({
+        qcode: "q2-general",
+        acode: "a2-general",
+        question: "How do I know my Apartment or Condominium is served?",
+        answer: "After regisitering, you may check the list to see if your Apartment or Condominium is served. If it is not, you may make a request along with building manager and if there is a collective interest of people, we will include your Apartment or Condominium with our service!"
+      });
+      faqRef.add({
+        qcode: "q3-general",
+        acode: "a3-general",
+        question: "Where can I find my Recipes?",
+        answer: "Check your suggested recipe page and see your information!"
+      });
+      faqRef.add({
+        qcode: "q4-general",
+        acode: "a4-general",
+        question: "How do I find a specific product?",
+        answer: "Use the search tab at the very top of app! Look for a magnifying glass icon."
+      })
+    }
+  -->
+  </script>
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <!--------------------------------------------------------------------->
 
 
 </body>
