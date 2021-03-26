@@ -80,7 +80,7 @@
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
-    <h1>Selected Recipes for You</h1>
+    <h1>Selected Recipes for <span id="name-goes-here">You</span> </h1>
     <div>
         <p id="intro">Based on your purchase, we think you may like to try these dishes:</p>
     </div>
@@ -110,6 +110,7 @@
                     <a href="#" class="btn btn-primary">See Recipe</a>
                 </div>
             </div>
+            <h1>Special suggestion: <span id="saved-recipe-goes-here"></span></h1>
         </section>
         <section id="saved-recipe">
             <h2>Your Favorites</h2>
@@ -188,29 +189,36 @@
     <!-- Link to the api keys for your firebase project -->
     <script src="scripts/firebase_team43.js"></script>
 
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+    <script src="scripts/my_functions.js"></script>
     <script>
         function writeRecipes() {
             var recipesRef = db.collection("recipes");
 
             recipesRef.add({
                 code: "TOMATO",
-                name: "The fresh taste of summer, all year long.",
+                name: "Fire-Roasted Tomato and Pepper Soup",
             });
             recipesRef.add({
                 code: "BEEF",
-                name: "Simple yet flavorful mushroom and beef burgers.",
+                name: "Mushroom Beef Burgers",
             });
             recipesRef.add({
                 code: "CHICKEN",
-                name: "Quick and easy breaded ranch chicken.",
+                name: "Breaded Parmesan Ranch Chicken",
+            });
+            recipesRef.add({
+                code: "FISH",
+                name: "Fried Fish",
+            });
+            recipesRef.add({
+                code: "VEGETABLE",
+                name: "vegetable",
             });
         }
     </script>
-
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
-
 
 </body>
 
