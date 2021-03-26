@@ -6,6 +6,8 @@ var firebaseConfig = {
     storageBucket: "stratadeli.appspot.com",
     messagingSenderId: "32980042067",
     appId: "1:32980042067:web:cc95843368c4ec87f321a6"
-    };
+};
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
