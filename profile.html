@@ -96,17 +96,17 @@
     <div class="card-group">
         <div class="card">
             <div class="card-body">
-                <h5 id ="YVR" class="card-title">Card title</h5>
+                <h5 id ="strata" class="card-title">Card title</h5>
             </div>
         </div>
         <div class="card">
             <div class="card-body">
-                <h5 id ="YVR" class="card-title">Card title</h5>
+                <h5 id ="strata" class="card-title">Card title</h5>
             </div>
         </div>
         <div class="card">
             <div class="card-body">
-                <h5 id ="YVR" class="card-title">Card title</h5>
+                <h5 id ="strata" class="card-title">Card title</h5>
             </div>
         </div>
     </div>
@@ -173,11 +173,11 @@
             db.collection("coverage").get()
             .then(function (snap) {
                 snap.forEach(function (doc) {
-                    var n = doc.data().name;
-                    console.log(n);
-                    var cityid = doc.data().code;
-                    console.log(cityid);
-                    document.getElementById(cityid).innerText = n;
+                    var name = doc.data().strata;
+                    console.log(name);
+                    var postcode = doc.data().postcode;
+                    console.log(postcode);
+                    document.getElementById("strata").innerText = name;
                     })
 
                 })
