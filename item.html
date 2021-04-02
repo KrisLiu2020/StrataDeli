@@ -11,20 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="./styles/generalstyle.css">
     <style>
-        input[type=search] {
-            background-image: url("searchicon.png");
-            width: 30vw;
-        }
-
-        .socialMediaIcon {
-            width: 32px;
-            height: 32px;
-        }
-
         .img-fluid {
             width: 100%;
         }
@@ -61,23 +52,6 @@
         .related-recipes-pic {
             border-radius: 5em
         }
-
-        .related-items {}
-
-        #footer {
-            background-color: black;
-            height: 500px;
-        }
-
-        p a {
-            text-decoration: none;
-            list-style-type: none;
-            color: white;
-        }
-
-        p a:hover {
-            color: white;
-        }
     </style>
 </head>
 
@@ -107,7 +81,14 @@
               </li> -->
                     </ul>
                     <form class="position-absolute top-50 start-50 translate-middle">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search.." id="search-item">
+                            <div class="input-group-append">
+                                <button class="green-search" id="submit" disabled>
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
                     </form>
                     <a href="profile.html">
                         <img src="images/profile2.png" width="40px" , height="40px">
