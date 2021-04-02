@@ -14,35 +14,9 @@
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
   <!-- Optional styles and scripts of your own -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./styles/generalstyle.css">
   <style>
-    input[type=search] {
-      background-image: url("searchicon.png");
-      width: 30vw;
-    }
-
-    .socialMediaIcon {
-      width: 32px;
-      height: 32px;
-    }
-
-    .img-fluid {
-      width: 100%;
-    }
-
-    #footer {
-      background-color: black;
-      height: 500px;
-    }
-
-    p a {
-      text-decoration: none;
-      list-style-type: none;
-      color: white;
-    }
-
-    p a:hover {
-      color: white;
-    }
 
     .accordion {
       background-color: #eee;
@@ -101,32 +75,38 @@
   <!-- Header Navigation Bar -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img src="images/stratadeli.png">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <!--<li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li> -->
-          </ul>
-          <form class="position-absolute top-50 start-50 translate-middle">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          </form>
-          <button type="button" class="btn btn-dark">Log In</button>
-          <button type="button" class="btn btn-outline-secondary">Sign Up</button>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/stratadeli.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <!--<li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
+                </ul>
+                <form class="position-absolute top-50 start-50 translate-middle">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search.." id="search-item">
+                        <div class="input-group-append">
+                            <button class="green-search" id="submit" disabled>
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <a href="login.html"><button class="green-login-shadow">Log In</button></a>
+            </div>
         </div>
-      </div>
     </nav>
-  </header>
+</header>
 
   <!-- FAQ Section Centered-->
   <br>
