@@ -33,6 +33,7 @@
     #footer {
       background-color: black;
       height: 500px;
+      clear: both;
     }
 
     p a {
@@ -48,7 +49,6 @@
 </head>
 
 <body>
-
   <!-------------------------------------->
   <!-- The following is HTML for layout -->
   <!-------------------------------------->
@@ -87,17 +87,26 @@
       <a href="suggestedrecipe.html"><button type="button" class="btn btn-outline-secondary">Suggested
           Recipes</button></a>
     </nav>
-    <div class="d-flex flex-column p-3 bg-light" style="width: 280px; float: left;">
+    <!-- sidebar section -->
+    <div class="d-flex flex-column p-3 bg-light" style="width: 280px; height: 1000px; float: left;">
       <span class="fs-4">Categories</span>
       </a>
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <a href="#" class="nav-link active">
+        <li>
+          <a href="#" class="nav-link link-dark">
             <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#home" />
+              <use xlink:href="#speedometer2" />
             </svg>
-            Produce
+            Vegetables
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link link-dark">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#speedometer2" />
+            </svg>
+            Meat
           </a>
         </li>
         <li>
@@ -113,7 +122,7 @@
             <svg class="bi me-2" width="16" height="16">
               <use xlink:href="#table" />
             </svg>
-            Orders
+            Bakery
           </a>
         </li>
         <li>
@@ -121,7 +130,7 @@
             <svg class="bi me-2" width="16" height="16">
               <use xlink:href="#grid" />
             </svg>
-            What else you want
+            Frozen
           </a>
         </li>
         <li>
@@ -129,17 +138,63 @@
             <svg class="bi me-2" width="16" height="16">
               <use xlink:href="#people-circle" />
             </svg>
-            Blahblah
+            Health & Beauty
           </a>
         </li>
       </ul>
       <hr>
     </div>
   </header>
-  <div>
-    <p id='VEG'>item</p>
-    <p id='MEAT'>item</p>
-    <p id='DAI'>item</p>
+  <!-- main display section -->
+  <div style="border: solid red 2px">
+    <div class="card" style="width: 18rem; float: left;">
+      <img src="/images/vegetables.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 id='VEG'>Card title</h5>
+        <p class="card-text">Fresh picked everyday!</p>
+        <a href="#" class="btn btn-primary">shop veggies</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem; float: left;">
+      <img src="/images/meat.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 id='MEAT'>Card title</h5>
+        <p class="card-text">Some meat.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem; float: left;">
+      <img src="./images/milk.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 id='DAI'>Card title</h5>
+        <p class="card-text">Milk and more.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem; float: left;">
+      <img src="./images/bakery.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 id='BAK'>Card title</h5>
+        <p class="card-text">Just bread.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem; float: left;">
+      <img src="./images/frozen.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 id='FORZ'>Card title</h5>
+        <p class="card-text">Frozen fresh.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem; float: left;">
+      <img src="./images/healthandbeauty.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 id='HB'>Card title</h5>
+        <p class="card-text">beauty and more.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
   </div>
   <!-- FOOTER -->
   <div id=footer class="sticky-bottom">
@@ -200,9 +255,6 @@
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
-  <script>
-
-  </script>
 
 </body>
 
