@@ -222,15 +222,17 @@
         }
         displayAddress();
         
-        function displayBranches() {
-            db.collection("test_user").get().then().db.collection("favorite recipe").get().then(function (snap) {
-                snap.forEach(function (doc) {
-                    var code = doc.data().code;
-                    console.log(code);
-                })
+        function get_nested_stuff(){
+            db.collection("test_collection/dairy/cheese").get().then(function(snap){
+               snap.forEach(function(doc){
+                    var chee_name = doc.data().name;
+                    var chee_price = doc.data().price;
+                    console.log(chee_name);
+                    console.log(chee_price);
+                }) 
             })
         }
-        displayBranches();
+        get_nested_stuff();
     </script>
 
 
