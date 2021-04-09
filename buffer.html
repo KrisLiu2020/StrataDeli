@@ -133,15 +133,15 @@
     <div class="card" style="width: 30%; float: left;">
       <img src="./images/vegetables.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 id='VEG'>Card title</h5>
+        <h5 id='TOM'>Card title</h5>
         <p class="card-text">Fresh picked!</p>
-        <a href="./buffer.html" class="green-button-shadow">shop veggies</a>
+        <a href="./vegi.html" class="green-button-shadow">shop veggies</a>
       </div>
     </div>
     <div class="card" style="width: 30%; float: left;">
       <img src="./images/meat.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 id='MEAT'>Card title</h5>
+        <h5 id='GPE'>Card title</h5>
         <p class="card-text">Some meat.</p>
         <a href="#" class="green-button-shadow">Go somewhere</a>
       </div>
@@ -149,32 +149,8 @@
     <div class="card" style="width: 30%;">
       <img src="./images/milk.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 id='DAI'>Card title</h5>
+        <h5 id='LET'>Card title</h5>
         <p class="card-text">Milk and more.</p>
-        <a href="#" class="green-button-shadow">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 30%; float: left; clear: left;">
-      <img src="./images/bakery.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 id='BAK'>Card title</h5>
-        <p class="card-text">Just bread.</p>
-        <a href="#" class="green-button-shadow">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 30%; float: left;">
-      <img src="./images/frozen.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 id='FORZ'>Card title</h5>
-        <p class="card-text">Frozen fresh.</p>
-        <a href="#" class="green-button-shadow">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 30%; float: left;">
-      <img src="./images/healthandbeauty.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 id='HB'>Card title</h5>
-        <p class="card-text">beauty and more.</p>
         <a href="#" class="green-button-shadow">Go somewhere</a>
       </div>
     </div>
@@ -241,7 +217,22 @@
   <!--------------------------------------------------------------------->
 
   <script>
-    displayItems();
+
+    function get_nested_stuff() {
+      db.collection("/test_collection/produce/veggies").get().then(function (snap) {
+        snap.forEach(function (doc) {
+          var vegi_name = doc.data().name;
+          var vegi_price = doc.data().price;
+          var vegi_des = doc.data().description;
+          var vegi_code = doc.data().code;
+          console.log("1", vegi_price);
+          console.log("2", vegi_des);
+          console.log("3", vegi_code);
+          document.getElementById(vegi_code).innerText = vegi_name
+        })
+      })
+    }
+    get_nested_stuff();
   </script>
 
 </body>
