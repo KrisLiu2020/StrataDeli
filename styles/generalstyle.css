@@ -84,3 +84,7 @@ p a:hover {
 .green-search:hover{
     background-color: #62bd7c
 }
+.alignCenter{
+    margin: auto;
+    padding-right: 10em;
+}
