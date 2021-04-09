@@ -134,24 +134,27 @@
       <img src="./images/vegetables.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 id='TOM'>Card title</h5>
-        <p class="card-text">Fresh picked!</p>
-        <a href="./vegi.html" class="green-button-shadow">shop veggies</a>
+        <p class="card-text">description</p>
+        <p class="price">Fresh picked!</p>
+        <a href="./vegi.html" class="green-button-shadow">shop</a>
       </div>
     </div>
     <div class="card" style="width: 30%; float: left;">
       <img src="./images/meat.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 id='GPE'>Card title</h5>
-        <p class="card-text">Some meat.</p>
-        <a href="#" class="green-button-shadow">Go somewhere</a>
+        <p class="card-text">description</p>
+        <p class="price">Fresh picked!</p>
+        <a href="#" class="green-button-shadow">shop</a>
       </div>
     </div>
     <div class="card" style="width: 30%;">
       <img src="./images/milk.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 id='LET'>Card title</h5>
-        <p class="card-text">Milk and more.</p>
-        <a href="#" class="green-button-shadow">Go somewhere</a>
+        <p class="card-text">description</p>
+        <p class="price">Fresh picked!</p>
+        <a href="#" class="green-button-shadow">shop</a>
       </div>
     </div>
     <div style="clear: both;"></div>
@@ -220,6 +223,7 @@
 
     function get_nested_stuff() {
       db.collection("/test_collection/produce/veggies").get().then(function (snap) {
+        var counter = 0
         snap.forEach(function (doc) {
           var vegi_name = doc.data().name;
           var vegi_price = doc.data().price;
@@ -229,6 +233,9 @@
           console.log("2", vegi_des);
           console.log("3", vegi_code);
           document.getElementById(vegi_code).innerText = vegi_name
+          document.getElementsByClassName("card-text")[counter].innerText = vegi_des
+          counter = counter + 1
+          console.log('hey', counter)
         })
       })
     }
