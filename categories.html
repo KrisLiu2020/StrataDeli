@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TEAM43 Strata Deli</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <meta name="author" content="Kerry, Kris, Tomo">
+
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="./styles/generalstyle.css">
+    <style>
+        img.card-img-top {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-------------------------------------->
+    <!-- The following is HTML for layout -->
+    <!-------------------------------------->
+    <!-- Header Navigation Bar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/stratadeli.png">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <!--<li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
+                    </ul>
+                    <form class="position-absolute top-50 start-50 translate-middle">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search.." id="search-item">
+                            <div class="input-group-append">
+                                <button class="green-search" id="submit" disabled>
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    </ul>
+                    <a href="profile.html">
+                        <img src="images/profile2.png" width="40px" , height="40px">
+                    </a>
+                    <a href="cart.html">
+                        <img src="images/cart2.png" width="40px" , height="40px">
+                    </a>
+                </div>
+            </div>
+            <a href="suggestedrecipe.html"><button type="button" class="btn btn-outline-secondary">Suggested
+                    Recipes</button></a>
+        </nav>
+    </header>
+    <!-- sidebar section -->
+    <br>
+    <div class="d-flex flex-column p-3 bg-light" style="width: 20%; height: 100%; float: left;">
+        <span class="fs-4">Categories</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li>
+                <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#speedometer2" />
+                    </svg>
+                    Vegetables
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#speedometer2" />
+                    </svg>
+                    Meat
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#speedometer2" />
+                    </svg>
+                    Diary
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#table" />
+                    </svg>
+                    Bakery
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#grid" />
+                    </svg>
+                    Frozen
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#people-circle" />
+                    </svg>
+                    Beauty
+                </a>
+            </li>
+        </ul>
+        <hr>
+    </div>
+    <!-- main display section -->
+    <h1>Shop</h1>
+    <div style="float: left;">
+    <div id="categories-go-here"></div>
+    </div>  
+    <!-- FOOTER -->
+    <div id=footer class="sticky-bottom">
+        <!--Change to sticky-bottom when we have more content-->
+        <footer class="container">
+            <br><br><br><br><br>
+            <div class="float-end">
+                <br><br><br><br><br>
+                <a href="https://www.facebook.com/">
+                    <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
+                <a href="https://www.instagram.com/">
+                    <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
+                <a href="https://www.linkedin.com/company/">
+                    <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
+                        class="socialMediaIcon"></a>
+                <p>
+                    <br><br>
+                    <img src="images/app-store.png" , width="150px" , height="40px">
+                    <br><br>
+                    <img src="images/play-store.png" , width="150px" , height="40px">
+                </p>
+            </div>
+            <a class="navbar-brand" href="index.html">
+                <img src="images/stratadeliwhite.png">
+            </a>
+            <div>
+                <br>
+                <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
+                <br>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="/Story">Careers</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+                <p><a href="/Story">Contact Us</a></p>
+                <p><a href="/Story">Terms & Conditions</a></p>
+            </div>
+        </footer>
+    </div>
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related    -->
+    <!----------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+
+    <!-- Link to the api keys for your firebase project -->
+    <script src="scripts/firebase_team43.js"></script>
+    <script src="scripts/my_functions.js"></script>
+
+
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+
+    <script>
+        function displayCategories() {
+            db.collection('categories')
+                .get()
+                .then(function (snap) {
+                    snap.forEach(function (doc) {
+                        console.log("1.", doc.id)
+                        var category = doc.id
+                        $("#categories-go-here").append("<h5 id ='" + doc.id + "'>" + category + "</h5>")
+                    })
+                })
+        }
+        displayCategories();
+
+        function selectIdForImg() {
+            db.collection('categories')
+            .get()
+            .then(function(snap) {
+                snap.forEach(function (doc) {
+                    if(doc.id == 'veggies') {
+                        $('#veggies').prepend("<img src='./images/vegetables.jpg' style='height: 5em; width: 8em'>")
+                    }
+                    if(doc.id == 'meat') {
+                        $('#meat').prepend("<img src='./images/meat.jpg' style='height: 5em; width: 8em;'>")
+                    }
+                    if(doc.id == 'beauty') {
+                        $('#beauty').prepend("<img src='./images/healthandbeauty.jpg' style='height: 5em; width: 8em;'>")
+                    }
+                    if(doc.id == 'frozen') {
+                        $('#frozen').prepend("<img src='./images/frozen.jpg' style='height: 5em; width: 8em;'>")
+                    }
+                    if(doc.id == 'bakery') {
+                        $('#bakery').prepend("<img src='./images/bakery.jpg' style='height: 5em; width: 8em;'>")
+                    }
+                    if(doc.id == 'dairy') {
+                        $('#dairy').prepend("<img src='./images/milk.jpg' style='height: 5em; width: 8em;'>")
+                    }
+                })
+            })
+        }
+        selectIdForImg();
+    </script>
+
+</body>
+
+</html>
