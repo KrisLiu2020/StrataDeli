@@ -43,11 +43,11 @@
                 <a class="nav-link" href="#">Link</a>
               </li> -->
                     </ul>
-                    <form class="alignCenter">
+                    <form class="alignCenter" onSubmit="return false;">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search.." id="search-item">
                             <div class="input-group-append">
-                                <button class="green-search" id="submit" disabled>
+                                <button class="green-search" id="submit" type="button">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>
@@ -149,7 +149,43 @@
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-    <script src ="scripts/my_functions.js"></script>
+    <script src="scripts/my_functions.js"></script>
+    <script>
+
+        // Search button on enter
+        function enterSearch() {
+            const searchBar = document.getElementById("search-item")
+            searchBar.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    searchDatabase()
+                }
+            });
+        }
+
+        function clickSearch() {
+            const searchButton = document.getElementById("submit")
+            searchButton.addEventListener('click', function () {
+                searchDatabase()
+            })
+        }
+
+        function searchDatabase() {
+            let item = document.getElementById("search-item").value;
+            db.collection("grocery_items")
+                .where("name", "==", item.toLowerCase()) // Convert value to lowercase 
+                .get()
+                .then(function (snap) {
+                    snap.forEach(function (doc) {
+                        console.log(doc.data());
+                    })
+                })
+        }
+        enterSearch()
+        clickSearch()
+
+
+
+    </script>
 
 </body>
 
