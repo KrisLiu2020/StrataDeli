@@ -202,6 +202,7 @@
                         console.log("1.", doc.id)
                         var category = doc.id
                         $("#categories-go-here").append("<h5 id ='" + doc.id + "'>" + category + "</h5>")
+                        addCategoriesRedirection(category)
                     })
                 })
         }
@@ -235,16 +236,13 @@
         }
         selectIdForImg();
 
-        function addWebcamListener(bakery) {
-            document.getElementById(bakery)
+        function addCategoriesRedirection(id) {
+            document.getElementById(id)
                 .addEventListener("click", function () {
-                    console.log(bakery + "was clicked!")
-                    //window.location.href="details.html";
-                    window.location.href = "details.html?id=" + bakery;
+                    window.location.href="category.html?id=" + id;
+                    // Get category ID --> go into subcollection of veggies --> dynamically generate new cards of all items in subcollection : veggies
                 });
         }
-
-        addWebcamListener
     </script>
 
 </body>
