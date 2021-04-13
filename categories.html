@@ -131,8 +131,8 @@
     <!-- main display section -->
     <h1>Shop</h1>
     <div style="float: left;">
-    <div id="categories-go-here"></div>
-    </div>  
+        <div id="categories-go-here"></div>
+    </div>
     <!-- FOOTER -->
     <div id=footer class="sticky-bottom">
         <!--Change to sticky-bottom when we have more content-->
@@ -209,31 +209,42 @@
 
         function selectIdForImg() {
             db.collection('categories')
-            .get()
-            .then(function(snap) {
-                snap.forEach(function (doc) {
-                    if(doc.id == 'veggies') {
-                        $('#veggies').prepend("<img src='./images/vegetables.jpg' style='height: 5em; width: 8em'>")
-                    }
-                    if(doc.id == 'meat') {
-                        $('#meat').prepend("<img src='./images/meat.jpg' style='height: 5em; width: 8em;'>")
-                    }
-                    if(doc.id == 'beauty') {
-                        $('#beauty').prepend("<img src='./images/healthandbeauty.jpg' style='height: 5em; width: 8em;'>")
-                    }
-                    if(doc.id == 'frozen') {
-                        $('#frozen').prepend("<img src='./images/frozen.jpg' style='height: 5em; width: 8em;'>")
-                    }
-                    if(doc.id == 'bakery') {
-                        $('#bakery').prepend("<img src='./images/bakery.jpg' style='height: 5em; width: 8em;'>")
-                    }
-                    if(doc.id == 'dairy') {
-                        $('#dairy').prepend("<img src='./images/milk.jpg' style='height: 5em; width: 8em;'>")
-                    }
+                .get()
+                .then(function (snap) {
+                    snap.forEach(function (doc) {
+                        if (doc.id == 'veggies') {
+                            $('#veggies').prepend("<img src='./images/vegetables.jpg' style='height: 5em; width: 8em'>")
+                        }
+                        if (doc.id == 'meat') {
+                            $('#meat').prepend("<img src='./images/meat.jpg' style='height: 5em; width: 8em;'>")
+                        }
+                        if (doc.id == 'beauty') {
+                            $('#beauty').prepend("<img src='./images/healthandbeauty.jpg' style='height: 5em; width: 8em;'>")
+                        }
+                        if (doc.id == 'frozen') {
+                            $('#frozen').prepend("<img src='./images/frozen.jpg' style='height: 5em; width: 8em;'>")
+                        }
+                        if (doc.id == 'bakery') {
+                            $('#bakery').prepend("<img src='./images/bakery.jpg' style='height: 5em; width: 8em;'>")
+                        }
+                        if (doc.id == 'dairy') {
+                            $('#dairy').prepend("<img src='./images/milk.jpg' style='height: 5em; width: 8em;'>")
+                        }
+                    })
                 })
-            })
         }
         selectIdForImg();
+
+        function addWebcamListener(bakery) {
+            document.getElementById(bakery)
+                .addEventListener("click", function () {
+                    console.log(bakery + "was clicked!")
+                    //window.location.href="details.html";
+                    window.location.href = "details.html?id=" + bakery;
+                });
+        }
+
+        addWebcamListener
     </script>
 
 </body>
