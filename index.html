@@ -186,29 +186,33 @@
 
     <script>
         function grabItemsInArray() {
+            let groceryItems = []; // Create empty array
             db.collection('categories')
                 .get()
                 .then(function (snap) {
                     snap.forEach(function (doc) {
-                        var insideCategories = doc.data().hi;
-                        for (var items in insideCategories) {
-                            console.log(items)
+                        var insideCategories = doc.data().hi; // create variable for map: "hi" 
+                        for (var items in insideCategories) { // loop inside map: "hi"
+                            groceryItems.push(items); // append array name to empty array
                         }
                     })
-
+                    
                 })
+                return groceryItems; // return new array
         }
-        grabItemsInArray()
-        /*
+
+        // Trying to now use the return of grabItemsInArray to index
         db.collection('categories')
         .get()
         .then(function(snap){
             snap.forEach(function (doc){
-                var insideCategoriesArray = doc.data().hi;
+                var insideCategoriesArray = doc.data().hi; // <-- insert ".grabItemsInArray()[0]" and grab every item inside array : "bread"
                 console.log(insideCategoriesArray)
             })
         })
-        */
+
+        const stuff = grabItemsInArray() // bug --> something to do with .promise and .then
+        console.log(stuff)
     </script>
 
 </body>
