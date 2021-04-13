@@ -180,11 +180,35 @@
                     })
                 })
         }
-        enterSearch()
-        clickSearch()
+        enterSearch
+        clickSearch
+    </script>
 
+    <script>
+        function grabItemsInArray() {
+            db.collection('categories')
+                .get()
+                .then(function (snap) {
+                    snap.forEach(function (doc) {
+                        var insideCategories = doc.data().hi;
+                        for (var items in insideCategories) {
+                            console.log(items)
+                        }
+                    })
 
-
+                })
+        }
+        grabItemsInArray()
+        /*
+        db.collection('categories')
+        .get()
+        .then(function(snap){
+            snap.forEach(function (doc){
+                var insideCategoriesArray = doc.data().hi;
+                console.log(insideCategoriesArray)
+            })
+        })
+        */
     </script>
 
 </body>
