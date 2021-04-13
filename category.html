@@ -129,10 +129,11 @@
         <hr>
     </div>
     <!-- main display section -->
-    <h1>Shop</h1>
-    <div style="float: left;">
-        <div id="categories-go-here"></div>
+    <h1 style="float: left; margin-left: 2em;">Fresh Baked</h1>
+    <div style="float: left; margin-left: 3em;">
+        <div id="categories-go-here" style="display: inline; float: left; width: 50em;"></div>
     </div>
+    
     <!-- FOOTER -->
     <div id=footer class="sticky-bottom">
         <!--Change to sticky-bottom when we have more content-->
@@ -194,16 +195,41 @@
     <!--------------------------------------------------------------------->
 
     <script>
-        function displayCategories() {
-            db.collection('categories').doc('bakery')
+        function displayCategory() {
+            // let params = (new URL(document.location)).searchParams;
+            // let pageId = params.get("id");
+            // console.log('pageId', pageId)
+            db.collection('categories/bakery/bread')
                 .get()
-                .then(function(doc) {
-                    console.log(doc.data().fields.name)
-                    console.log('document data: ', doc.id)
+                .then(function(snap) {
+                    snap.forEach(function(doc){
+                        var name = doc.data().fields.name;
+                        var img_path = doc.data().fields.path;
+                        var intro = doc.data().fields.intro;
+                        var price = doc.data().fields.price
+                        var code = doc.data().fields.code
+                        $("#categories-go-here").append('<div class="card">')
+                        $("#categories-go-here").append("<img src=' " + img_path + " ' alt='Avatar' style='width:30%'>")
+                        $("#categories-go-here").append('<div class="container">')
+                        $("#categories-go-here").append('<h4 id='+ code + '> <b>' + name + '</b></h4>')    
+                        $("#categories-go-here").append('<p>' + intro +'</p>')
+                        $("#categories-go-here").append('<p> <b>price</b> ' + price +' /package </p>')
+                        $("#categories-go-here").append('</div>')
+                        $("#categories-go-here").append('</div>')  
+                        $("#categories-go-here").append('</div>')
+                        addProductRedirection(code) 
+                    })
                 })
         }
-        displayCategories();
+        displayCategory();
 
+        function addProductRedirection(id) {
+            document.getElementById(id)
+                .addEventListener("click", function () {
+                    window.location.href="item.html?id=" + id;
+                    // Get category ID --> go into subcollection of veggies --> dynamically generate new cards of all items in subcollection : veggies
+                });
+        }
     </script>
 
 </body>
