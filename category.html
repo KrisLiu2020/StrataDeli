@@ -205,32 +205,35 @@
                         })
                     })
         }
+
+        function displayEachCategory(doc) {
+            // console.log('doc', doc.id)
+            var name = doc.data().name;
+            // console.log('name', name)
+            var img_path = doc.data().path;
+            var intro = doc.data().intro;
+            var price = doc.data().price;
+            $("#categories-go-here").append('<br><br>')
+            $("#categories-go-here").append('<div class="card">')
+            $("#categories-go-here").append("<img src=' " + img_path + " ' alt='Avatar' style='width:30%'>")
+            $("#categories-go-here").append('<div class="container">')
+            $("#categories-go-here").append('<h4> <b>' + name + '</b></h4>')
+            $("#categories-go-here").append('<p>' + intro + '</p>')
+            $("#categories-go-here").append('<p> <b>price</b> ' + price + ' /lb </p>')
+            $("#categories-go-here").append('</div>')
+            $("#categories-go-here").append('</div>')
+            $("#categories-go-here").append('</div>')
+        }
+
         displayCategory();
 
-
-        function addProductRedirection(id) {
-            document.getElementById(id)
-                .addEventListener("click", function () {
-                    window.location.href = "item.html?id=" + id;
-                    // Get category ID --> go into subcollection of veggies --> dynamically generate new cards of all items in subcollection : veggies
-                });
-        }
-
-        function grabAndDisplayGroceryItems() {
-            const parsedUrl = new URL(window.location.href); // Checks current URL
-            var id = parsedUrl.searchParams.get("id") // Grabs id e.g. bakery on category.html?id=bakery page
-            db.collection(id) // uses URL to determine which collection to dive into
-                .get() // get the information
-                .then(function (snap) {
-                    snap.forEach(function (doc) { // for every document inside collection(id)
-                        information = doc.data()
-                        var name = information.name // grabs every "name" contained inside collection(id)
-                        console.log(name)
-                        var price = information.price // grabs every "price" contained inside collection(id)
-                        console.log(price)
-                    })
-                })
-        }
+        // function addProductRedirection(id) {
+        //     document.getElementById(id)
+        //         .addEventListener("click", function () {
+        //             window.location.href="item.html?id=" + id;
+        //             // Get category ID --> go into subcollection of veggies --> dynamically generate new cards of all items in subcollection : veggies
+        //         });
+        // }
     </script>
 
 </body>
