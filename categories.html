@@ -14,13 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="./styles/sidebar.css">
+    <link rel="stylesheet" href="./styles/itemsdisplay.css">
     <link rel="stylesheet" href="./styles/generalstyle.css">
-    <style>
-        img.card-img-top {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
 </head>
 
 <body>
@@ -71,67 +67,69 @@
         </nav>
     </header>
     <!-- sidebar section -->
-    <br>
-    <div class="d-flex flex-column p-3 bg-light" style="width: 20%; height: 100%; float: left;">
-        <span class="fs-4">Categories</span>
-        </a>
-        <hr>
-        <ul class="nav nav-pills flex-column mb-auto">
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#speedometer2" />
-                    </svg>
-                    Vegetables
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#speedometer2" />
-                    </svg>
-                    Meat
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#speedometer2" />
-                    </svg>
-                    Diary
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#table" />
-                    </svg>
-                    Bakery
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#grid" />
-                    </svg>
-                    Frozen
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#people-circle" />
-                    </svg>
-                    Beauty
-                </a>
-            </li>
-        </ul>
-        <hr>
+    <div class="sidenav">
+        <br><br><br>
+        <hr style=" color: grey;">
+        <a style="color: rgb(189, 185, 185)">Categories</a>
+        <hr style="color: grey;">
+        <a href="#">veggies</a>
+        <a href="#">meat</a>
+        <a href="#">dairy</a>
+        <a href="#">bakery</a>
+        <a href="#">frozen</a>
+        <a href="#">beauty</a>
+        <br><br><br>
     </div>
     <!-- main display section -->
-    <h1>Shop</h1>
-    <div style="float: left;">
-        <div id="categories-go-here"></div>
+    <div class='main-display' style="margin: 0.5em 15em;">
+        <div class="text">
+            <h4>All Categories</h4>
+            <p>Fresh grocery everyday!</p>
+        </div>
+    </div>
+    <div style="margin: 0.5em 15em;">
+        <br>
+        <div class="categories">
+            <a class="link-to-category" href="category.html?order=veggies">
+                <img class='categories-img' src="./images/vegetables.jpg" style="margin-top: 47px;">
+                <h4>veggies</h4>
+            </a>
+        </div>
+        <br>
+        <div class="categories">
+            <a class="link-to-category" href="category.html?order=meat">
+                <img class='categories-img' src="./images/meat.jpg" style="margin-top: 23px;">
+                <h4>meat</h4>
+            </a>
+        </div>
+        <br>
+        <div class="categories">
+            <a class="link-to-category" href="category.html?order=dairy">
+                <img class='categories-img' src="./images/milk.jpg">
+                <h4>dairy</h4>
+            </a>
+        </div>
+        <br>
+        <div class="categories">
+            <a class="link-to-category" href="category.html?order=bakery">
+                <img class='categories-img' src="./images/bakery.jpg">
+                <h4>bakery</h4>
+            </a>
+        </div>
+        <br>
+        <div class="categories">
+            <a class="link-to-category" href="category.html?order=frozen">
+                <img class='categories-img' src="./images/frozen.jpg">
+                <h4>frozen</h4>
+            </a>
+        </div>
+        <br>
+        <div class="categories">
+            <a class="link-to-category" href="category.html?order=beauty">
+                <img class='categories-img' src="./images/healthandbeauty.jpg">
+                <h4>beauty</h4>
+            </a>
+        </div>
     </div>
     <!-- FOOTER -->
     <div id=footer class="sticky-bottom">
@@ -236,13 +234,29 @@
         }
         selectIdForImg();
 
-        function addCategoriesRedirection(id) {
-            document.getElementById(id)
-                .addEventListener("click", function () {
-                    window.location.href="category.html?id=" + id;
-                    // Get category ID --> go into subcollection of veggies --> dynamically generate new cards of all items in subcollection : veggies
-                });
+        // function addCategoriesRedirection(id) {
+        //     document.getElementById(id)
+        //         .addEventListener("click", function () {
+        //             window.location.href = "category.html?id=" + id;
+        //             // Get category ID --> go into subcollection of veggies --> dynamically generate new cards of all items in subcollection : veggies
+        //         });
+        // }
+
+        var elements = document.getElementsByClassName("link-to-category");
+
+        function reply_click(clicked_id) {
+            console.log(clicked_id)
+            return clicked_id
         }
+
+        for (var order = 0; order < elements.length; order++) {
+            elements[order].addEventListener('click', function () {
+                var id = reply_click
+                window.location.href = "category.html?order=" + id;  // i stands for order number
+            });
+        }
+
+
     </script>
 
 </body>

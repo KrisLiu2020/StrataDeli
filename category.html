@@ -21,6 +21,7 @@
             height: 100%;
         }
     </style>
+    <link rel="stylesheet" href="./styles/sidebar.css">
 </head>
 
 <body>
@@ -71,69 +72,25 @@
         </nav>
     </header>
     <!-- sidebar section -->
-    <br>
-    <div class="d-flex flex-column p-3 bg-light" style="width: 20%; height: 100%; float: left;">
-        <span class="fs-4">Categories</span>
-        </a>
-        <hr>
-        <ul class="nav nav-pills flex-column mb-auto">
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#speedometer2" />
-                    </svg>
-                    Vegetables
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#speedometer2" />
-                    </svg>
-                    Meat
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#speedometer2" />
-                    </svg>
-                    Diary
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#table" />
-                    </svg>
-                    Bakery
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#grid" />
-                    </svg>
-                    Frozen
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#people-circle" />
-                    </svg>
-                    Beauty
-                </a>
-            </li>
-        </ul>
-        <hr>
+    <div class="sidenav">
+        <br><br><br>
+        <hr style=" color: grey;">
+        <a style="color: rgb(189, 185, 185)">Categories</a>
+        <hr style="color: grey;">
+        <a href="#">veggies</a>
+        <a href="#">meat</a>
+        <a href="#">dairy</a>
+        <a href="#">bakery</a>
+        <a href="#">frozen</a>
+        <a href="#">beauty</a>
+        <br><br><br>
     </div>
     <!-- main display section -->
-    <h1 style="float: left; margin-left: 2em;">Fresh Baked</h1>
-    <div style="float: left; margin-left: 3em;">
+    <br>
+    <h3 style="margin-left: 9em;">Items</h3>
+    <div style="float: left; margin-left: 15em;">
         <div id="categories-go-here" style="display: inline; float: left; width: 50em;"></div>
     </div>
-    
     <!-- FOOTER -->
     <div id=footer class="sticky-bottom">
         <!--Change to sticky-bottom when we have more content-->
@@ -196,40 +153,87 @@
 
     <script>
         function displayCategory() {
-            // let params = (new URL(document.location)).searchParams;
-            // let pageId = params.get("id");
-            // console.log('pageId', pageId)
-            db.collection('categories/bakery/bread')
-                .get()
-                .then(function(snap) {
-                    snap.forEach(function(doc){
-                        var name = doc.data().fields.name;
-                        var img_path = doc.data().fields.path;
-                        var intro = doc.data().fields.intro;
-                        var price = doc.data().fields.price
-                        var code = doc.data().fields.code
-                        $("#categories-go-here").append('<div class="card">')
-                        $("#categories-go-here").append("<img src=' " + img_path + " ' alt='Avatar' style='width:30%'>")
-                        $("#categories-go-here").append('<div class="container">')
-                        $("#categories-go-here").append('<h4 id='+ code + '> <b>' + name + '</b></h4>')    
-                        $("#categories-go-here").append('<p>' + intro +'</p>')
-                        $("#categories-go-here").append('<p> <b>price</b> ' + price +' /package </p>')
-                        $("#categories-go-here").append('</div>')
-                        $("#categories-go-here").append('</div>')  
-                        $("#categories-go-here").append('</div>')
-                        addProductRedirection(code) 
+            let params = (new URL(document.location)).searchParams;
+            let pageId = params.get("order");
+            console.log('pageId', pageId)
+            if (pageId == 'veggies')
+                db.collection('veggies')
+                    .get()
+                    .then(function (snap) {
+                        snap.forEach(function (doc) {
+                            displayEachCategory(doc)
+                        })
                     })
-                })
+            else if (pageId == 'meat')
+                db.collection('meat')
+                    .get()
+                    .then(function (snap) {
+                        snap.forEach(function (doc) {
+                            displayEachCategory(doc)
+                        })
+                    })
+            else if (pageId == 'dairy')
+                db.collection('dairy')
+                    .get()
+                    .then(function (snap) {
+                        snap.forEach(function (doc) {
+                            displayEachCategory(doc)
+                        })
+                    })
+            else if (pageId == 'bakery')
+                db.collection('bakery')
+                    .get()
+                    .then(function (snap) {
+                        snap.forEach(function (doc) {
+                            displayEachCategory(doc)
+                        })
+                    })
+            else if (pageId == 'frozen')
+                db.collection('frozen')
+                    .get()
+                    .then(function (snap) {
+                        snap.forEach(function (doc) {
+                            displayEachCategory(doc)
+                        })
+                    })
+            else if (pageId == 'beauty')
+                db.collection('beauty')
+                    .get()
+                    .then(function (snap) {
+                        snap.forEach(function (doc) {
+                            displayEachCategory(doc)
+                        })
+                    })
         }
+
+        function displayEachCategory(doc) {
+            // console.log('doc', doc.id)
+            var name = doc.data().name;
+            // console.log('name', name)
+            var img_path = doc.data().path;
+            var intro = doc.data().intro;
+            var price = doc.data().price;
+            $("#categories-go-here").append('<br><br>')
+            $("#categories-go-here").append('<div class="card">')
+            $("#categories-go-here").append("<img src=' " + img_path + " ' alt='Avatar' style='width:30%'>")
+            $("#categories-go-here").append('<div class="container">')
+            $("#categories-go-here").append('<h4> <b>' + name + '</b></h4>')
+            $("#categories-go-here").append('<p>' + intro + '</p>')
+            $("#categories-go-here").append('<p> <b>price</b> ' + price + ' /lb </p>')
+            $("#categories-go-here").append('</div>')
+            $("#categories-go-here").append('</div>')
+            $("#categories-go-here").append('</div>')
+        }
+
         displayCategory();
 
-        function addProductRedirection(id) {
-            document.getElementById(id)
-                .addEventListener("click", function () {
-                    window.location.href="item.html?id=" + id;
-                    // Get category ID --> go into subcollection of veggies --> dynamically generate new cards of all items in subcollection : veggies
-                });
-        }
+        // function addProductRedirection(id) {
+        //     document.getElementById(id)
+        //         .addEventListener("click", function () {
+        //             window.location.href="item.html?id=" + id;
+        //             // Get category ID --> go into subcollection of veggies --> dynamically generate new cards of all items in subcollection : veggies
+        //         });
+        // }
     </script>
 
 </body>
