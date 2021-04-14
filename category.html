@@ -152,7 +152,6 @@
     <!--------------------------------------------------------------------->
 
     <script>
-        /*
         function displayCategory() {
             let params = (new URL(document.location)).searchParams;
             let pageId = params.get("order");
@@ -206,39 +205,7 @@
                         })
                     })
         }
-<<<<<<< HEAD
-
-        function displayEachCategory(doc) {
-            // console.log('doc', doc.id)
-            var name = doc.data().name;
-            // console.log('name', name)
-            var img_path = doc.data().path;
-            var intro = doc.data().intro;
-            var price = doc.data().price;
-            $("#categories-go-here").append('<br><br>')
-            $("#categories-go-here").append('<div class="card">')
-            $("#categories-go-here").append("<img src=' " + img_path + " ' alt='Avatar' style='width:30%'>")
-            $("#categories-go-here").append('<div class="container">')
-            $("#categories-go-here").append('<h4> <b>' + name + '</b></h4>')
-            $("#categories-go-here").append('<p>' + intro + '</p>')
-            $("#categories-go-here").append('<p> <b>price</b> ' + price + ' /lb </p>')
-            $("#categories-go-here").append('</div>')
-            $("#categories-go-here").append('</div>')
-            $("#categories-go-here").append('</div>')
-        }
-
         displayCategory();
-
-        // function addProductRedirection(id) {
-        //     document.getElementById(id)
-        //         .addEventListener("click", function () {
-        //             window.location.href="item.html?id=" + id;
-        //             // Get category ID --> go into subcollection of veggies --> dynamically generate new cards of all items in subcollection : veggies
-        //         });
-        // }
-=======
-        displayCategory();
-        */
 
 
         function addProductRedirection(id) {
@@ -264,7 +231,6 @@
                     })
                 })
         }
->>>>>>> 2f85b6ef985bb706fef97b2d9c0f53d05d5ca42e
     </script>
 
 </body>
