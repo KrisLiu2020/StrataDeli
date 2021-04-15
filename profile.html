@@ -92,7 +92,7 @@
     <h1 class="display-4"> Hello, <span id="name-goes-here">I'm broken :(</span> </h1>
 </div>
 
-    <img src="" alt="...">
+    <img id="userImage" src="" alt="...">
 
 
     <div class="card-group">
@@ -195,15 +195,24 @@
         }
         displayAddress();
 
+        setTimeout(
         function displayImage(){
           db.collection("users").get()
           .then(function (snap){
             snap.forEach(function (doc) {
+              var namedisplayed = document.getElementById("name-goes-here").innerText;
               var imgNum = doc.data().img;
               console.log(imgNum);
+              var user_name = doc.data().name;
+              console.log(user_name);
+              console.log(namedisplayed);
+              if (namedisplayed == user_name){
+                document.getElementById('userImage').src = "https://randomuser.me/api/portraits/men/"+imgNum+".jpg";
+                console.log("the same");
+              }
             })
           })
-        }
+        }, 2000);
 
         displayImage();
         
