@@ -84,6 +84,8 @@ p a:hover {
 .green-search:hover{
     background-color: #62bd7c
 }
+
+/* login.html style */
 .alignCenter{
     margin: auto;
     padding-right: 10em;
@@ -92,4 +94,29 @@ p a:hover {
 .login-margins{
     height: 30vh;
     margin-top: 10vh;
+}
+
+
+/* eligible.html style */
+#google-map {
+    text-align: center;
+}
+
+#availability-form {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#availiability-button {
+    background-color: #60ce80;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+#availiability-button:hover {
+    background-color: #62bd7c;
 }
