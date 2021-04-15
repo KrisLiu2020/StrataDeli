@@ -16,30 +16,6 @@
     <!-- Optional styles and scripts of your own -->
     <link rel="stylesheet" href="./styles/generalstyle.css">
 </head>
-<style>
-    #google-map {
-        text-align: center;
-    }
-
-    #availability-form {
-        padding-top: 100px;
-        padding-bottom: 20px;
-        margin: 0 auto;
-        width: 50%;
-    }
-
-    #availiability-button {
-        background-color: #60ce80;
-        color: white;
-        padding: 5px;
-        border-radius: 10px;
-        border: none;
-    }
-
-    #availiability-button:hover {
-        background-color: #62bd7c;
-    }
-</style>
 
 <body>
 
@@ -221,35 +197,6 @@
             gatherValues()
             resetValues()
         })
-
-        function gatherValues() {
-            let storeRecipientName = document.getElementById('recipient-name').value;
-            let storeRecipientPhoneNumber = document.getElementById('recipient-phone-number').value;
-            let storeRecipientAddress = document.getElementById('recipient-address').value;
-            let storeRecipientCity = document.getElementById('recipient-city').value;
-            let storeRecipientMessage = document.getElementById('message-text').value;
-            sendRequestToFirebase(storeRecipientName, storeRecipientPhoneNumber, storeRecipientAddress, storeRecipientCity, storeRecipientMessage);
-            
-        }
-
-        function resetValues() {
-            document.getElementById('recipient-name').value = "";
-            document.getElementById('recipient-phone-number').value = "";
-            document.getElementById('recipient-address').value = "";
-            document.getElementById('recipient-city').value = "";
-            document.getElementById('message-text').value = "";
-        }
-
-        function sendRequestToFirebase(userName, userPhone, userAddress, userCity, userMessage) {
-            var locationRef = db.collection("LocationRequest");
-            locationRef.add({
-                name: userName,
-                phoneNumber: userPhone,
-                address: userAddress,
-                city: userCity,
-                message: userMessage
-            });
-        }
 
     </script>
 
