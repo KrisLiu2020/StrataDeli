@@ -88,53 +88,23 @@
   </header>
 
 
-  <div class="container">
+<div class="container">
     <h1 class="display-4"> Hello, <span id="name-goes-here">I'm broken :(</span> </h1>
 </div>
 
+    <img src="" alt="...">
+
 
     <div class="card-group">
         <div class="card">
             <div class="card-body">
-                <h5 id ="T4" class="card-title">Card title</h5>
-                <p id="ganja"></p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 id ="TW" class="card-title">Card title</h5>
-                <p id="wood"></p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 id ="TS" class="card-title">Card title</h5>
-                <p id="oldpeople"></p>
+                <h5 id ="TS" class="card-title">Name</h5>
+                <p id="oldpeople">Address</p>
+                <p>order history</p>
+                <p>settings</p>
             </div>
         </div>
     </div>
-    <br>
-    <div class="card-group">
-         <div class="card">
-            <div class="card-body">
-                <h5 id ="TC" class="card-title">Card title</h5>
-                <p id="TCA"></p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 id ="TF" class="card-title">Card title</h5>
-                <p id="TFA"></p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 id ="CST" class="card-title">Card title</h5>
-                <p id="CSTA"></p>
-            </div>
-        </div>
-    </div>
-
 
   <!-- FOOTER -->
   <div id=footer class="fixed-bottom"> <!-- Change to sticky-bottom when there is enough content-->
@@ -201,7 +171,8 @@
                     console.log(code);
                     var name = doc.data().strata;
                     console.log(name);
-                    document.getElementById(code).innerText = name;
+                    if ((code) === "TS")
+                      document.getElementById(code).innerText = name;
                     })
 
                 })
@@ -216,23 +187,26 @@
                     console.log(addressCode);
                     var address = doc.data().address;
                     console.log(address);
-                    document.getElementById(addressCode).innerText = address;
+                    if (addressCode=== "oldpeople"){
+                      document.getElementById(addressCode).innerText = address;
+                    }
                 })
             })
         }
         displayAddress();
-        
-        function get_nested_stuff(){
-            db.collection("test_collection/dairy/cheese").get().then(function(snap){
-               snap.forEach(function(doc){
-                    var chee_name = doc.data().name;
-                    var chee_price = doc.data().price;
-                    console.log(chee_name);
-                    console.log(chee_price);
-                }) 
+
+        function displayImage(){
+          db.collection("users").get()
+          .then(function (snap){
+            snap.forEach(function (doc) {
+              var imgNum = doc.data().img;
+              console.log(imgNum);
             })
+          })
         }
-        get_nested_stuff();
+
+        displayImage();
+        
     </script>
 
 
