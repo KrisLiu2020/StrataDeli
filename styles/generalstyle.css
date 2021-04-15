@@ -89,3 +89,7 @@ p a:hover {
     padding-right: 10em;
 }
 
+.login-margins{
+    height: 30vh;
+    margin-top: 10vh;
+}
