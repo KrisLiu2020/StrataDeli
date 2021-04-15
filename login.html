@@ -17,13 +17,6 @@
     <!-- Optional styles and scripts of your own -->
     <link rel="stylesheet" href="./styles/generalstyle.css">
     <link href="styles/carousel.css" rel="stylesheet">
-
-    <style>
-        img.card-img-top {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
 </head>
 </head>
 
@@ -45,12 +38,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <!--<li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="faq.html">FAQ</a>
+                        </li>
                     </ul>
                     <form class="position-absolute top-50 start-50 translate-middle">
                         <div class="input-group">
@@ -75,9 +68,12 @@
         <h1 class="display-4">Hello! Welcome to StrataDeli!</h1>
         <h1> Let's get you logged in ... </h1>
         <br>
-        <div id="firebaseui-auth-container"></div>
-        <div id="loader">Loading...</div>
+        <div class="login-margins">
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader" class="login-margins"></div>
+        </div>
     </div>
+    <br><br><br><br>
 
 
     <!-- FOOTER -->
@@ -172,7 +168,7 @@
                 uiShown: function () {
                     // The widget is rendered.
                     // Hide the loader.
-                    document.getElementById('loader').style.display = 'none';
+                    document.getElementById('loader').style.display = 'fixed';
                 }
             },
             // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
