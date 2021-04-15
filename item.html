@@ -15,45 +15,8 @@
 
     <!-- Optional styles and scripts of your own -->
     <link rel="stylesheet" href="./styles/generalstyle.css">
-    <style>
-        .img-fluid {
-            width: 100%;
-        }
-
-        body {
-            margin-top: 10em;
-        }
-
-        #item-pic-display {
-            margin-left: 5em;
-        }
-
-        .related-recipes-pic {
-            height: 100px;
-            width: 150px;
-        }
-
-        .without-pic {
-            margin-left: 5em;
-        }
-
-        .item-picture {
-            float: left;
-            margin-right: 20em;
-            margin-top: 5em;
-            margin-left: 10em;
-        }
-
-        .function-intro {
-            width: 30em;
-            float: left;
-        }
-
-        .related-recipes-pic {
-            border-radius: 5em
-        }
-    </style>
     <link rel="stylesheet" href="./styles/sidebar.css">
+    <link rel="stylesheet" href="./styles/item.css">
 </head>
 
 <body>
@@ -102,7 +65,7 @@
         </nav>
     </header>
     <!-- sidebar section -->
-    <div class="sidenav">
+    <!-- <div class="sidenav">
         <br><br><br>
         <hr style=" color: grey;">
         <a style="color: rgb(189, 185, 185)">Categories</a>
@@ -114,120 +77,126 @@
         <a href="category.html?order=frozen">frozen</a>
         <a href="category.html?order=beauty">beauty</a>
         <br><br><br>
-    </div>
-    <section class="item-picture">
-        <img id="item-pic-display" src="./images/sliced_bread.jpeg" style="width: 20em;">
-    </section>
-    <section class="without-pic">
-        <section class="function-intro" style="margin-top: 3em;">
-            <button id="btnclick" type="button">Add to Cart</button>
-            <p>Coupon Available!</p>
-            <br>
-            <section class="item-short-description">
-                <h3>White Sliced Bread - Family Package, 675 Gram</h3>
-            </section>
-            <section class="item-detail-description">
-                <p id="product_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in ipsum
-                    metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                    Pellentesque accumsan consequat ipsum, at porta sem. Nullam dictum pretium mi, ut pretium justo
-                    mattis sit amet. Integer in fermentum purus. Duis quam lorem, mollis vitae odio et, finibus mattis
-                    risus. Proin semper sollicitudin augue ut dapibus.</p>
-            </section>
-            <button type="button" class="btn btn-success">Save the Item</button>
+    </div> -->
+    <section id="item-card">
+        <img id="item-pic-display" src="./images/carrot.jpg">
+        <br><br>
+        <div id='item-info'>
+            <h2>Organic Carrots</h2>
+            <h4>1.78/lb</h4>
+            <button id="btnclick" type="button" class="btn btn-success" style="display: inline-block">Add to
+                Cart</button>
+            <h5 id="item-number-goes-here"></h5>
+            <button type="button" class="btn btn-success" style="display: inline-block">Save the Item</button>
+        </div>
+
+        <br>
+        <section class="item-detail-description">
+            <p id="product_description">Mauris ex massa, hendrerit in tincidunt a, porttitor ut massa. Interdum et
+                malesuada fames ac ante ipsum primis in faucibus.</p>
         </section>
-        <section class="item-picture">
-            <img src="./images/nutrition_facts.png">
-            <br>
-            <hr>
-            <br>
-        </section>
-        <section class="related-items-and-recipes">
-            <section class="related-items" style="clear: both; margin-left: 10em;">
+
+        <hr>
+
+        <section id="related-items-and-recipes">
+            <section class="related-items">
                 <h5>Related Items:</h5>
                 <div>
-                    <img class="related-recipes-pic" src="./images/carrot.png">
+                    <img class="related-recipes-pic" src="./images/lettuce.jpg">
                 </div>
             </section>
             <br><br>
-            <section class="related-recipes" style="margin-left: 10em;">
+            <section class="related-recipes">
                 <h5>Recipes You May Like:</h5>
                 <img class="related-recipes-pic" src="./images/tomato_soup.jpg">
                 <img class="related-recipes-pic" src="./images/pad_thai.jpg">
             </section>
         </section>
-    </section>
-    <br>
-    <!-- FOOTER -->
-    <div id=footer class="sticky-bottom">
-        <footer class="container">
-            <br><br><br><br><br>
-            <div class="float-end">
+        <br>
+        <!-- FOOTER -->
+        <div id=footer class="sticky-bottom">
+            <footer class="container">
                 <br><br><br><br><br>
-                <a href="https://www.facebook.com/">
-                    <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
-                <a href="https://www.instagram.com/">
-                    <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
-                <a href="https://www.linkedin.com/company/">
-                    <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
-                        class="socialMediaIcon"></a>
-                <p>
-                    <br><br>
-                    <img src="images/app-store.png" , width="150px" , height="40px">
-                    <br><br>
-                    <img src="images/play-store.png" , width="150px" , height="40px">
-                </p>
-            </div>
-            <a class="navbar-brand" href="index.html">
-                <img src="images/stratadeliwhite.png">
-            </a>
-            <div>
-                <br>
-                <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
-                <br>
-                <p><a href="about.html">About Us</a></p>
-                <p><a href="/Story">Careers</a></p>
-                <p><a href="faq.html">FAQ</a></p>
-                <p><a href="/Story">Contact Us</a></p>
-                <p><a href="/Story">Terms & Conditions</a></p>
-            </div>
-        </footer>
-    </div>
+                <div class="float-end">
+                    <br><br><br><br><br>
+                    <a href="https://www.facebook.com/">
+                        <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format"
+                            class="socialMediaIcon"></a>
+                    <a href="https://www.instagram.com/">
+                        <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format"
+                            class="socialMediaIcon"></a>
+                    <a href="https://www.linkedin.com/company/">
+                        <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
+                            class="socialMediaIcon"></a>
+                    <p>
+                        <br><br>
+                        <img src="images/app-store.png" , width="150px" , height="40px">
+                        <br><br>
+                        <img src="images/play-store.png" , width="150px" , height="40px">
+                    </p>
+                </div>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/stratadeliwhite.png">
+                </a>
+                <div>
+                    <br>
+                    <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
+                    <br>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="/Story">Careers</a></p>
+                    <p><a href="faq.html">FAQ</a></p>
+                    <p><a href="/Story">Contact Us</a></p>
+                    <p><a href="/Story">Terms & Conditions</a></p>
+                </div>
+            </footer>
+        </div>
 
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
+        <!----------------------------------------------->
+        <!-- JS: Boostrap, Firebase, API related    -->
+        <!----------------------------------------------->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+            </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+
+        <!-- Link to the api keys for your firebase project -->
+        <script src="scripts/firebase_team43.js"></script>
+
+        <!--------------------------------------------------------------------->
+        <!-- JS files: Your own JavaScript functions included here    -->
+        <!--------------------------------------------------------------------->
+
+        <script>
+            function addCart() {
+                document.getElementById('btnclick')
+                    .addEventListener('click', function () {
+                        console.log('btn clicked!')
+                        db.collection('veggies')
+                            .doc('carrot')
+                            .update({
+                                counter: firebase.firestore.FieldValue.increment(1)
+                            })
+                        console.log("increment");
+                    })
+            }
+
+            function displayCounter() {
+                db.collection('veggies').doc('carrot')
+                    .get()
+                    .then(function (doc) {
+                        let counter = doc.data().counter
+                        console.log('doc',doc.data().counter)
+                        $("#item-number-goes-here").append('<p>' + counter + ' items in your cart</p>')
+                    })
+            }
+            addCart();
+            displayCounter();
         </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-
-    <!-- Link to the api keys for your firebase project -->
-    <script src="scripts/firebase_team43.js"></script>
-
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
-
-    <script>
-        function addCart() {
-            document.getElementById('btnclick')
-                .addEventListener('click', function () {
-                    console.log('btn clicked!')
-                    db.collection('bakery')
-                        .doc('artisan')
-                        .update({
-                            counter: firebase.firestore.FieldValue.increment(1)
-                        })
-                    console.log("increment");
-                })
-        }
-        addCart();
-    </script>
 </body>
 
 </html>

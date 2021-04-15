@@ -1,0 +1,49 @@
+#item-pic-display {
+    width: 100vw; 
+    box-shadow: 0 6px 2px -2px rgb(184, 184, 184);
+}
+
+#item-card {
+    margin-top: 30%;
+    border: 1px solid rgb(224, 233, 224);
+}
+
+#item-info{
+    margin-left: 1em;
+}
+
+.item-detail-description{
+    width: 300px;
+    margin-left: 1em;
+    color: grey;
+}
+
+.related-recipes-pic {
+    height: 100px;
+    width: 150px;
+}
+
+.without-pic {
+    margin-left: 5em;
+}
+
+.item-picture {
+    float: left;
+    margin-right: 20em;
+    margin-top: 5em;
+    margin-left: 10em;
+}
+
+.function-intro {
+    margin-left: 5vw;
+    width: 50%;
+}
+
+.related-recipes-pic {
+    border-radius: 5em
+}
+
+#related-items-and-recipes{
+    margin-left: 5vw;
+}
+
