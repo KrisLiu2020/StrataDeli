@@ -11,19 +11,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./styles/carousel.css" rel="stylesheet">
     <!-- Optional styles and scripts of your own -->
     <link rel="stylesheet" href="./styles/generalstyle.css">
 </head>
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
 
 <body>
 
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
-    <!-- Header Navigation Bar -->
 
+
+    <!-- Header Navigation Bar -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
             <div class="container-fluid">
@@ -36,12 +52,12 @@
                 </button>
                 <div class="collapse navbar-collapse " id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <!--<li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="faq.html">FAQ</a>
+                        </li>
                     </ul>
                     <form class="alignCenter" onSubmit="return false;">
                         <div class="input-group">
@@ -53,47 +69,79 @@
                             </div>
                         </div>
                     </form>
-                    <a href="login.html"><button class="green-login-shadow">Log In</button></a>
+                    <a href="login.html"><button class="green-login-shadow">Log in</button></a>
                 </div>
             </div>
         </nav>
     </header>
-    <div>
-        <img src="./images/maddi-bazzocco-Hz4FAtKSLKo-unsplash.jpg" class="img-fluid" alt="groceries">
-    </div>
-    <div class="container">
-        <br>
-        <br>
-        <h3> Welcome to Strata Deli</h3>
-        <p>Strata Deli makes your grocery shopping experience safe, effortless, and affordable.</p>
 
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">HOW STRATA DELI WORKS</h5>
-                        <p class="card-text">We significantly lower the cost for delivery through bulk strata purchase.
-                        </p>
-                        <a href="#" class="green-button-shadow">More Info</a>
+
+    <!-- Body -->
+    <main>
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active item-carousel">
+                    <img src=./images/carousel.jpg>
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <rect width="100%" height="100%" fill="#777" />
+                    </svg>
+
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>strataDeli</h1>
+                            <p>Lets bring the grocery store to you.</p>
+                            <p><a class="btn btn-outline-success" href="login.html">Sign up today</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src=./images/carousel1.jpeg>
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <rect width="100%" height="100%" fill="#777" />
+                    </svg>
+
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Vancouver's Most Affordable Grocery Delivery Service</h1>
+                            <p>Get quality ingredients delivered directly to your door! As low as FREE shipping!</p>
+                            <p><a class="btn btn-outline-success" href="#">See Pricing</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src=./images/carousel2.jpeg>
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <rect width="100%" height="100%" fill="#777" />
+                    </svg>
+
+                    <div class="container">
+                        <div class="carousel-caption text-end">
+                            <h1>Is your apartment eligible?</h1>
+                            <p>Probably, but lets confirm!</p>
+                            <p><a class="btn btn-outline-success" href="#">Browse gallery</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">SEE PRICING</h5>
-                        <p class="card-text">No commitment and cancel anytime you want. </p>
-                        <a href="#" class="green-button-shadow">More Info</a>
-                    </div>
-                </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </div>
-    <br>
-    <br>
-    <div>
-        <img src="./images/sign_up_bg_pic.png" class="img-fluid" alt="signup">
-    </div>
+    </main>
     <br><br><br><br><br><br><br><br>
 
     <!-- FOOTER -->
@@ -182,37 +230,6 @@
         }
         enterSearch
         clickSearch
-    </script>
-
-    <script>
-        function grabItemsInArray() {
-            let groceryItems = []; // Create empty array
-            db.collection('categories')
-                .get()
-                .then(function (snap) {
-                    snap.forEach(function (doc) {
-                        var insideCategories = doc.data().hi; // create variable for map: "hi" 
-                        for (var items in insideCategories) { // loop inside map: "hi"
-                            groceryItems.push(items); // append array name to empty array
-                        }
-                    })
-                    
-                })
-                return groceryItems; // return new array
-        }
-
-        // Trying to now use the return of grabItemsInArray to index
-        db.collection('categories')
-        .get()
-        .then(function(snap){
-            snap.forEach(function (doc){
-                var insideCategoriesArray = doc.data().hi; // <-- insert ".grabItemsInArray()[0]" and grab every item inside array : "bread"
-                console.log(insideCategoriesArray)
-            })
-        })
-
-        const stuff = grabItemsInArray() // bug --> something to do with .promise and .then
-        console.log(stuff)
     </script>
 
 </body>
