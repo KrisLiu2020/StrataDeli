@@ -79,3 +79,31 @@ function sendRequestToFirebase(userName, userPhone, userAddress, userCity, userM
         message: userMessage
     });
 }
+
+// Functions for faq.html to read information from database
+function displayQuestion() {
+    db.collection("FAQ").get()
+        .then(function (snap) {
+            snap.forEach(function (doc) {
+                var n = doc.data().question;
+                console.log(n);
+                var questionid = doc.data().qcode;
+                console.log(questionid);
+                document.getElementById(questionid).innerText = n;
+            })
+
+        })
+}
+function displayAnswer() {
+    db.collection("FAQ").get()
+        .then(function (snap) {
+            snap.forEach(function (doc) {
+                var n = doc.data().answer;
+                console.log(n);
+                var answerid = doc.data().acode;
+                console.log(answerid);
+                document.getElementById(answerid).innerText = n;
+            })
+
+        })
+}

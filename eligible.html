@@ -43,6 +43,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="faq.html">FAQ</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="eligible.html">Eligibility</a>
+                        </li>
                     </ul>
                     <a href="login.html"><button class="green-login-shadow">Log in</button></a>
                 </div>
@@ -109,7 +112,7 @@
             </div>
         </div>
 
-        <!-- Second modal dialog -->
+        <!-- Second Modal-->
         <div class="modal fade" id="modal2" aria-hidden="true" aria-labelledby="..." tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -130,7 +133,7 @@
 
         <!-- Google Map API-->
         <div id=google-map>
-            <iframe width="90%" height="1000" style="border:0" loading="lazy" allowfullscreen
+            <iframe width="90%" style="border:0; height: 50vh;" loading="lazy" allowfullscreen
                 src="https://www.google.com/maps/embed/v1/search?q=apartment&key=AIzaSyC1XB0QBikZnm5gH176Kf_BWCsOPFLf2sA"></iframe>
         </div>
 
@@ -138,7 +141,7 @@
     <br><br><br><br><br><br><br><br>
 
     <!-- FOOTER -->
-    <div id=footer>
+    <div id="footer">
         <footer class="container">
             <br><br><br><br><br>
             <div class="float-end">
@@ -172,34 +175,32 @@
             </div>
         </footer>
     </div>
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-        </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-    <!-- Link to the api keys for team43 firebase -->
-    <script src="scripts/firebase_team43.js"></script>
-
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
-    <script src="scripts/my_functions.js"></script>
-
-    <script>
-        document.getElementById('submit-request').addEventListener('click', function () {
-            gatherValues()
-            resetValues()
-        })
-
-    </script>
-
 </body>
-
 </html>
+<!----------------------------------------------->
+<!-- JS: Boostrap, Firebase, API related    -->
+<!----------------------------------------------->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+<!-- Link to the api keys for team43 firebase -->
+<script src="scripts/firebase_team43.js"></script>
+
+<!--------------------------------------------------------------------->
+<!-- JS files: Your own JavaScript functions included here    -->
+<!--------------------------------------------------------------------->
+<script src="scripts/my_functions.js"></script>
+
+<script>
+    document.getElementById('submit-request').addEventListener('click', function () {
+        gatherValues()
+        resetValues()
+    })
+
+</script>

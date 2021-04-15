@@ -16,54 +16,6 @@
   <!-- Optional styles and scripts of your own -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./styles/generalstyle.css">
-  <style>
-
-    .accordion {
-      background-color: #eee;
-      color: #444;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: 1px solid #D0D0D0;
-      border-radius: 5px;
-      text-align: left;
-      outline: none;
-      font-size: 15px;
-      transition: 0.4s;
-    }
-
-    .active,
-    .accordion:hover {
-      background-color: #ccc;
-    }
-
-    .panel {
-      padding: 0 18px;
-      display: none;
-      background-color: white;
-      overflow: hidden;
-      border: black;
-    }
-
-    #faq {
-      width: 50%;
-      padding: 20px;
-    }
-
-    .accordion:after {
-      content: '\02795';
-      /* Unicode character for "plus" sign (+) */
-      font-size: 13px;
-      color: #777;
-      float: right;
-      margin-left: 5px;
-    }
-
-    .active:after {
-      content: "\2796";
-      /* Unicode character for "minus" sign (-) */
-    }
-  </style>
 </head>
 
 <body>
@@ -75,38 +27,31 @@
   <!-- Header Navigation Bar -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="images/stratadeli.png">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <!--<li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li> -->
-                </ul>
-                <form class="position-absolute top-50 start-50 translate-middle">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search.." id="search-item">
-                        <div class="input-group-append">
-                            <button class="green-search" id="submit" disabled>
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <a href="login.html"><button class="green-login-shadow">Log In</button></a>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/stratadeli.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="eligible.html">Eligibility</a>
+            </li>
+          </ul>
+          <a href="login.html"><button class="green-login-shadow">Log in</button></a>
         </div>
+      </div>
     </nav>
-</header>
+  </header>
 
   <!-- FAQ Section Centered-->
   <br>
@@ -217,6 +162,7 @@
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
+  <script src="scripts/my_functions.js"></script>
   <script>
     var acc = document.getElementsByClassName("accordion");
     var i;
@@ -232,97 +178,9 @@
         }
       });
     }
-
-    function displayQuestion() {
-      db.collection("FAQ").get()
-        .then(function (snap) {
-          snap.forEach(function (doc) {
-            var n = doc.data().question;
-            console.log(n);
-            var questionid = doc.data().qcode;
-            console.log(questionid);
-            document.getElementById(questionid).innerText = n;
-          })
-
-        })
-    }
     displayQuestion();
-
-    function displayAnswer() {
-      db.collection("FAQ").get()
-        .then(function (snap) {
-          snap.forEach(function (doc) {
-            var n = doc.data().answer;
-            console.log(n);
-            var answerid = doc.data().acode;
-            console.log(answerid);
-            document.getElementById(answerid).innerText = n;
-          })
-
-        })
-    }
     displayAnswer();
   </script>
-<!--
-  <script>
-    function writeFAQ() {
-      var faqRef = db.collection("FAQ");
-
-      faqRef.add({
-        qcode: "q1-food-safety",
-        acode : "a1-food-safety",
-        question: "What precautions are you taking to ensure produce is delivered in a manner that prevents the spread of COVID-19?",
-        answer: "We employ our standard food safety precautions and food handling standards as part of our core operations to protect against any viruses or transmission of sickness. We perform regular deep cleans of our facility and employees are tested on a regularly to ensure we minimize our footprint on the Covid-19 Virus. Employees will wear gloves, masks, as well as face shields upon delivering your produce to your door."
-      });
-      faqRef.add({
-        qcode: "q2-food-safety",
-        acode: "a2-food-safety",
-        question: "How is StrataDeli ensuring the health and safety of its employees?",
-        answer: "All StrataDeli employees who can work from home will be working from home fr the foreseeable future to eliminate any unnecessary risks. All staff and visitors entering the facility are required to receive a non-contact temperature check, answer a COVID-19 questionnaire and provide contact information."
-      });
-      faqRef.add({
-        qcode: "q3-food-safety",
-        acode: "a3-food-safety",
-        question: "What is being done to prevent the potential spread of illness via my reusable produce cooler bag?",
-        answer: "As part of our regular sanitation procedures, we thoroughly clean and disinfect the bags when they return to our facility. Cleaning is done in a separate area from our ingredient processing area to avoid any cross contamination."
-      });
-      faqRef.add({
-        qcode: "q4-food-safety",
-        acode: "a4-food-safety",
-        question: "How will I know the quality and freshness of my produce?",
-        answer: "Here are StrataDeli, we are partnered with your local grocery stores the moment they receive their produce and stock. All produce and products are selected carefully to ensure it meets the standards of our customers."
-      });
-      faqRef.add({
-        qcode: "q1-general",
-        acode: "a1-general",
-        question: "When will my order be delivered?",
-        answer: "We deliver to each strata in bulk, thus there is a unique date set for every strata. This information will be available with your building manager or you can easily access the deliverable dates on your profile as well."
-      });
-      faqRef.add({
-        qcode: "q2-general",
-        acode: "a2-general",
-        question: "How do I know my Apartment or Condominium is served?",
-        answer: "After regisitering, you may check the list to see if your Apartment or Condominium is served. If it is not, you may make a request along with building manager and if there is a collective interest of people, we will include your Apartment or Condominium with our service!"
-      });
-      faqRef.add({
-        qcode: "q3-general",
-        acode: "a3-general",
-        question: "Where can I find my Recipes?",
-        answer: "Check your suggested recipe page and see your information!"
-      });
-      faqRef.add({
-        qcode: "q4-general",
-        acode: "a4-general",
-        question: "How do I find a specific product?",
-        answer: "Use the search tab at the very top of app! Look for a magnifying glass icon."
-      })
-    }
-  -->
-  </script>
-  <!--------------------------------------------------------------------->
-  <!-- JS files: Your own JavaScript functions included here    -->
-  <!--------------------------------------------------------------------->
-
 
 </body>
 
