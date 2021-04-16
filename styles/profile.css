@@ -1,0 +1,34 @@
+img.card-img-top {
+  width: 100%;
+  height: 100%;
+}
+
+input[type=search] {
+  width: 30vw;
+}
+
+.socialMediaIcon {
+  width: 32px;
+  height: 32px;
+}
+
+#footer {
+  background-color: black;
+  height: 20%; /* original is 500px*/
+}
+
+p a {
+  text-decoration: none;
+  list-style-type: none;
+  color: white;
+}
+
+p a:hover {
+  color: white;
+}
+
+#userImage {
+    border-radius: 50%;
+    margin: 1em;
+}
+
