@@ -204,10 +204,9 @@
             $("#categories-go-here").append('<div class="container">')
             $("#categories-go-here").append('<h4> <b> <a href="item.html?item=' + id + '">' + name + '</a></b></h4>')
             $("#categories-go-here").append('<p>' + intro + '</p>')
-            $("#categories-go-here").append('<p> <b>price</b> ' + price + ' /lb </p>')
+            $("#categories-go-here").append('<p> <b>price</b> ' + price + ' ea. </p>')
             $("#categories-go-here").append('<button type="button" class="green-button-shadow" id="' + id + '" style="width: 150px">Add to Cart</button>')
-            setTimeout(function() {addCartListenerById(id)}, 1000);
-            incrementItemInCart(id)
+            setTimeout(function() {addCartListenerById(id, price)}, 1000);
             $("#categories-go-here").append('</div>')
             $("#categories-go-here").append('</div>')
             $("#categories-go-here").append('</div>')
@@ -215,7 +214,7 @@
 
         displayCategory();
 
-        function addCartListenerById(docid) {
+        function addCartListenerById(docid, itemPrice) {
             document.getElementById(docid).addEventListener("click", function () {
                 console.log("adding " + docid + " to cart");
                 firebase.auth().onAuthStateChanged(function (user) {
@@ -224,7 +223,8 @@
                         .set({
                             CartByID: firebase.firestore.FieldValue.arrayUnion({
                                 name : docid,
-                                quantity: 1
+                                quantity: 1,
+                                price: itemPrice
                             })
                         }, {
                             merge: true
@@ -232,6 +232,7 @@
                 })
             })
         }
+        /*
         function incrementItemInCart(itemID){
             document.getElementById(itemID).addEventListener("click", function () {
                 firebase.auth().onAuthStateChanged(function (user) {
@@ -244,7 +245,9 @@
                         })
                     })        
                })
-        }   
+        }
+        */
+
     </script>
 
 </body>
