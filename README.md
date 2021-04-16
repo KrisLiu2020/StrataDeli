@@ -20,7 +20,18 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
+├── index.html		     # landing HTML file, this is what users see when you come to url
+├── about.html
+├── category.html
+├── checkout.html
+├── eligible.html
+├── faq.html
+├── item.html
+├── login.html
+├── main.html
+├── profile.html
+├── suggestedrecipe.html
+├── vegi.html
 └── README.md
 
 It has the following subfolders and files:
@@ -28,10 +39,19 @@ It has the following subfolders and files:
 ├── images                   # Folder for images
     /blah.jpg                # 
 ├── scripts                  # Folder for scripts
-    /blah.js                 # 
+    /blah.js                 #
+    /firebase_team43.js
+    /my_functions.js
 ├── styles                   # Folder for styles
-    /blah.css                # 
-
+|   /blah.css                # 
+|   /carousel.css
+|   /generalstyle.css
+|   /item.css
+|   /itemdisplay.css
+|   /profile.css
+|   /sidebar.css
+|   /suggestedrecipe.css
+|
 Firebase hosting files: 
 ├── .firebaserc...
 
