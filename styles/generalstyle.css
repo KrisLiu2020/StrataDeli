@@ -7,6 +7,29 @@
     width: 100%;
 }
 
+.row{
+    text-align: center;
+}
+
+.column-stores{
+    padding-top: 6em;
+    padding-bottom: 6em;
+    background-color: lightgrey;
+}
+#column-stores-heading{
+    font-family: "Lucida Console";
+    padding-bottom: 2em;
+}
+
+.h-100{
+    padding-top:10em;
+}
+
+#start-shopping{
+    padding: 0.5em 2em 0.5em 2em;
+    font-size: 1.2em;
+}
+
 #footer {
     background-color: black;
     height: 500px;
@@ -26,7 +49,6 @@ p a:hover {
 .input-group>input[type=text] {
     width: 30vw;
 }
-
 .has-search .form-control {
     padding-left: 2.375rem;
 }
@@ -156,7 +178,6 @@ p a:hover {
 
   .accordion:after {
     content: '\02795';
-    /* Unicode character for "plus" sign (+) */
     font-size: 13px;
     color: #777;
     float: right;
@@ -165,5 +186,4 @@ p a:hover {
 
   .accordion.active:after {
     content: "\2796";
-    /* Unicode character for "minus" sign (-) */
   }
