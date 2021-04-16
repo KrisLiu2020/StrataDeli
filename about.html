@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>TEAM43 Strata Deli</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <title>StrataDeli</title>
+    <meta name="COMP-1800" content="Team 43">
     <meta name="author" content="Kerry, Kris, Tomo">
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
@@ -13,7 +13,7 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <!-- Optional styles and scripts of your own -->
-    <link href="styles/carousel.css" rel="stylesheet">
+    <link href="styles/carousel.css" rel="stylesheet">  <!-- Necessary to ensure proper div classes-->
     <link href="styles/generalstyle.css" rel="stylesheet">
 </head>
 
@@ -22,17 +22,24 @@
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
-    <!-- Header Navigation Bar -->
+
+    <!-- HEADER NAVIGATION BAR -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
           <div class="container-fluid">
+
+        <!--Clickable Logo-->
             <a class="navbar-brand" href="index.html">
               <img src="images/stratadeli.png">
             </a>
+
+        <!--Bootstrap Collapse Button when shrunk or Mobile-First-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
               aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
+
+        <!--Placing items that we want to collapse into Bootstrap Collapse Button-->
             <div class="collapse navbar-collapse " id="navbarCollapse">
               <ul class="navbar-nav me-auto mb-2 mb-md-0">
                 <li class="nav-item">
@@ -47,30 +54,34 @@
               </ul>
               <a href="login.html"><button class="green-login-shadow">Log in</button></a>
             </div>
+
           </div>
         </nav>
       </header>
+    <!--END THE HEADER-->
+    
 
-    <!-- START THE FEATURETTES -->
+    <!--START THE FEATURETTES-->
     <div class="container">
         <hr class="featurette-divider">
 
+
+    <!--Featurette Top-->
         <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="featurette-heading">The <span class="text-muted">Beginning.</span>
                 </h2>
                 <p class="lead">Strata Deli was started in the New Year of 2021 by BCIT Computer Systems Technology
-                    students
-                    who were all in search of an easier answer to the question "How can we avoid COVID 19"
+                    students who were all in search of an easier answer to the question "How can we avoid COVID 19"
                     For busy people who live in apartments, they found there were too many obstacles to cooking a
-                    wholesome meal at
-                    home and that made it all too appealing to just grab fast food instead. They figured there had to be
-                    a better option and that’s why they started Strata Deli.
-
+                    wholesome meal at home and that made it all too appealing to just grab fast food instead. They 
+                    figured there had to be a better option and that’s why they started Strata Deli.
                     With Strata Deli you just click and cook. It’s gone from dream to reality and we’re on a mission to
                     share this great solution with all of Vancouver, and to do it in an honest and sustainable way while
                     saving lots of $ on delivery fees!</p>
             </div>
+
+    <!--Featurette Top Image-->
             <div class="col-md-5">
                 <img src="https://www.premiercommunity.co.uk/wp-content/uploads/90996156_185407c.jpg" width="100%" ,
                     height="100%">
@@ -79,6 +90,7 @@
 
         <hr class="featurette-divider">
 
+    <!--Featurette Middle-->
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
                 <h2 class="featurette-heading">Our <span class="text-muted">Mission</span>
@@ -90,6 +102,8 @@
                     easiest way for you to access the highest quality food, everyday. We are committed to making your
                     life in the kitchen, and outside the kitchen, as easy and as stress-free as possible.</p>
             </div>
+
+    <!--Featurette Middle Image-->
             <div class="col-md-5 order-md-1">
                 <img src="images/salad.jpg" width="100%" , height="100%">
             </div>
@@ -97,6 +111,7 @@
 
         <hr class="featurette-divider">
 
+    <!--Featurette Bottom-->
         <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="featurette-heading">How StrataDeli<span class="text-muted"> Works</span></h2>
@@ -108,22 +123,22 @@
                     your essential items!
                 </p>
             </div>
+     
+    <!--Featurette Bottom Image-->        
             <div class="col-md-5">
                 <img src="https://www.gannett-cdn.com/presto/2019/06/24/USAT/13e52c05-380a-4714-97a0-79a15033d1ae-instacart-0227-2117-final.jpg?width=660&height=347&fit=crop&format=pjpg&auto=webp"
                     width="100%" , height="100%">
-
             </div>
         </div>
 
         <hr class="featurette-divider">
     </div>
 
-    <!-- /END THE FEATURETTES -->
+    <!--END THE FEATURETTES-->
 
 
-    <!-- FOOTER -->
+    <!--FOOTER-->
     <div id=footer class="sticky-bottom">
-        <!--Change to sticky-bottom when we have more content-->
         <footer class="container">
             <br><br><br><br><br>
             <div class="float-end">
@@ -155,12 +170,13 @@
             </div>
         </footer>
     </div>
+    <!--END THE FOOTER-->
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
     <!----------------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
