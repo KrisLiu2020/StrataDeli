@@ -1,5 +1,5 @@
 .main-display {
-    background-color: rgb(141, 189, 86);
+    background-color: rgb(200, 223, 166);
 }
 
 .text {
@@ -16,10 +16,40 @@
 }
 
 .categories {
-    margin: 5px;
-    
+    margin-left: 4vw;
+    margin-bottom: 5vh;
 }
 
 .link-to-category {
     display:inline-block;
+    margin: 1vw;
 }
+
+.scroll-img{
+    width: 25vw;
+    margin: 2vw;
+}
+
+div.scrollmenu {
+    background-color: rgb(255, 255, 255);
+    overflow: auto;
+    white-space: nowrap;
+}
+  
+div.scrollmenu a {
+    display: inline-block;
+    color: rgb(228, 222, 222);
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+  
+div.scrollmenu a:hover {
+    background-color: #777;
+}
+
+#history-items {
+    margin-left: 6vw;
+    margin-bottom: 0%;
+}
+
