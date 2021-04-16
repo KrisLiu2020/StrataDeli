@@ -37,12 +37,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <!--<li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li> -->
+
                     </ul>
                     <form class="position-absolute top-50 start-50 translate-middle">
                         <div class="input-group">
@@ -64,27 +59,13 @@
             </div>
         </nav>
     </header>
-    <!-- sidebar section -->
-    <!-- <div class="sidenav">
-        <br><br><br>
-        <hr style=" color: grey;">
-        <a style="color: rgb(189, 185, 185)">Categories</a>
-        <hr style="color: grey;">
-        <a href="category.html?order=veggies">veggies</a>
-        <a href="category.html?order=meat">meat</a>
-        <a href="category.html?order=dairy">dairy</a>
-        <a href="category.html?order=bakery">bakery</a>
-        <a href="category.html?order=frozen">frozen</a>
-        <a href="category.html?order=beauty">beauty</a>
-        <br><br><br>
-    </div> -->
     <section id="item-card">
         <img id="item-pic-display" src="./images/carrot.jpg">
         <br><br>
         <div id='item-info'>
             <h2>Organic Carrots</h2>
             <h4>1.78/lb</h4>
-            <button id="btnclick" type="button" class="btn btn-success" style="display: inline-block">Add to
+            <button id="btnclick" type="button" class="btn btn-success" style="display: inline-block" >Add to
                 Cart</button>
             <h5 id="item-number-goes-here"></h5>
             <button type="button" class="btn btn-success" style="display: inline-block">Save the Item</button>
@@ -182,6 +163,13 @@
                                 counter: firebase.firestore.FieldValue.increment(1)
                             })
                         console.log("increment");
+                        
+                        var counterID = document.getElementById('counterID');
+                        if(counterID==null){
+                            displayCounter();
+                        }else{
+                            counterID.innerHTML= parseInt(counterID.innerHTML)+1;
+                        }
                     })
             }
 
@@ -191,9 +179,10 @@
                     .then(function (doc) {
                         let counter = doc.data().counter
                         console.log('doc',doc.data().counter)
-                        $("#item-number-goes-here").append('<p>' + counter + ' items in your cart</p>')
+                        $("#item-number-goes-here").append('<p><span id="counterID">' + counter + '</span> items in your cart</p>')
                     })
             }
+            
             addCart();
             displayCounter();
         </script>
