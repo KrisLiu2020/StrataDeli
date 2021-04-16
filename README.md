@@ -37,11 +37,24 @@ Content of the project folder:
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /blah.jpg                # 
+|   /blah.jpg                #
+|   /apple.jpg
+|   /app-store.png
+|   /bakery.jpg
+|   /beef.jpg
+|   /bell.png
+|   /berries.jpg
+|   /black_bread.jpg
+|   /busy-grocery.jpeg
+|   /carousel.jpg
+|   /carousel1.jpg
+|   /carousel2.jpg
+|   /carrot.jpg
+|
 ├── scripts                  # Folder for scripts
-    /blah.js                 #
-    /firebase_team43.js
-    /my_functions.js
+|   /blah.js                 #
+|   /firebase_team43.js
+|   /my_functions.js
 ├── styles                   # Folder for styles
 |   /blah.css                # 
 |   /carousel.css
