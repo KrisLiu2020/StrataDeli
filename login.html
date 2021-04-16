@@ -3,21 +3,20 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+    <title>StrataDeli</title>
+    <meta name="COMP-1800" content="Team 43">
+    <meta name="author" content="Kerry, Kris, Tomo">
 
     <!-- Bootstrap, Firebase AuthUI -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Optional styles and scripts of your own -->
     <link rel="stylesheet" href="./styles/generalstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="styles/carousel.css" rel="stylesheet">
-</head>
 </head>
 
 <body>
@@ -25,47 +24,43 @@
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
-    <!-- Header Navigation Bar -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="images/stratadeli.png">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse " id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="faq.html">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="eligible.html">Eligibility</a>
-                        </li>
-                    </ul>
-                    <!--
-                    <form class="alignCenter" onSubmit="return false;">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search.." id="search-item">
-                            <div class="input-group-append">
-                                <button class="green-search" id="submit" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                -->
-                    <a href="login.html"><button class="green-login-shadow">Log in</button></a>
-                </div>
-            </div>
-        </nav>
-    </header>
 
+     <!-- HEADER NAVIGATION BAR -->
+     <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+          <div class="container-fluid">
+
+        <!--Clickable Logo-->
+            <a class="navbar-brand" href="index.html">
+              <img src="images/stratadeli.png">
+            </a>
+
+        <!--Bootstrap Collapse Button when shrunk or Mobile-First-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <!--Placing items that we want to collapse into Bootstrap Collapse Button-->
+            <div class="collapse navbar-collapse " id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="faq.html">FAQ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="eligible.html">Eligibility</a>
+                </li>
+              </ul>
+              <a href="login.html"><button class="green-login-shadow">Log in</button></a>
+            </div>
+
+          </div>
+        </nav>
+      </header>
+    <!--END THE HEADER-->
 
 
     <div class="container">
@@ -81,8 +76,8 @@
     <br><br><br><br>
 
 
-     <!-- FOOTER -->
-     <div id=footer class="sticky-bottom">
+     <!--FOOTER-->
+    <div id=footer class="sticky-bottom">
         <footer class="container">
             <br><br><br><br><br>
             <div class="float-end">
@@ -114,6 +109,8 @@
             </div>
         </footer>
     </div>
+    <!--END THE FOOTER-->
+
     <!----------------------------------------------->
     <!-- JS: Boostrap, JQuery, Firebase, API related    -->
     <!----------------------------------------------->
@@ -134,6 +131,7 @@
     <!--------------------------------------------------------------------->
 
     <script>
+
         // Initialize the FirebaseUI Widget using Firebase.
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
         var uiConfig = {

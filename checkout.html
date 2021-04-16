@@ -255,19 +255,7 @@
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-    <script src="scripts/my_functions.js"></script>
-    <script>
-
-        var checkoutItems = displayYourCart()
-
-        document.getElementById('place-order').addEventListener('click', function () {
-            gatherCheckoutInformation(checkoutItems);
-        })
-        document.getElementById('return-home').addEventListener('click', function() {
-            deleteUserCart()
-        })
-
-    </script>
+    <script src="scripts/checkout.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
-body{
-    padding-top: 150px;
-    }
+main{
+    margin-top: 2em;
+}
 
 h1{
     margin-left: 2em;
@@ -12,5 +12,4 @@ h1{
 
 #saved-recipe{
     margin-top: 3em;
-    margin-left: 5em;
 }

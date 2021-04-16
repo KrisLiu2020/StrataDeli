@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>TEAM43 Strata Deli</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+    <title>StrataDeli</title>
+    <meta name="COMP-1800" content="Team 43">
+    <meta name="author" content="Kerry, Kris, Tomo">
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,25 +24,31 @@
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
-    <!-- Header Navigation Bar -->
+
+    <!-- HEADER NAVIGATION BAR -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
             <div class="container-fluid">
+                <!--Clickable Logo-->
                 <a class="navbar-brand" href="main.html">
                     <img src="images/stratadeli.png">
                 </a>
+
+                 <!--Bootstrap Collapse Button when shrunk or Mobile-First-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!--Placing items that we want to collapse into Bootstrap Collapse Button-->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
                     </ul>
                     </ul>
                     <a href="profile.html">
                         <img src="images/profile2.png" width="40px" , height="40px">
                     </a>
+
                     <a href="checkout.html">
                         <img src="images/cart2.png" width="40px" , height="40px">
                     </a>
@@ -52,7 +58,9 @@
                     Recipes</button></a>
         </nav>
     </header>
+    <!--END THE HEADER-->
 
+    <!--Static Page of a Carrot-->
     <section id="item-card">
         <img id="item-pic-display" src="./images/carrot.jpg">
         <br><br>
@@ -88,41 +96,42 @@
             </section>
         </section>
         <br>
-        <!-- FOOTER -->
-        <div id=footer class="sticky-bottom">
-            <footer class="container">
+    <!--End of Static Page of a Carrot-->
+
+    <!--FOOTER-->
+    <div id=footer class="sticky-bottom">
+        <footer class="container">
+            <br><br><br><br><br>
+            <div class="float-end">
                 <br><br><br><br><br>
-                <div class="float-end">
-                    <br><br><br><br><br>
-                    <a href="https://www.facebook.com/">
-                        <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format"
-                            class="socialMediaIcon"></a>
-                    <a href="https://www.instagram.com/">
-                        <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format"
-                            class="socialMediaIcon"></a>
-                    <a href="https://www.linkedin.com/company/">
-                        <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
-                            class="socialMediaIcon"></a>
-                    <p>
-                        <br><br>
-                        <img src="images/app-store.png" , width="150px" , height="40px">
-                        <br><br>
-                        <img src="images/play-store.png" , width="150px" , height="40px">
-                    </p>
-                </div>
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/stratadeliwhite.png">
-                </a>
-                <div>
-                    <br>
-                    <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
-                    <br>
-                    <p><a href="about.html">About Us</a></p>
-                    <p><a href="faq.html">FAQ</a></p>
-                    <p><a href="eligible.html">Eligibility</a></p>
-                </div>
-            </footer>
-        </div>
+                <a href="https://www.facebook.com/">
+                    <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
+                <a href="https://www.instagram.com/">
+                    <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
+                <a href="https://www.linkedin.com/company/">
+                    <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
+                        class="socialMediaIcon"></a>
+                <p>
+                    <br><br>
+                    <img src="images/app-store.png" , width="150px" , height="40px">
+                    <br><br>
+                    <img src="images/play-store.png" , width="150px" , height="40px">
+                </p>
+            </div>
+            <a class="navbar-brand" href="index.html">
+                <img src="images/stratadeliwhite.png">
+            </a>
+            <div>
+                <br>
+                <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
+                <br>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+                <p><a href="eligible.html">Eligibility</a></p>
+            </div>
+        </footer>
+    </div>
+    <!--END THE FOOTER-->
 
         <!----------------------------------------------->
         <!-- JS: Boostrap, Firebase, API related    -->
@@ -143,12 +152,8 @@
         <!--------------------------------------------------------------------->
         <!-- JS files: Your own JavaScript functions included here    -->
         <!--------------------------------------------------------------------->
-        <script src="scripts/my_functions.js"></script>
-        <script>
-            addCart();
-            displayCounter();
-            addCartForItem('carrot');
-        </script>
+        <script src="scripts/item.js"></script>
+
 </body>
 
 </html>

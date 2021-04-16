@@ -3,20 +3,18 @@
 
 <head>
   <meta charset="utf-8">
-  <title>TEAM43 Strata Deli</title>
-  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <title>StrataDeli</title>
+  <meta name="COMP-1800" content="Team 43">
   <meta name="author" content="Kerry, Kris, Tomo">
+
 
   <!-- Bootstrap for Mobile-first, and JQuery -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles/generalstyle.css">
-
 
   <!-- Optional styles and scripts of your own -->
-  <style>
-  </style>
+  <link rel="stylesheet" href="styles/generalstyle.css">
 
 </head>
 
@@ -25,25 +23,30 @@
   <!-------------------------------------->
   <!-- The following is HTML for layout -->
   <!-------------------------------------->
-  <!-- Header Navigation Bar -->
-  <header>
+   <!-- HEADER NAVIGATION BAR -->
+   <header>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
         <div class="container-fluid">
+            <!--Clickable Logo-->
             <a class="navbar-brand" href="main.html">
                 <img src="images/stratadeli.png">
             </a>
+
+             <!--Bootstrap Collapse Button when shrunk or Mobile-First-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!--Placing items that we want to collapse into Bootstrap Collapse Button-->
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
                 </ul>
                 </ul>
                 <a href="profile.html">
                     <img src="images/profile2.png" width="40px" , height="40px">
                 </a>
+
                 <a href="checkout.html">
                     <img src="images/cart2.png" width="40px" , height="40px">
                 </a>
@@ -53,8 +56,7 @@
                 Recipes</button></a>
     </nav>
 </header>
-  <br>
-  <br>
+<!--END THE HEADER-->
 
 
   <div class="container">
@@ -131,88 +133,7 @@
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
-  <script src="scripts/my_functions.js"></script>
-  <script>
-    sayHello();
-    function displayCities() {
-      db.collection("coverage").get()
-        .then(function (snap) {
-          snap.forEach(function (doc) {
-            var code = doc.data().code;
-            console.log(code);
-            var name = doc.data().strata;
-            console.log(name);
-            if ((code) === "TS")
-              document.getElementById(code).innerText = name;
-          })
-
-        })
-    }
-    displayCities();
-
-    function displayAddress() {
-      db.collection("coverage").get()
-        .then(function (snap) {
-          snap.forEach(function (doc) {
-            var addressCode = doc.data().ad_code;
-            console.log(addressCode);
-            var address = doc.data().address;
-            console.log(address);
-            if (addressCode === "oldpeople") {
-              document.getElementById(addressCode).innerText = address;
-            }
-          })
-        })
-    }
-    displayAddress();
-
-    setTimeout(
-      function displayImage() {
-        db.collection("users").get()
-          .then(function (snap) {
-            snap.forEach(function (doc) {
-              var namedisplayed = document.getElementById("name-goes-here").innerText;
-              var imgNum = doc.data().img;
-              console.log(imgNum);
-              var user_name = doc.data().name;
-              console.log(user_name);
-              console.log(namedisplayed);
-              if (namedisplayed == user_name) {
-                document.getElementById('userImage').src = "https://randomuser.me/api/portraits/men/" + imgNum + ".jpg";
-                console.log("the same");
-              }
-            })
-          })
-      }, 3000);
-
-    /*
-  function addToCart() {
-    firebase.auth().onAuthStateChanged(function (somebody) {
-      if (somebody) {
-        console.log(somebody.uid);
-        db.collection("users")
-          .doc(somebody.uid)
-          .get()                  //READ!!!
-          .then(function (doc) {
-            email = doc.data().email;
-            addToUserItemsInCart(email)
-          })
-
-      }
-    })
-
-  }
-  function addToUserItemsInCart(userEmail) {
-    var cartRef = db.collection("user_items_cart");
-    cartRef.add({
-      email: userEmail
-    });
-  }
-  addToCart()
-*/
-
-  </script>
-
+  <script src="scripts/profile.js"></script>
 
 </body>
 

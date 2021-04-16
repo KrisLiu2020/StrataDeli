@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <title>TEAM43 Strata Deli</title>
-  <meta name="comp1800 boilerplate code" content="my bcit project">
-  <meta name="author" content="BCIT">
+  <title>StrataDeli</title>
+  <meta name="COMP-1800" content="Team 43">
+  <meta name="author" content="Kerry, Kris, Tomo">
 
   <!-- Bootstrap for Mobile-first, and JQuery -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,6 +58,7 @@
   <br>
   <br>
 
+  <!--Accordion to Display FAQ Questions-->
   <div id="faq">
     <h1>FAQ</h1>
     <br>
@@ -106,42 +107,43 @@
       <p id="a4-general">text</p>
     </div>
   </div>
-  <!-- FOOTER -->
-  <div id=footer class="sticky-bottom">
-    <!--Change to sticky-bottom when we have more content-->
-    <footer class="container">
-      <br><br><br><br><br>
-      <div class="float-end">
-        <br><br><br><br><br>
-        <a href="https://www.facebook.com/">
-          <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
-        <a href="https://www.instagram.com/">
-          <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
-        <a href="https://www.linkedin.com/company/">
-          <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
-            class="socialMediaIcon"></a>
-        <p>
-          <br><br>
-          <img src="images/app-store.png" , width="150px" , height="40px">
-          <br><br>
-          <img src="images/play-store.png" , width="150px" , height="40px">
-        </p>
-      </div>
-      <a class="navbar-brand" href="index.html">
-        <img src="images/stratadeliwhite.png">
-      </a>
-      <div>
-        <br>
-        <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
-        <br>
-        <p><a href="about.html">About Us</a></p>
-        <p><a href="/Story">Careers</a></p>
-        <p><a href="faq.html">FAQ</a></p>
-        <p><a href="/Story">Contact Us</a></p>
-        <p><a href="/Story">Terms & Conditions</a></p>
-      </div>
-    </footer>
+  <!--END Accordion-->
+
+
+    <!--FOOTER-->
+    <div id=footer class="sticky-bottom">
+      <footer class="container">
+          <br><br><br><br><br>
+          <div class="float-end">
+              <br><br><br><br><br>
+              <a href="https://www.facebook.com/">
+                  <img src="https://freshprep.imgix.net/footer/fb_icon.png?auto=format" class="socialMediaIcon"></a>
+              <a href="https://www.instagram.com/">
+                  <img src="https://freshprep.imgix.net/footer/ig_icon.png?auto=format" class="socialMediaIcon"></a>
+              <a href="https://www.linkedin.com/company/">
+                  <img src="https://cdn.fastly.picmonkey.com/content4/previews/icons_linkedin/icons_linkedin_17_550.webp"
+                      class="socialMediaIcon"></a>
+              <p>
+                  <br><br>
+                  <img src="images/app-store.png" , width="150px" , height="40px">
+                  <br><br>
+                  <img src="images/play-store.png" , width="150px" , height="40px">
+              </p>
+          </div>
+          <a class="navbar-brand" href="index.html">
+              <img src="images/stratadeliwhite.png">
+          </a>
+          <div>
+              <br>
+              <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
+              <br>
+              <p><a href="about.html">About Us</a></p>
+              <p><a href="faq.html">FAQ</a></p>
+              <p><a href="eligible.html">Eligibility</a></p>
+          </div>
+      </footer>
   </div>
+  <!--END THE FOOTER-->
 
   <!----------------------------------------------->
   <!-- JS: Boostrap, Firebase, API related    -->
@@ -162,12 +164,7 @@
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
-  <script src="scripts/my_functions.js"></script>
-  <script>
-    showAndHideAccordion();
-    displayQuestion();
-    displayAnswer();
-  </script>
+  <script src="scripts/faq.js"></script>
 
 </body>
 

@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>TEAM43 Strata Deli</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <title>StrataDeli</title>
+    <meta name="COMP-1800" content="Team 43">
     <meta name="author" content="Kerry, Kris, Tomo">
+
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,39 +15,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Optional styles and scripts of your own -->
-    <!-- <link rel="stylesheet" href="./styles/sidebar.css"> -->
     <link rel="stylesheet" href="./styles/itemsdisplay.css">
     <link rel="stylesheet" href="./styles/generalstyle.css">
-    <style>
-        body {
-            background-color: #fffefe;
-        }
-    </style>
+
 </head>
 
 <body>
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
-    <!-- Header Navigation Bar -->
+    
+    <!-- HEADER NAVIGATION BAR -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
+                <!--Clickable Logo-->
+                <a class="navbar-brand" href="main.html">
                     <img src="images/stratadeli.png">
                 </a>
+
+                 <!--Bootstrap Collapse Button when shrunk or Mobile-First-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!--Placing items that we want to collapse into Bootstrap Collapse Button-->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
                     </ul>
                     </ul>
                     <a href="profile.html">
                         <img src="images/profile2.png" width="40px" , height="40px">
                     </a>
+
                     <a href="checkout.html">
                         <img src="images/cart2.png" width="40px" , height="40px">
                     </a>
@@ -56,21 +58,9 @@
                     Recipes</button></a>
         </nav>
     </header>
-    <!-- sidebar section -->
-    <!-- <div class="sidenav">
-        <br><br><br>
-        <hr style=" color: grey;">
-        <a style="color: rgb(189, 185, 185)">Categories</a>
-        <hr style="color: grey;">
-        <a href="category.html?order=veggies">veggies</a>
-        <a href="category.html?order=meat">meat</a>
-        <a href="category.html?order=dairy">dairy</a>
-        <a href="category.html?order=bakery">bakery</a>
-        <a href="category.html?order=frozen">frozen</a>
-        <a href="category.html?order=beauty">beauty</a>
-        <br><br><br>
-    </div> -->
-    <!-- main display section -->
+    <!--END THE HEADER-->
+
+    <!-- Main Display -->
     <br>
     <div class='main-display'>
         <div class="text">
@@ -80,6 +70,8 @@
     </div>
     <br>
     <p id="history-items">History Items</p>
+
+    <!-- Mobile Scroll Menu-->
     <div class="scrollmenu">
         <img src="./images/carrot.jpg" class="scroll-img">
         <img src="./images/sliced_bread.jpeg" class="scroll-img">
@@ -88,13 +80,10 @@
         <img src="./images/yogurt.jpg" class="scroll-img">
         <img src="./images/strawberry.jpg" class="scroll-img">
         <hr>
-        <!-- <a href="#news">veggies</a>
-        <a href="#news">meat</a>
-        <a href="#contact">dairy</a>
-        <a href="#about">bakery</a>
-        <a href="#about">frozen</a>
-        <a href="#about">beauty</a> -->
     </div>
+    <!--End of Mobile Scroll Menu-->
+
+    <!--Categories Section-->
     <div class="categories">
         <p style="margin-left: 1vw;">Categories</p>
         <a class="link-to-category" href="category.html?order=veggies">
@@ -122,9 +111,10 @@
             <h4>beauty</h4>
         </a>
     </div>
-    <!-- FOOTER -->
+    <!--End of Categories Section-->
+
+    <!--FOOTER-->
     <div id=footer class="sticky-bottom">
-        <!--Change to sticky-bottom when we have more content-->
         <footer class="container">
             <br><br><br><br><br>
             <div class="float-end">
@@ -151,13 +141,13 @@
                 <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
                 <br>
                 <p><a href="about.html">About Us</a></p>
-                <p><a href="/Story">Careers</a></p>
                 <p><a href="faq.html">FAQ</a></p>
-                <p><a href="/Story">Contact Us</a></p>
-                <p><a href="/Story">Terms & Conditions</a></p>
+                <p><a href="eligible.html">Eligibility</a></p>
             </div>
         </footer>
     </div>
+    <!--END THE FOOTER-->
+
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
     <!----------------------------------------------->
@@ -175,80 +165,10 @@
 
     <!-- Link to the api keys for your firebase project -->
     <script src="scripts/firebase_team43.js"></script>
-    <script src="scripts/my_functions.js"></script>
-
 
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-
-    <script>
-        function displayCategories() {
-            db.collection('categories')
-                .get()
-                .then(function (snap) {
-                    snap.forEach(function (doc) {
-                        console.log("1.", doc.id)
-                        var category = doc.id
-                        $("#categories-go-here").append("<h5 id ='" + doc.id + "'>" + category + "</h5>")
-                        addCategoriesRedirection(category)
-                    })
-                })
-        }
-        displayCategories();
-
-        function selectIdForImg() {
-            db.collection('categories')
-                .get()
-                .then(function (snap) {
-                    snap.forEach(function (doc) {
-                        if (doc.id == 'veggies') {
-                            $('#veggies').prepend("<img src='./images/vegetables.jpg' style='height: 5em; width: 8em'>")
-                        }
-                        if (doc.id == 'meat') {
-                            $('#meat').prepend("<img src='./images/meat.jpg' style='height: 5em; width: 8em;'>")
-                        }
-                        if (doc.id == 'beauty') {
-                            $('#beauty').prepend("<img src='./images/healthandbeauty.jpg' style='height: 5em; width: 8em;'>")
-                        }
-                        if (doc.id == 'frozen') {
-                            $('#frozen').prepend("<img src='./images/frozen.jpg' style='height: 5em; width: 8em;'>")
-                        }
-                        if (doc.id == 'bakery') {
-                            $('#bakery').prepend("<img src='./images/bakery.jpg' style='height: 5em; width: 8em;'>")
-                        }
-                        if (doc.id == 'dairy') {
-                            $('#dairy').prepend("<img src='./images/milk.jpg' style='height: 5em; width: 8em;'>")
-                        }
-                    })
-                })
-        }
-        selectIdForImg();
-
-        // function addCategoriesRedirection(id) {
-        //     document.getElementById(id)
-        //         .addEventListener("click", function () {
-        //             window.location.href = "category.html?id=" + id;
-        //             // Get category ID --> go into subcollection of veggies --> dynamically generate new cards of all items in subcollection : veggies
-        //         });
-        // }
-
-        var elements = document.getElementsByClassName("link-to-category");
-
-        function reply_click(clicked_id) {
-            console.log(clicked_id)
-            return clicked_id
-        }
-
-        for (var order = 0; order < elements.length; order++) {
-            elements[order].addEventListener('click', function () {
-                var id = reply_click
-                window.location.href = "category.html?order=" + id;
-            });
-        }
-
-
-    </script>
 
 </body>
 
