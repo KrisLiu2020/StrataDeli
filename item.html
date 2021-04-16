@@ -65,7 +65,7 @@
         <div id='item-info'>
             <h2>Organic Carrots</h2>
             <h4>1.78/lb</h4>
-            <button id="btnclick" type="button" class="btn btn-success" style="display: inline-block">Add to
+            <button id="carrot" type="button" class="btn btn-success" style="display: inline-block">Add to
                 Cart</button>
             <h5 id="item-number-goes-here"></h5>
             <button type="button" class="btn btn-success" style="display: inline-block">Save the Item</button>
@@ -154,9 +154,9 @@
 
         <script>
             function addCart() {
-                document.getElementById('btnclick')
+                document.getElementById('carrot')
                     .addEventListener('click', function () {
-                        console.log('btn clicked!')
+                        console.log('carrot clicked!')
                         db.collection('veggies')
                             .doc('carrot')
                             .update({
@@ -184,13 +184,13 @@
             }
 
             function addCartListenerById() {
-                document.getElementById('btnclick').addEventListener("click", function () {
-                    console.log("adding " + 'btnclick' + "to cart");
+                document.getElementById('carrot').addEventListener("click", function () {
+                    console.log("adding " + 'carrot' + "to cart");
                     firebase.auth().onAuthStateChanged(function (user) {
                         db.collection("users")   //part of the user's doc
                             .doc(user.uid)
                             .set({
-                                CartByID: firebase.firestore.FieldValue.arrayUnion('btnclick')
+                                CartByID: firebase.firestore.FieldValue.arrayUnion('carrot')
                             }, {
                                 merge: true
                             });
