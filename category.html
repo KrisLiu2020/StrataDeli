@@ -44,21 +44,14 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <form class="position-absolute top-50 start-50 translate-middle">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search.." id="search-item">
-                            <div class="input-group-append">
-                                <button class="green-search" id="submit" disabled>
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+                    </ul>
                     </ul>
                     <a href="profile.html">
                         <img src="images/profile2.png" width="40px" , height="40px">
                     </a>
-                    <a href="cart.html">
+                    <a href="checkout.html">
                         <img src="images/cart2.png" width="40px" , height="40px">
                     </a>
                 </div>
@@ -75,9 +68,27 @@
         <div id="categories-go-here" style="display: inline; float: left; width: 50em;"></div>
     </div>
 
+    <!--Added to Cart Modal-->
+    <div class="modal" tabindex="-1" id="add-to-cart-response">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cart(1)</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>You have successfully added to cart!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a href="checkout.html"><button" class="btn btn-success">Checkout</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <!-- FOOTER -->
     <div id=footer class="sticky-bottom">
-        <!--Change to sticky-bottom when we have more content-->
         <footer class="container">
             <br><br><br><br><br>
             <div class="float-end">
@@ -104,10 +115,8 @@
                 <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
                 <br>
                 <p><a href="about.html">About Us</a></p>
-                <p><a href="/Story">Careers</a></p>
                 <p><a href="faq.html">FAQ</a></p>
-                <p><a href="/Story">Contact Us</a></p>
-                <p><a href="/Story">Terms & Conditions</a></p>
+                <p><a href="eligible.html">Eligibility</a></p>
             </div>
         </footer>
     </div>
@@ -136,102 +145,8 @@
     <!--------------------------------------------------------------------->
 
     <script>
-        function displayCategory() {
-            let params = (new URL(document.location)).searchParams;
-            let pageId = params.get("order");
-            console.log('pageId', pageId)
-            if (pageId == 'veggies')
-                db.collection('veggies')
-                    .get()
-                    .then(function (snap) {
-                        snap.forEach(function (doc) {
-                            displayEachCategory(doc)
-                        })
-                    })
-            else if (pageId == 'meat')
-                db.collection('meat')
-                    .get()
-                    .then(function (snap) {
-                        snap.forEach(function (doc) {
-                            displayEachCategory(doc)
-                        })
-                    })
-            else if (pageId == 'dairy')
-                db.collection('dairy')
-                    .get()
-                    .then(function (snap) {
-                        snap.forEach(function (doc) {
-                            displayEachCategory(doc)
-                        })
-                    })
-            else if (pageId == 'bakery')
-                db.collection('bakery')
-                    .get()
-                    .then(function (snap) {
-                        snap.forEach(function (doc) {
-                            displayEachCategory(doc)
-                        })
-                    })
-            else if (pageId == 'frozen')
-                db.collection('frozen')
-                    .get()
-                    .then(function (snap) {
-                        snap.forEach(function (doc) {
-                            displayEachCategory(doc)
-                        })
-                    })
-            else if (pageId == 'beauty')
-                db.collection('beauty')
-                    .get()
-                    .then(function (snap) {
-                        snap.forEach(function (doc) {
-                            displayEachCategory(doc)
-                        })
-                    })
-        }
-
-        function displayEachCategory(doc) {
-            // console.log('doc', doc.id)
-            var name = doc.data().name;
-            // console.log('name', name)
-            var img_path = doc.data().path;
-            var intro = doc.data().intro;
-            var price = doc.data().price;
-            var id = doc.id
-            $("#categories-go-here").append('<br><br>')
-            $("#categories-go-here").append('<div class="card">')
-            $("#categories-go-here").append("<img src=' " + img_path + " ' alt='Avatar' style='width:30%'>")
-            $("#categories-go-here").append('<div class="container">')
-            $("#categories-go-here").append('<h4> <b> <a href="item.html?item=' + id + '">' + name + '</a></b></h4>')
-            $("#categories-go-here").append('<p>' + intro + '</p>')
-            $("#categories-go-here").append('<p> <b>price</b> ' + price + ' ea. </p>')
-            $("#categories-go-here").append('<button type="button" class="green-button-shadow" id="' + id + '" style="width: 150px">Add to Cart</button>')
-            setTimeout(function() {addCartListenerById(id, price)}, 1000);
-            $("#categories-go-here").append('</div>')
-            $("#categories-go-here").append('</div>')
-            $("#categories-go-here").append('</div>')
-        }
 
         displayCategory();
-
-        function addCartListenerById(docid, itemPrice) {
-            document.getElementById(docid).addEventListener("click", function () {
-                console.log("adding " + docid + " to cart");
-                firebase.auth().onAuthStateChanged(function (user) {
-                    db.collection("users")   //part of the user's doc
-                        .doc(user.uid)
-                        .set({
-                            CartByID: firebase.firestore.FieldValue.arrayUnion({
-                                name : docid,
-                                quantity: 1,
-                                price: itemPrice
-                            })
-                        }, {
-                            merge: true
-                        });
-                })
-            })
-        }
         /*
         function incrementItemInCart(itemID){
             document.getElementById(itemID).addEventListener("click", function () {

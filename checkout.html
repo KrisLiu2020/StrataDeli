@@ -34,7 +34,6 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
@@ -50,36 +49,9 @@
 
             <div class="row g-5">
                 <div class="col-md-5 col-lg-4 order-md-last">
-                    <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="text-success">Your cart</span>
-                        <span class="badge bg-success rounded-pill">3</span>
+                    <h4 class="d-flex justify-content-between align-items-center mb-3" id="cart-quantity">
                     </h4>
-                    <ul class="list-group mb-3">
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                            <div>
-                                <h6 class="my-0">Product name</h6>
-                                <small class="text-muted">Brief description</small>
-                            </div>
-                            <span class="text-muted">$12</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                            <div>
-                                <h6 class="my-0">Second product</h6>
-                                <small class="text-muted">Brief description</small>
-                            </div>
-                            <span class="text-muted">$8</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                            <div>
-                                <h6 class="my-0">Third item</h6>
-                                <small class="text-muted">Brief description</small>
-                            </div>
-                            <span class="text-muted">$5</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Total</span>
-                            <strong>$20</strong>
-                        </li>
+                    <ul class="list-group mb-3" id="item-checkout">
                     </ul>
 
                     <form class="card p-2">
@@ -229,11 +201,31 @@
 
                         <hr class="my-4">
 
-                        <button class="w-100 btn btn-success btn-lg" type="submit">Place Order</button>
+                        <button class="w-100 btn btn-success btn-lg" id="place-order" type="button"
+                            data-bs-toggle="modal" data-bs-target="#payment-processed">Place Order</button>
                     </form>
                 </div>
             </div>
         </main>
+
+        <!--Modal-->
+        <div class="modal" tabindex="-1" id="payment-processed">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Order No. #A123456789</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="text-align: center;">
+                        <p>Payment Processed!</p>
+                        <img src=images/payment-verified.png style="width: 200px; height: 200px;">
+                    </div>
+                    <div class="modal-footer">
+                        <a href="main.html"><button type="button" class="btn btn-success" id="return-home">Return Home</button> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <footer class="my-5 pt-5 text-muted text-center text-small">
             <p class="mb-1">&copy; 2017–2021 StrataDeli</p>
@@ -244,6 +236,7 @@
             </ul>
         </footer>
     </div>
+
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
     <!----------------------------------------------->
@@ -264,10 +257,17 @@
     <!--------------------------------------------------------------------->
     <script src="scripts/my_functions.js"></script>
     <script>
-        validateCheckoutFields()
-    </script>
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+        var checkoutItems = displayYourCart()
+
+        document.getElementById('place-order').addEventListener('click', function () {
+            gatherCheckoutInformation(checkoutItems);
+        })
+        document.getElementById('return-home').addEventListener('click', function() {
+            deleteUserCart()
+        })
+
+    </script>
 </body>
 
 </html>

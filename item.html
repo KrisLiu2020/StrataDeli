@@ -26,7 +26,7 @@
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
                     <img src="images/stratadeli.png">
@@ -39,32 +39,26 @@
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
 
                     </ul>
-                    <form class="position-absolute top-50 start-50 translate-middle">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search.." id="search-item">
-                            <div class="input-group-append">
-                                <button class="green-search" id="submit" disabled>
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    </ul>
                     <a href="profile.html">
                         <img src="images/profile2.png" width="40px" , height="40px">
                     </a>
-                    <a href="cart.html">
+                    <a href="checkout.html">
                         <img src="images/cart2.png" width="40px" , height="40px">
                     </a>
                 </div>
             </div>
+            <a href="suggestedrecipe.html"><button type="button" class="btn btn-outline-secondary">Suggested
+                    Recipes</button></a>
         </nav>
     </header>
+
     <section id="item-card">
         <img id="item-pic-display" src="./images/carrot.jpg">
         <br><br>
         <div id='item-info'>
             <h2>Organic Carrots</h2>
-            <h4>1.78/lb</h4>
+            <h4>1.78 ea.</h4>
             <button id="carrot" type="button" class="btn btn-success" style="display: inline-block">Add to
                 Cart</button>
             <h5 id="item-number-goes-here"></h5>
@@ -124,10 +118,8 @@
                     <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
                     <br>
                     <p><a href="about.html">About Us</a></p>
-                    <p><a href="/Story">Careers</a></p>
                     <p><a href="faq.html">FAQ</a></p>
-                    <p><a href="/Story">Contact Us</a></p>
-                    <p><a href="/Story">Terms & Conditions</a></p>
+                    <p><a href="eligible.html">Eligibility</a></p>
                 </div>
             </footer>
         </div>
@@ -151,57 +143,11 @@
         <!--------------------------------------------------------------------->
         <!-- JS files: Your own JavaScript functions included here    -->
         <!--------------------------------------------------------------------->
-
+        <script src="scripts/my_functions.js"></script>
         <script>
-            function addCart() {
-                document.getElementById('carrot')
-                    .addEventListener('click', function () {
-                        console.log('carrot clicked!')
-                        db.collection('veggies')
-                            .doc('carrot')
-                            .update({
-                                counter: firebase.firestore.FieldValue.increment(1)
-                            })
-                        console.log("increment");
-
-                        var counterID = document.getElementById('counterID');
-                        if (counterID == null) {
-                            displayCounter();
-                        } else {
-                            counterID.innerHTML = parseInt(counterID.innerHTML) + 1;
-                        }
-                    })
-            }
-
-            function displayCounter() {
-                db.collection('veggies').doc('carrot')
-                    .get()
-                    .then(function (doc) {
-                        let counter = doc.data().counter
-                        console.log('doc', doc.data().counter)
-                        $("#item-number-goes-here").append('<p><span id="counterID">' + counter + '</span> items in your cart</p>')
-                    })
-            }
-
-            function addCartListenerById() {
-                document.getElementById('carrot').addEventListener("click", function () {
-                    console.log("adding " + 'carrot' + "to cart");
-                    firebase.auth().onAuthStateChanged(function (user) {
-                        db.collection("users")   //part of the user's doc
-                            .doc(user.uid)
-                            .set({
-                                CartByID: firebase.firestore.FieldValue.arrayUnion('carrot')
-                            }, {
-                                merge: true
-                            });
-                    })
-                })
-            }
-            addCartListenerById()
-
-
             addCart();
             displayCounter();
+            addCartForItem('carrot');
         </script>
 </body>
 

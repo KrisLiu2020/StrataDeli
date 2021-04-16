@@ -29,14 +29,14 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#">
                     <img src="images/stratadeli.png">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="collapse navbar-collapse " id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
@@ -44,18 +44,23 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="faq.html">FAQ</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="eligible.html">Eligibility</a>
+                        </li>
                     </ul>
-                    <form class="position-absolute top-50 start-50 translate-middle">
+                    <!--
+                    <form class="alignCenter" onSubmit="return false;">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search.." id="search-item">
                             <div class="input-group-append">
-                                <button class="green-search" id="submit" disabled>
+                                <button class="green-search" id="submit" type="button">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>
                         </div>
                     </form>
-                    <a href="login.html"><button class="green-login-shadow">Log In</button></a>
+                -->
+                    <a href="login.html"><button class="green-login-shadow">Log in</button></a>
                 </div>
             </div>
         </nav>
@@ -76,9 +81,8 @@
     <br><br><br><br>
 
 
-    <!-- FOOTER -->
-    <div id=footer class="sticky-bottom">
-        <!--Change to sticky-bottom when we have more content-->
+     <!-- FOOTER -->
+     <div id=footer class="sticky-bottom">
         <footer class="container">
             <br><br><br><br><br>
             <div class="float-end">
@@ -105,10 +109,8 @@
                 <p style="color:grey">&copy; 2021 strataDeli, Inc.</p>
                 <br>
                 <p><a href="about.html">About Us</a></p>
-                <p><a href="/Story">Careers</a></p>
                 <p><a href="faq.html">FAQ</a></p>
-                <p><a href="/Story">Contact Us</a></p>
-                <p><a href="/Story">Terms & Conditions</a></p>
+                <p><a href="eligible.html">Eligibility</a></p>
             </div>
         </footer>
     </div>

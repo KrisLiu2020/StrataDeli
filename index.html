@@ -62,6 +62,7 @@
                             <a class="nav-link active" aria-current="page" href="eligible.html">Eligibility</a>
                         </li>
                     </ul>
+                    <!--
                     <form class="alignCenter" onSubmit="return false;">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search.." id="search-item">
@@ -72,6 +73,7 @@
                             </div>
                         </div>
                     </form>
+                -->
                     <a href="login.html"><button class="green-login-shadow">Log in</button></a>
                 </div>
             </div>
@@ -208,7 +210,8 @@
 
             <!--Start Shopping Button-->
             <div class="h-100 row align-items-center">
-                <a href="login.html"><button class="btn btn-success" id="start-shopping">Start Shopping Now!</button></a>
+                <a href="login.html"><button class="btn btn-success" id="start-shopping">Start Shopping
+                        Now!</button></a>
             </div>
     </main>
     <br><br><br><br><br><br><br><br>
@@ -266,37 +269,38 @@
     <!--------------------------------------------------------------------->
     <script src="scripts/my_functions.js"></script>
     <script>
-
-        // Search button on enter
-        function enterSearch() {
-            const searchBar = document.getElementById("search-item")
-            searchBar.addEventListener('keypress', function (e) {
-                if (e.key === 'Enter') {
+        /*
+            // Search button on enter
+            function enterSearch() {
+                const searchBar = document.getElementById("search-item")
+                searchBar.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        searchDatabase()
+                    }
+                });
+            }
+    
+            function clickSearch() {
+                const searchButton = document.getElementById("submit")
+                searchButton.addEventListener('click', function () {
                     searchDatabase()
-                }
-            });
-        }
-
-        function clickSearch() {
-            const searchButton = document.getElementById("submit")
-            searchButton.addEventListener('click', function () {
-                searchDatabase()
-            })
-        }
-
-        function searchDatabase() {
-            let item = document.getElementById("search-item").value;
-            db.collection("grocery_items")
-                .where("name", "==", item.toLowerCase()) // Convert value to lowercase 
-                .get()
-                .then(function (snap) {
-                    snap.forEach(function (doc) {
-                        console.log(doc.data());
-                    })
                 })
-        }
-        enterSearch
-        clickSearch
+            }
+    
+            function searchDatabase() {
+                let item = document.getElementById("search-item").value;
+                db.collection("grocery_items")
+                    .where("name", "==", item.toLowerCase()) // Convert value to lowercase
+                    .get()
+                    .then(function (snap) {
+                        snap.forEach(function (doc) {
+                            console.log(doc.data());
+                        })
+                    })
+            }
+            enterSearch
+            clickSearch
+        */
     </script>
 
 </body>
