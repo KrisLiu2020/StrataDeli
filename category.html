@@ -226,6 +226,8 @@
             $("#categories-go-here").append('<p>' + intro + '</p>')
             $("#categories-go-here").append('<p> <b>price</b> ' + price + ' /lb </p>')
             $("#categories-go-here").append('<button type="button" class="green-button-shadow" id="' + id + '" style="width: 150px">Add to Cart</button>')
+            setTimeout(function() {addCartListenerById(id)}, 1000);
+            incrementItemInCart(id)
             $("#categories-go-here").append('</div>')
             $("#categories-go-here").append('</div>')
             $("#categories-go-here").append('</div>')
@@ -233,6 +235,36 @@
 
         displayCategory();
 
+        function addCartListenerById(docid) {
+            document.getElementById(docid).addEventListener("click", function () {
+                console.log("adding " + docid + " to cart");
+                firebase.auth().onAuthStateChanged(function (user) {
+                    db.collection("users")   //part of the user's doc
+                        .doc(user.uid)
+                        .set({
+                            CartByID: firebase.firestore.FieldValue.arrayUnion({
+                                name : docid,
+                                quantity: 1
+                            })
+                        }, {
+                            merge: true
+                        });
+                })
+            })
+        }
+        function incrementItemInCart(itemID){
+            document.getElementById(itemID).addEventListener("click", function () {
+                firebase.auth().onAuthStateChanged(function (user) {
+                    db.collection("users")   //part of the user's doc
+                        .doc(user.uid)
+                        .get()
+                        .then(function(doc){
+                            var CartByID = doc.data().CartByID;
+                            CartByID[0]["quantity"] += 1
+                        })
+                    })        
+               })
+        }   
     </script>
 
 </body>

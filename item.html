@@ -65,7 +65,7 @@
         <div id='item-info'>
             <h2>Organic Carrots</h2>
             <h4>1.78/lb</h4>
-            <button id="btnclick" type="button" class="btn btn-success" style="display: inline-block" >Add to
+            <button id="btnclick" type="button" class="btn btn-success" style="display: inline-block">Add to
                 Cart</button>
             <h5 id="item-number-goes-here"></h5>
             <button type="button" class="btn btn-success" style="display: inline-block">Save the Item</button>
@@ -163,12 +163,12 @@
                                 counter: firebase.firestore.FieldValue.increment(1)
                             })
                         console.log("increment");
-                        
+
                         var counterID = document.getElementById('counterID');
-                        if(counterID==null){
+                        if (counterID == null) {
                             displayCounter();
-                        }else{
-                            counterID.innerHTML= parseInt(counterID.innerHTML)+1;
+                        } else {
+                            counterID.innerHTML = parseInt(counterID.innerHTML) + 1;
                         }
                     })
             }
@@ -178,11 +178,28 @@
                     .get()
                     .then(function (doc) {
                         let counter = doc.data().counter
-                        console.log('doc',doc.data().counter)
+                        console.log('doc', doc.data().counter)
                         $("#item-number-goes-here").append('<p><span id="counterID">' + counter + '</span> items in your cart</p>')
                     })
             }
-            
+
+            function addCartListenerById() {
+                document.getElementById('btnclick').addEventListener("click", function () {
+                    console.log("adding " + 'btnclick' + "to cart");
+                    firebase.auth().onAuthStateChanged(function (user) {
+                        db.collection("users")   //part of the user's doc
+                            .doc(user.uid)
+                            .set({
+                                CartByID: firebase.firestore.FieldValue.arrayUnion('btnclick')
+                            }, {
+                                merge: true
+                            });
+                    })
+                })
+            }
+            addCartListenerById()
+
+
             addCart();
             displayCounter();
         </script>
